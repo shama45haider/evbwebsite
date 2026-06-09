@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -151,9 +152,9 @@
       position: relative; z-index: 3;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 32px 24px 44px;
+      align-items: flex-start;
+      text-align: left;
+      padding: 32px 20px 44px;
       max-width: 1100px;
       margin: 0 auto;
       width: 100%;
@@ -173,7 +174,7 @@
     .hero-left {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       width: 100%;
     }
     @media (min-width: 1024px) {
@@ -191,8 +192,8 @@
     /*  HERO HEADING BLOCK  */
     .hero-heading-block {
       width: 100%;
-      margin-bottom: 22px;
-      text-align: center;
+      margin-bottom: 24px;
+      text-align: left;
     }
     @media (min-width: 1024px) {
       .hero-heading-block { text-align: left; margin-bottom: 24px; }
@@ -200,19 +201,20 @@
 
     .hero-display-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(24px, 4.6vw, 36px);
+      font-size: clamp(26px, 6.5vw, 38px);
       font-weight: 900;
       color: #111;
       letter-spacing: -0.02em;
       line-height: 1.15;
-      margin: 0 0 12px;
-      max-width: 520px;
+      margin: 0 0 18px;
+      max-width: 100%;
     }
     @media (min-width: 1024px) {
       .hero-display-title {
         font-size: clamp(28px, 3vw, 38px);
         max-width: 620px;
         line-height: 1.12;
+        margin: 0 0 12px;
       }
     }
 
@@ -505,8 +507,6 @@
       margin-bottom: 28px;
       width: 100%;
       max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .hero-btn-call, .hero-btn-text {
       display: flex; align-items: center; justify-content: center;
@@ -981,19 +981,13 @@
 
     /* MOBILE */
     @media (max-width: 700px) {
-      .hero-inner { padding: 36px 16px 36px; }
+      .hero-inner { padding: 28px 20px 40px; }
       .hero-logo-img { max-height: 200px; }
       .hero-title { font-size: clamp(32px, 9.5vw, 44px); margin-bottom: 14px; }
-      .hero-body { gap: 10px; }
-      .hero-body li { font-size: 13.5px; padding-left: 16px; }
-
-      .hero-cta-pair { flex-direction: row; gap: 8px; max-width: 100%; margin-bottom: 22px; }
-      .hero-btn-call, .hero-btn-text { padding: 10px 12px; border-radius: 10px; gap: 8px; flex: 1; }
-      .hero-btn-label { font-size: 12px; }
-      .hero-btn-sub { font-size: 8.5px; }
-      .hero-btn-icon { width: 28px; height: 28px; border-radius: 7px; }
-      .hero-btn-icon svg { width: 14px; height: 14px; }
-      .hero-btn-copy { align-items: flex-start; flex: 1; }
+      .hero-body { gap: 14px; }
+      .hero-body li { font-size: 14px; padding-left: 18px; }
+      .hero-body li strong { font-size: 14.5px; }
+      .hero-body li span { font-size: 13px; }
 
       .hero-stats-bar { max-width: 100%; border-radius: 13px; margin-bottom: 28px; }
       .hero-stat-num { font-size: 22px; }
@@ -2789,8 +2783,6 @@
       margin-bottom: 28px;
       width: 100%;
       max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .hero-btn-call,
     .hero-btn-text {
@@ -2870,21 +2862,23 @@
 
     @media (max-width: 700px) {
       .hero-cta-pair {
-        flex-direction: row;
-        gap: 8px;
+        flex-direction: column;
+        gap: 12px;
         max-width: 100%;
-        margin-bottom: 22px;
+        margin-bottom: 28px;
       }
       .hero-btn-call,
       .hero-btn-text {
-        padding: 14px 16px;
-        border-radius: 13px;
-        gap: 10px;
+        padding: 18px 20px;
+        border-radius: 14px;
+        gap: 14px;
+        justify-content: flex-start;
+        width: 100%;
       }
-      .hero-btn-icon { width: 36px; height: 36px; }
-      .hero-btn-icon svg { width: 17px; height: 17px; }
-      .hero-btn-label { font-size: 14px; }
-      .hero-btn-sub { font-size: 10px; }
+      .hero-btn-icon { width: 44px; height: 44px; border-radius: 11px; flex-shrink: 0; }
+      .hero-btn-icon svg { width: 20px; height: 20px; }
+      .hero-btn-label { font-size: 16px; }
+      .hero-btn-sub { font-size: 11px; }
     }
 
     /* HERO DESKTOP REDESIGN */
