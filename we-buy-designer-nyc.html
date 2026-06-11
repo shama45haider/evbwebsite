@@ -293,6 +293,8 @@
     .evb-footer-cats a:hover { color: #f97316; }
     .evb-footer-cats a.is-active { color: #f97316; }
   </style>
+  <link rel="stylesheet" href="site-mobile.css">
+  <link rel="stylesheet" href="site-ticker.css">
 </head>
 <body>
 
@@ -310,6 +312,7 @@
         <a href="index.html#sell" class="site-nav-link">Consign</a>
         <a href="index.html#store" class="site-nav-link">Shop</a>
         <a href="index.html#sell" class="site-nav-link">About</a>
+        <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
       <div class="site-nav-right">
         <div class="site-nav-phone">
@@ -341,6 +344,7 @@
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">Consign</a>
       <a href="index.html#store" class="site-mob-link" onclick="toggleEvbNav()">Shop</a>
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">About</a>
+      <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
     <div class="site-mob-footer">
       <a href="tel:9176088939" class="site-mob-btn site-mob-btn-call">
@@ -354,58 +358,11 @@
     </div>
   </div>
   <script src="site-nav.js"></script>
-
-  <!-- TICKER -->
-  <div class="ticker" aria-label="Designer brands we buy and sell">
-    <div class="ticker-inner">
-      <div class="ticker-track">
-        <span class="ticker-set">
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Louis Vuitton</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Chanel</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Hermès</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Gucci</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Dior</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Designer Handbags</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Designer Accessories</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Birkin &amp; Kelly</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Neverfull &amp; Speedy</span></span>
-          <span class="t-bullet">&bull;</span>
-        </span>
-        <span class="ticker-set" aria-hidden="true">
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Louis Vuitton</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Chanel</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Hermès</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Gucci</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Dior</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Designer Handbags</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Designer Accessories</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Birkin &amp; Kelly</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Neverfull &amp; Speedy</span></span>
-          <span class="t-bullet">&bull;</span>
-        </span>
-      </div>
-    </div>
-  </div>
+  <script src="site-ticker.js"></script>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <img src="handbagbanner.png" alt="Buy and sell designer handbags in NYC" class="page-hero-img">
+    <img src="evbplaceholder.png" alt="Buy and sell designer handbags in NYC" class="page-hero-img">
     <div class="page-hero-inner">
       <p class="page-hero-kicker">Buy &bull; Sell &bull; Trade &mdash; East Village, NYC</p>
       <h1 class="page-hero-title">We Buy &amp; Sell<br>Designer in NYC</h1>
@@ -940,7 +897,7 @@
     </div>
     <div style="max-width:1100px;margin:0 auto;padding:0 0;">
       <div class="evb-footer-bottom">
-        <span class="evb-footer-copy">&copy; 2026 East Village Buyers. All rights reserved.</span>
+        <span class="evb-footer-copy">&copy; 2026 East Village Buyers. All rights reserved. &nbsp;&middot;&nbsp; <a href="index.html" style="color:inherit;">Back to Home</a></span>
         <span class="evb-footer-legal">Vintage USA Inc &nbsp;&middot;&nbsp; DBA East Village Buyers &nbsp;&middot;&nbsp; DCA Lic. #2070477</span>
       </div>
     </div>

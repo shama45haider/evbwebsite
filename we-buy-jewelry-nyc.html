@@ -2816,6 +2816,7 @@ ul:not(.cp-footer-links) li:hover {
     .evb-footer-bottom a:hover { color: var(--accent) !important; }
   </style>
   <link rel="stylesheet" href="site-mobile.css">
+  <link rel="stylesheet" href="site-ticker.css">
 </head>
 <body class="cp-we-buy-page cp-jewelry-page">
 
@@ -2832,6 +2833,7 @@ ul:not(.cp-footer-links) li:hover {
         <a href="index.html#sell" class="site-nav-link">Consign</a>
         <a href="index.html#store" class="site-nav-link">Shop</a>
         <a href="index.html#sell" class="site-nav-link">About</a>
+        <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
       <div class="site-nav-right">
         <div class="site-nav-phone">
@@ -2863,6 +2865,7 @@ ul:not(.cp-footer-links) li:hover {
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">Consign</a>
       <a href="index.html#store" class="site-mob-link" onclick="toggleEvbNav()">Shop</a>
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">About</a>
+      <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
     <div class="site-mob-footer">
       <a href="tel:9176088939" class="site-mob-btn site-mob-btn-call">
@@ -2876,29 +2879,11 @@ ul:not(.cp-footer-links) li:hover {
     </div>
   </div>
   <script src="site-nav.js"></script>
-
-  <div class="cp-ticker" aria-hidden="true">
-    <div class="cp-ticker-inner">
-      <div class="cp-ticker-track">
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Gold</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Diamonds</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Silver</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Estate Jewelry</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-white">Designer</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Platinum</span><span class="cp-t-muted"> &nbsp;&nbsp;&nbsp;◆◆◆&nbsp;&nbsp;&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Gold</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Diamonds</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Silver</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Estate Jewelry</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-white">Designer</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-gold">Platinum</span><span class="cp-t-muted"> &nbsp;&nbsp;&nbsp;◆◆◆&nbsp;&nbsp;&nbsp; </span>
-      </div>
-    </div>
-  </div>
+  <script src="site-ticker.js"></script>
 
   <section class="cp-page-hero">
     <div class="cp-page-hero-visual cp-page-hero-visual--mobile">
-      <img src="guyholdingmoney.jpg" alt="Happy customer holding cash after selling jewelry at East Village Buyers NYC">
+      <img src="evbplaceholder.png" alt="Happy customer holding cash after selling jewelry at East Village Buyers NYC">
     </div>
 
     <div class="cp-page-hero-inner">
@@ -3054,7 +3039,7 @@ ul:not(.cp-footer-links) li:hover {
       </div>
 
       <div class="cp-page-hero-visual cp-page-hero-visual--desktop">
-        <img src="guyholdingmoney.jpg" alt="Happy customer holding cash after selling jewelry at East Village Buyers NYC">
+        <img src="evbplaceholder.png" alt="Happy customer holding cash after selling jewelry at East Village Buyers NYC">
       </div>
     </div>
   </section>
@@ -3084,7 +3069,7 @@ ul:not(.cp-footer-links) li:hover {
       </div>
       <div class="jw-cat-grid">
         <a href="#gold" class="jw-card">
-          <div class="jw-card-media"><img src="goldbanner.png" alt="Gold chains and rings"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Gold chains and rings"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Gold</div>
             <div class="jw-card-sub">10K–24K · scrap · dental</div>
@@ -3092,7 +3077,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#diamonds" class="jw-card">
-          <div class="jw-card-media"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Diamond engagement ring"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Diamond engagement ring"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Diamonds</div>
             <div class="jw-card-sub">Rings · loose · GIA &amp; estate</div>
@@ -3100,7 +3085,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#silver" class="jw-card">
-          <div class="jw-card-media"><img src="silverbanner.png" alt="Sterling silver jewelry"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Sterling silver jewelry"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Silver</div>
             <div class="jw-card-sub">Sterling · jewelry · scrap</div>
@@ -3108,7 +3093,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#platinum" class="jw-card">
-          <div class="jw-card-media"><img src="platinumbanner.png" alt="Platinum jewelry — rings, bands and diamonds"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Platinum jewelry — rings, bands and diamonds"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Platinum</div>
             <div class="jw-card-sub">Bands · scrap · watches</div>
@@ -3116,7 +3101,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#silverware" class="jw-card">
-          <div class="jw-card-media"><img src="silverwarebanner.jpg" alt="Sterling silver flatware and tea set"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Sterling silver flatware and tea set"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Silverware</div>
             <div class="jw-card-sub">Flatware · hollowware · tea sets</div>
@@ -3124,7 +3109,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#coins" class="jw-card">
-          <div class="jw-card-media"><img src="coinsbanner.png" alt="Gold and silver coins"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Gold and silver coins"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Coins</div>
             <div class="jw-card-sub">Gold · silver · bullion</div>
@@ -3132,7 +3117,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#estate" class="jw-card jw-card--wide">
-          <div class="jw-card-media"><img src="estatebanner.png" alt="Vintage estate jewelry"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Vintage estate jewelry"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Estate &amp; Vintage</div>
             <div class="jw-card-sub">Inherited · probate · collections</div>
@@ -3140,7 +3125,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#gemstones" class="jw-card">
-          <div class="jw-card-media"><img src="gemsbanner.png" alt="Colored gemstones and diamonds"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Colored gemstones and diamonds"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Gemstones</div>
             <div class="jw-card-sub">Diamonds · rubies · sapphires</div>
@@ -3148,7 +3133,7 @@ ul:not(.cp-footer-links) li:hover {
           </div>
         </a>
         <a href="#designer" class="jw-card">
-          <div class="jw-card-media"><img src="designerbanner.png" alt="Designer luxury jewelry"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Designer luxury jewelry"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Designer</div>
             <div class="jw-card-sub">Tiffany · Cartier · David Yurman</div>
@@ -3168,7 +3153,7 @@ ul:not(.cp-footer-links) li:hover {
           <p class="wb-lead">We're a real shop at <strong>39 Avenue A</strong> — walk in with anything from a single broken chain to a full inherited collection. We test and weigh everything at the counter in front of you, explain the numbers plainly, and pay cash the same day if you like the offer. No mail-in, no hidden fees, no pressure.</p>
         </div>
         <div class="cp-storefront-wrap" aria-label="East Village Buyers storefront">
-          <img src="evbstorefront.jpg" alt="East Village Buyers storefront at 39 Avenue A, New York City" class="cp-storefront-img">
+          <img src="evbplaceholder.png" alt="East Village Buyers storefront at 39 Avenue A, New York City" class="cp-storefront-img">
         </div>
       </div>
 
@@ -3206,12 +3191,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="goldbanner.png" alt="Gold jewelry buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Gold jewelry buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Gold Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Gold coins and bars at East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Gold coins and bars at East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Gold · 39 Avenue A</span>
           </figure>
@@ -3271,12 +3256,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Diamond engagement ring on display" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Diamond engagement ring on display" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Diamond Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Loose diamonds and gemstones" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Loose diamonds and gemstones" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Diamonds · 39 Avenue A</span>
           </figure>
@@ -3332,12 +3317,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="silverbanner.png" alt="Sterling silver jewelry buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Sterling silver jewelry buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Silver Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Silver flatware and jewelry" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Silver flatware and jewelry" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Silver · 39 Avenue A</span>
           </figure>
@@ -3409,12 +3394,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
                 <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="silverwarebanner.jpg" alt="Sterling silver flatware, trays, and tea service" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Sterling silver flatware, trays, and tea service" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Silverware Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Sterling silver serving pieces close-up" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Sterling silver serving pieces close-up" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Silverware · 39 Avenue A</span>
           </figure>
@@ -3494,12 +3479,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
                 <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="coinsbanner.png" alt="Gold and silver coins buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Gold and silver coins buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Coin Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Rare coins and bullion at East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Rare coins and bullion at East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Coins · 39 Avenue A</span>
           </figure>
@@ -3583,12 +3568,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
                 <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="platinumbanner.png" alt="Platinum jewelry buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Platinum jewelry buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Platinum Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Platinum rings and settings" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Platinum rings and settings" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Platinum · 39 Avenue A</span>
           </figure>
@@ -3644,12 +3629,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
                 <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="estatebanner.png" alt="Estate jewelry buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Estate jewelry buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Estate Jewelry · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Vintage and antique jewelry collection" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Vintage and antique jewelry collection" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Estate · 39 Avenue A</span>
           </figure>
@@ -3714,12 +3699,12 @@ ul:not(.cp-footer-links) li:hover {
       <div class="cp-metal-band-layout">
                 <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="gemsbanner.png" alt="Colored gemstone buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Colored gemstone buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Gemstone Buyer · NYC</span>
           </figure>
           <figure class="cp-metal-band-photo">
-            <img src="https://placehold.co/800x600/1a1814/f97316?text=Photo+Coming+Soon" alt="Sapphires, rubies and emeralds" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Sapphires, rubies and emeralds" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Gemstones · 39 Avenue A</span>
           </figure>
@@ -3784,7 +3769,7 @@ ul:not(.cp-footer-links) li:hover {
     <section id="items" class="cp-metal-band cp-metal-band--content">
       <div class="cp-metal-band-layout">
         <figure class="cp-metal-band-photo">
-          <img src="https://images.unsplash.com/photo-1535632066922-ab5c9d7a4a0e?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Assorted fine jewelry — rings, necklaces, earrings" width="800" height="600" loading="lazy">
+          <img src="evbplaceholder.png" alt="Assorted fine jewelry — rings, necklaces, earrings" width="800" height="600" loading="lazy">
                   <span class="cp-photo-corner"></span>
           <span class="cp-photo-label">Estate Jewelry · NYC</span>
         </figure>
@@ -3846,7 +3831,7 @@ ul:not(.cp-footer-links) li:hover {
     <section id="designer" class="cp-metal-band cp-metal-band--content">
       <div class="cp-metal-band-layout">
         <figure class="cp-metal-band-photo">
-          <img src="designerbanner.png" alt="Luxury designer jewelry display" width="800" height="600" loading="lazy">
+          <img src="evbplaceholder.png" alt="Luxury designer jewelry display" width="800" height="600" loading="lazy">
                   <span class="cp-photo-corner"></span>
           <span class="cp-photo-label">Designer Buyer · NYC</span>
         </figure>
@@ -4607,6 +4592,7 @@ ul:not(.cp-footer-links) li:hover {
         <a href="we-buy-designer-nyc.html">Designer</a>
         <a href="we-buy-streetwear-nyc.html">Streetwear</a>
         <a href="we-buy-watches-nyc.html">Watches</a>
+        <a href="we-buy-electronics-nyc.html">Electronics</a>
       </div>
     </div>
     <div class="evb-footer-bottom">

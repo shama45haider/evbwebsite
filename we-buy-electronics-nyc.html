@@ -367,6 +367,10 @@
     @media (min-width: 768px) { .evb-footer-inner { grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; } }
     .evb-footer-logo { font-family: 'Syne', sans-serif; font-size: 22px; color: #fff; margin-bottom: 10px; }
     .evb-footer-desc { font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 500; line-height: 1.7; }
+    .evb-footer-cats { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; }
+    .evb-footer-cats a { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: 0.04em; }
+    .evb-footer-cats a:hover { color: #f97316; }
+    .evb-footer-cats a.is-active { color: #f97316; }
     .evb-footer-heading { font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #f97316; margin-bottom: 14px; }
     .evb-footer-link { display: block; font-size: 12px; color: rgba(255,255,255,0.8); text-decoration: none; margin-bottom: 8px; font-weight: 600; }
     .evb-footer-link:hover { color: #fff; }
@@ -374,6 +378,8 @@
     .evb-footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); }
     .evb-footer-legal { font-size: 10px; color: rgba(255,255,255,0.2); }
   </style>
+  <link rel="stylesheet" href="site-mobile.css">
+  <link rel="stylesheet" href="site-ticker.css">
 </head>
 <body>
 
@@ -391,6 +397,7 @@
         <a href="index.html#sell" class="site-nav-link">Consign</a>
         <a href="index.html#store" class="site-nav-link">Shop</a>
         <a href="index.html#sell" class="site-nav-link">About</a>
+        <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
       <div class="site-nav-right">
         <div class="site-nav-phone">
@@ -422,6 +429,7 @@
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">Consign</a>
       <a href="index.html#store" class="site-mob-link" onclick="toggleEvbNav()">Shop</a>
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">About</a>
+      <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
     <div class="site-mob-footer">
       <a href="tel:9176088939" class="site-mob-btn site-mob-btn-call">
@@ -435,62 +443,11 @@
     </div>
   </div>
   <script src="site-nav.js"></script>
-
-  <!-- TICKER -->
-  <div class="ticker" aria-label="Electronics we buy and sell">
-    <div class="ticker-inner">
-      <div class="ticker-track">
-        <span class="ticker-set">
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">iPhone 16</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">AirPods Max</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">PlayStation 5</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Sony Cameras</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Nikon</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Canon</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Fujifilm</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Leica</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">AirPods Pro</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">iPhone 16 Pro Max</span></span>
-          <span class="t-bullet">&bull;</span>
-        </span>
-        <span class="ticker-set" aria-hidden="true">
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">iPhone 16</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">AirPods Max</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">PlayStation 5</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Sony Cameras</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Nikon</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Canon</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Fujifilm</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">Leica</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">AirPods Pro</span></span>
-          <span class="t-bullet">&bull;</span>
-          <span class="t-group"><span class="t-actions"><span class="t-act">Buy</span><span class="t-act-sep">·</span><span class="t-act">Sell</span><span class="t-act-sep">·</span><span class="t-act">Trade</span></span><span class="t-pipe">|</span><span class="t-cat">iPhone 16 Pro Max</span></span>
-          <span class="t-bullet">&bull;</span>
-        </span>
-      </div>
-    </div>
-  </div>
+  <script src="site-ticker.js"></script>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <img src="https://images.unsplash.com/photo-1756705533779-105bf34e0722?w=1600&auto=format&fit=crop&q=80" alt="Electronics we buy and sell in NYC" class="page-hero-img">
+    <img src="evbplaceholder.png" alt="Electronics we buy and sell in NYC" class="page-hero-img">
     <div class="page-hero-inner">
       <p class="page-hero-kicker">Buy &bull; Sell &bull; Trade &mdash; East Village, NYC</p>
       <h1 class="page-hero-title">We Buy &amp; Sell<br>Electronics NYC</h1>
@@ -517,7 +474,7 @@
 
       <div class="elec-grid">
         <a href="#iphones" class="elec-card" style="--ec:#555;">
-          <div class="elec-card-img"><img src="https://images.unsplash.com/photo-1727079513748-d03e7b8c8947?w=600&auto=format&fit=crop&q=80" alt="iPhone 16 pair" style="object-position:center top;"></div>
+          <div class="elec-card-img"><img src="evbplaceholder.png" alt="iPhone 16 pair" style="object-position:center top;"></div>
           <div class="elec-card-body">
             <div class="elec-card-title">Buy &amp; Sell iPhones</div>
             <div class="elec-card-sub">iPhone 16, 16 Plus, 16 Pro, 16 Pro Max and newer models only</div>
@@ -525,7 +482,7 @@
           </div>
         </a>
         <a href="#airpods" class="elec-card" style="--ec:#f97316;">
-          <div class="elec-card-img"><img src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=600&auto=format&fit=crop&q=80" alt="AirPods Max" style="object-position:center;"></div>
+          <div class="elec-card-img"><img src="evbplaceholder.png" alt="AirPods Max" style="object-position:center;"></div>
           <div class="elec-card-body">
             <div class="elec-card-title">Buy &amp; Sell AirPods</div>
             <div class="elec-card-sub">Brand new AirPods, AirPods Pro, and AirPods Max — sealed or open box</div>
@@ -533,7 +490,7 @@
           </div>
         </a>
         <a href="#cameras" class="elec-card" style="--ec:#1a1a1a;">
-          <div class="elec-card-img"><img src="https://images.unsplash.com/photo-1577457960025-af765394879c?w=600&auto=format&fit=crop&q=80" alt="Sony mirrorless camera" style="object-position:center;"></div>
+          <div class="elec-card-img"><img src="evbplaceholder.png" alt="Sony mirrorless camera" style="object-position:center;"></div>
           <div class="elec-card-body">
             <div class="elec-card-title">Buy &amp; Sell Cameras</div>
             <div class="elec-card-sub">Nikon · Canon · Sony · Fujifilm · Leica · Lumix · Pentax · Ricoh</div>
@@ -541,7 +498,7 @@
           </div>
         </a>
         <a href="#ps5" class="elec-card" style="--ec:#003087;">
-          <div class="elec-card-img"><img src="https://images.unsplash.com/photo-1750797308931-b0d261abb3d5?w=600&auto=format&fit=crop&q=80" alt="PlayStation 5 console with DualSense controller" style="object-position:center;"></div>
+          <div class="elec-card-img"><img src="evbplaceholder.png" alt="PlayStation 5 console with DualSense controller" style="object-position:center;"></div>
           <div class="elec-card-body">
             <div class="elec-card-title">Buy &amp; Sell PS5</div>
             <div class="elec-card-sub">PlayStation 5 console — disc edition and digital edition</div>
@@ -549,7 +506,7 @@
           </div>
         </a>
         <a href="#rayban" class="elec-card" style="--ec:#1a1a1a;">
-          <div class="elec-card-img"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop&q=80" alt="Ray-Ban sunglasses" style="object-position:center;"></div>
+          <div class="elec-card-img"><img src="evbplaceholder.png" alt="Ray-Ban sunglasses" style="object-position:center;"></div>
           <div class="elec-card-body">
             <div class="elec-card-title">Buy &amp; Sell Ray-Ban Meta</div>
             <div class="elec-card-sub">All models — new and used — Gen 1 &amp; Gen 2</div>
@@ -557,7 +514,7 @@
           </div>
         </a>
         <a href="#ipads" class="elec-card" style="--ec:#1d6fa4;">
-          <div class="elec-card-img"><img src="https://images.unsplash.com/photo-1585790051609-09928c362a42?w=600&auto=format&fit=crop&q=80" alt="iPad Pro on white desk" style="object-position:center;"></div>
+          <div class="elec-card-img"><img src="evbplaceholder.png" alt="iPad Pro on white desk" style="object-position:center;"></div>
           <div class="elec-card-body">
             <div class="elec-card-title">Buy &amp; Sell iPads</div>
             <div class="elec-card-sub">Brand new only — latest iPad, iPad Air, and iPad Pro models</div>
@@ -1187,6 +1144,13 @@
       <div>
         <div class="evb-footer-logo">East Village Buyers</div>
         <p class="evb-footer-desc">Buy, sell, and trade electronics, jewelry, designer goods, sneakers, and more in NYC's East Village. Walk-ins welcome every day we're open.</p>
+        <div class="evb-footer-cats">
+          <a href="we-buy-jewelry-nyc.html">Jewelry</a>
+          <a href="we-buy-designer-nyc.html">Designer</a>
+          <a href="we-buy-streetwear-nyc.html">Streetwear</a>
+          <a href="we-buy-watches-nyc.html">Watches</a>
+          <a href="we-buy-electronics-nyc.html" class="is-active">Electronics</a>
+        </div>
       </div>
       <div>
         <div class="evb-footer-heading">Electronics</div>
@@ -1208,7 +1172,7 @@
     </div>
     <div style="max-width:1100px;margin:0 auto;padding:0 0;">
       <div class="evb-footer-bottom">
-        <span class="evb-footer-copy">&copy; 2026 East Village Buyers. All rights reserved.</span>
+        <span class="evb-footer-copy">&copy; 2026 East Village Buyers. All rights reserved. &nbsp;&middot;&nbsp; <a href="index.html" style="color:inherit;">Back to Home</a></span>
         <span class="evb-footer-legal">Vintage USA Inc &nbsp;&middot;&nbsp; DBA East Village Buyers &nbsp;&middot;&nbsp; DCA Lic. #2070477</span>
       </div>
     </div>

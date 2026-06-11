@@ -712,6 +712,8 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
 
 @media (max-width: 640px) { .cp-article { padding: 1.5rem 1rem 3rem; } ul:not(.cp-footer-links) { grid-template-columns: 1fr; } .cp-topic-grid { grid-template-columns: 1fr; } }
   </style>
+  <link rel="stylesheet" href="site-mobile.css">
+  <link rel="stylesheet" href="site-ticker.css">
 </head>
 
 <body class="cp-we-buy-page cp-streetwear-page">
@@ -728,6 +730,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
         <a href="index.html#what-we-buy" class="site-nav-link">Trade</a>
         <a href="index.html#store" class="site-nav-link">Shop</a>
         <a href="index.html#sell" class="site-nav-link">About</a>
+        <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
       <div class="site-nav-right">
         <div class="site-nav-phone">
@@ -758,6 +761,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <a href="index.html#what-we-buy" class="site-mob-link" onclick="toggleEvbNav()">Trade</a>
       <a href="index.html#store" class="site-mob-link" onclick="toggleEvbNav()">Shop</a>
       <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">About</a>
+      <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
     <div class="site-mob-footer">
       <a href="tel:9176088939" class="site-mob-btn site-mob-btn-call">
@@ -771,28 +775,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
     </div>
   </div>
   <script src="site-nav.js"></script>
-
-  <!-- Ticker -->
-  <div class="cp-ticker" aria-hidden="true">
-    <div class="cp-ticker-inner">
-      <div class="cp-ticker-track">
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Supreme</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Chrome Hearts</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Bape</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Amiri</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Eric Emanuel</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Sp5der</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Denim Tears</span><span class="cp-t-muted"> &nbsp;&nbsp;&nbsp;◆◆◆&nbsp;&nbsp;&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Supreme</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Chrome Hearts</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Bape</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Amiri</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Eric Emanuel</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Sp5der</span><span class="cp-t-muted"> &nbsp;◆&nbsp; </span>
-        <span class="cp-t-orange">We Buy&nbsp;</span><span class="cp-t-ink">Denim Tears</span><span class="cp-t-muted"> &nbsp;&nbsp;&nbsp;◆◆◆&nbsp;&nbsp;&nbsp; </span>
-      </div>
-    </div>
-  </div>
+  <script src="site-ticker.js"></script>
 
   <!-- Hero -->
   <section class="cp-page-hero">
@@ -810,7 +793,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
         </p>
       </div>
       <div class="cp-page-hero-visual">
-        <img src="supreme1.webp" alt="Supreme x Louis Vuitton collab bag — East Village Buyers">
+        <img src="evbplaceholder.png" alt="Supreme x Louis Vuitton collab bag — East Village Buyers">
       </div>
     </div>
   </section>
@@ -819,7 +802,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
 
 
     <!-- Category overview cards -->
-    <section id="brands">
+    <section id="sneakers">
       <div class="cp-section-head">
         <p class="cp-eyebrow">Brands We Buy &amp; Sell</p>
         <h2>What We Buy &amp; Sell</h2>
@@ -827,7 +810,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       </div>
       <div class="jw-cat-grid">
         <a href="#supreme" class="jw-card" style="--jw-accent:#cc1111;">
-          <div class="jw-card-media"><img src="supreme1.webp" alt="Supreme NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Supreme NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Supreme</div>
             <div class="jw-card-sub">Box Logo · Hoodies · Accessories</div>
@@ -835,7 +818,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#chrome-hearts" class="jw-card" style="--jw-accent:#1a1a1a;">
-          <div class="jw-card-media"><img src="chromehearts1.webp" alt="Chrome Hearts NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Chrome Hearts NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Chrome Hearts</div>
             <div class="jw-card-sub">Tees · Hoodies · Hats · Leather</div>
@@ -843,7 +826,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#bape" class="jw-card" style="--jw-accent:#008000;">
-          <div class="jw-card-media"><img src="bape1.jpg" alt="Bape Bapesta sneakers NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Bape Bapesta sneakers NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Bape</div>
             <div class="jw-card-sub">Shark Hoodies · Camo · Full-Zips</div>
@@ -851,7 +834,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#amiri" class="jw-card" style="--jw-accent:#8b0000;">
-          <div class="jw-card-media"><img src="amiri1.jpg" alt="Amiri logo NYC" style="object-fit:contain;background:#f0f0f0;padding:16px;"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Amiri logo NYC" style="object-fit:contain;background:#f0f0f0;padding:16px;"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Amiri</div>
             <div class="jw-card-sub">MX1 Denim · Bones Tees · Jackets</div>
@@ -859,7 +842,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#vale" class="jw-card" style="--jw-accent:#1a1a2e;">
-          <div class="jw-card-media"><img src="vale1.jpg" alt="Vale Dreams tees NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Vale Dreams tees NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Vale</div>
             <div class="jw-card-sub">Tees · Hoodies · Limited Drops</div>
@@ -867,7 +850,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#eric-emanuel" class="jw-card" style="--jw-accent:#0066cc;">
-          <div class="jw-card-media"><img src="eric1.jpg" alt="Eric Emanuel camo shorts NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Eric Emanuel camo shorts NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Eric Emanuel</div>
             <div class="jw-card-sub">Mesh Shorts · Collab Pieces</div>
@@ -875,7 +858,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#erd" class="jw-card" style="--jw-accent:#2d0a0a;">
-          <div class="jw-card-media"><img src="streetwearbanner.png" alt="Enfants Riches Déprimés NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Enfants Riches Déprimés NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Enfants Riches Déprimés</div>
             <div class="jw-card-sub">Tees · Denim · Rare Pieces</div>
@@ -883,7 +866,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#sb-studios" class="jw-card" style="--jw-accent:#222244;">
-          <div class="jw-card-media"><img src="sbstudios1.webp" alt="SB Studios NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="SB Studios NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">SB Studios</div>
             <div class="jw-card-sub">Tees · Hoodies · Drops</div>
@@ -891,7 +874,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#denim-tears" class="jw-card" style="--jw-accent:#3d2b1f;">
-          <div class="jw-card-media"><img src="denim1.jpg" alt="Denim Tears camo hoodies NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Denim Tears camo hoodies NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Denim Tears</div>
             <div class="jw-card-sub">Wreath Jeans · Collab Drops</div>
@@ -899,7 +882,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#sp5der" class="jw-card" style="--jw-accent:#880088;">
-          <div class="jw-card-media"><img src="sp5der1.jpg" alt="Sp5der green hoodie NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Sp5der green hoodie NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Sp5der</div>
             <div class="jw-card-sub">Hoodies · Tracksuits · Tees</div>
@@ -907,7 +890,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#saint-vanity" class="jw-card" style="--jw-accent:#1a1a1a;">
-          <div class="jw-card-media"><img src="saintv1.jpg" alt="Saint Vanity tees NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Saint Vanity tees NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Saint Vanity</div>
             <div class="jw-card-sub">Tees · Hoodies · Outerwear</div>
@@ -915,7 +898,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#godspeed" class="jw-card" style="--jw-accent:#1a3a1a;">
-          <div class="jw-card-media"><img src="streetwearbanner.png" alt="Godspeed NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Godspeed NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Godspeed</div>
             <div class="jw-card-sub">Tees · Hoodies · Drops</div>
@@ -923,7 +906,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#alo" class="jw-card" style="--jw-accent:#2a2a2a;">
-          <div class="jw-card-media"><img src="streetwearbanner.png" alt="Alo NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Alo NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Alo</div>
             <div class="jw-card-sub">Activewear · Limited Pieces</div>
@@ -931,7 +914,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           </div>
         </a>
         <a href="#mixed-emotion" class="jw-card" style="--jw-accent:#2a1a2a;">
-          <div class="jw-card-media"><img src="streetwearbanner.png" alt="Mixed Emotion NYC"></div>
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Mixed Emotion NYC"></div>
           <div class="jw-card-body">
             <div class="jw-card-title">Mixed Emotion</div>
             <div class="jw-card-sub">Tees · Hoodies · Limited Drops</div>
@@ -973,7 +956,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="supreme1.webp" alt="Supreme x Louis Vuitton collab — East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Supreme x Louis Vuitton collab — East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Supreme · NYC</span>
           </figure>
@@ -1033,7 +1016,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="chromehearts1.webp" alt="Chrome Hearts tees buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Chrome Hearts tees buyer NYC — East Village Buyers" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Chrome Hearts · NYC</span>
           </figure>
@@ -1093,7 +1076,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="bape1.jpg" alt="Bape Bapesta sneakers buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Bape Bapesta sneakers buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Bape · NYC</span>
           </figure>
@@ -1153,7 +1136,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="amiri1.jpg" alt="Amiri logo buyer NYC" width="800" height="600" loading="lazy" style="object-fit:contain;background:#f5f5f5;">
+            <img src="evbplaceholder.png" alt="Amiri logo buyer NYC" width="800" height="600" loading="lazy" style="object-fit:contain;background:#f5f5f5;">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Amiri · NYC</span>
           </figure>
@@ -1213,7 +1196,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="vale1.jpg" alt="Vale Dreams graphic tees buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Vale Dreams graphic tees buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Vale · NYC</span>
           </figure>
@@ -1273,7 +1256,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="eric1.jpg" alt="Eric Emanuel camo mesh shorts buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Eric Emanuel camo mesh shorts buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Eric Emanuel · NYC</span>
           </figure>
@@ -1333,7 +1316,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="streetwearbanner.png" alt="Enfants Riches Déprimés buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Enfants Riches Déprimés buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">ERD · NYC</span>
           </figure>
@@ -1393,7 +1376,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="sbstudios1.webp" alt="SB Studios Stain Bandz shorts buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="SB Studios Stain Bandz shorts buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">SB Studios · NYC</span>
           </figure>
@@ -1453,7 +1436,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="denim1.jpg" alt="Denim Tears camo hoodies buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Denim Tears camo hoodies buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Denim Tears · NYC</span>
           </figure>
@@ -1513,7 +1496,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="sp5der1.jpg" alt="Sp5der green web hoodie buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Sp5der green web hoodie buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Sp5der · NYC</span>
           </figure>
@@ -1573,7 +1556,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="saintv1.jpg" alt="Saint Vanity tees buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Saint Vanity tees buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Saint Vanity · NYC</span>
           </figure>
@@ -1633,7 +1616,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="streetwearbanner.png" alt="Godspeed buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Godspeed buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Godspeed · NYC</span>
           </figure>
@@ -1657,7 +1640,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="streetwearbanner.png" alt="Alo buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Alo buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Alo · NYC</span>
           </figure>
@@ -1717,7 +1700,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
       <div class="cp-metal-band-layout">
         <div class="cp-metal-band-photos">
           <figure class="cp-metal-band-photo">
-            <img src="streetwearbanner.png" alt="Mixed Emotion buyer NYC" width="800" height="600" loading="lazy">
+            <img src="evbplaceholder.png" alt="Mixed Emotion buyer NYC" width="800" height="600" loading="lazy">
             <span class="cp-photo-corner"></span>
             <span class="cp-photo-label">Mixed Emotion · NYC</span>
           </figure>
@@ -1898,7 +1881,7 @@ ul:not(.cp-footer-links) li:hover { border-color: rgba(249,115,22,0.35); box-sha
           <span class="faq2-icon" aria-hidden="true"></span>
         </button>
         <div class="faq2-a">
-          <div class="faq2-a-inner"><p>Yes — Jordans, Yeezys, Nike SBs, and other collectible kicks. See our <a href="index.html#what-we-buy">sneakers page</a> for the full breakdown, or just bring them in when you bring your clothing and we'll quote everything together.</p></div>
+          <div class="faq2-a-inner"><p>Yes — Jordans, Yeezys, Nike SBs, and other collectible kicks. See our <a href="we-buy-streetwear-nyc.html#sneakers">streetwear &amp; sneakers page</a> for the full breakdown, or just bring them in when you bring your clothing and we'll quote everything together.</p></div>
         </div>
       </div>
 
