@@ -3470,9 +3470,9 @@
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.06em;
-      color: #111;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.1);
+      color: #f97316;
+      background: #fdf6ee;
+      border: 1px solid rgba(249,115,22,0.25);
       border-radius: 999px;
       padding: 4px 12px;
       white-space: nowrap;
@@ -3489,20 +3489,20 @@
       position: relative;
       overflow: hidden;
       border-radius: 16px;
-      border-top: 3px solid #f97316;
-      border-bottom: 3px solid #f97316;
-      background: #fdf6ee;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.9);
+      border-top: 3px solid #fdf6ee;
+      border-bottom: 3px solid #fdf6ee;
+      background: #f97316;
+      box-shadow: 0 4px 20px rgba(249,115,22,0.35), 0 1px 0 rgba(255,255,255,0.15);
     }
-    /* Edge fades matching cream bg */
+    /* Edge fades matching orange bg */
     .bwb-carousel-strip::before,
     .bwb-carousel-strip::after {
       content: '';
       position: absolute; top: 0; bottom: 0;
       width: 56px; z-index: 3; pointer-events: none;
     }
-    .bwb-carousel-strip::before { left:  0; background: linear-gradient(to right, #fdf6ee 20%, transparent); }
-    .bwb-carousel-strip::after  { right: 0; background: linear-gradient(to left,  #fdf6ee 20%, transparent); }
+    .bwb-carousel-strip::before { left:  0; background: linear-gradient(to right, #f97316 20%, transparent); }
+    .bwb-carousel-strip::after  { right: 0; background: linear-gradient(to left,  #f97316 20%, transparent); }
 
     /* Track */
     .bwb-brand-carousel .brand-carousel-track {
@@ -3528,15 +3528,15 @@
       overflow: hidden;
       display: block;
       position: relative;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2), 0 0 0 2px rgba(253,246,238,0.3);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
       cursor: default;
     }
     .bwb-brand-carousel .brand-logo-wrap:hover {
       transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.22), 0 0 0 2px #f97316;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.28), 0 0 0 2px #fdf6ee;
     }
-    /* Orange corner accent on hover */
+    /* Cream corner accent on hover */
     .bwb-brand-carousel .brand-logo-wrap::after {
       content: '';
       position: absolute;
@@ -3544,7 +3544,7 @@
       width: 0; height: 0;
       border-style: solid;
       border-width: 0 20px 20px 0;
-      border-color: transparent #f97316 transparent transparent;
+      border-color: transparent #fdf6ee transparent transparent;
       opacity: 0;
       transition: opacity 0.22s ease;
     }
@@ -3563,7 +3563,7 @@
       transform: scale(1.04);
     }
 
-    /* No separators needed — tiles are self-contained */
+    /* No separators needed */
     .bwb-brand-carousel .brand-sep { display: none; }
 
     /* Bottom info row */
