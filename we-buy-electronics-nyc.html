@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>We Buy &amp; Sell Electronics NYC | iPhone, AirPods, Cameras, PS5 | East Village Buyers</title>
   <meta name="description" content="Buy and sell electronics in NYC — iPhones, AirPods, AirPods Max, Nikon, Canon, Sony cameras, PlayStation 5 &amp; more. Walk in to 39 Avenue A, East Village. Same-day cash, free appraisal.">
   <meta name="keywords" content="buy electronics NYC, sell electronics NYC, sell iPhone NYC, buy iPhone NYC, sell AirPods NYC, sell PS5 NYC, buy PS5 NYC, sell camera NYC, buy camera NYC, sell MacBook NYC, sell iPad NYC, electronics buyer NYC, buy sell electronics east village, cash for electronics NYC, East Village Buyers">
@@ -46,357 +47,2781 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="appletouchicon.png">
   <meta name="theme-color" content="#f97316">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site-nav.css">
+  <style id="category-page-css">
+/* East Village Buyers — We Buy category pages (EVB homepage style) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
+:root {
+  --accent: #f97316;
+  --accent-dark: #c2410c;
+  --accent-muted: rgba(249, 115, 22, 0.08);
+  --accent-glow: rgba(249, 115, 22, 0.18);
+  --bg: #f8f5f0;
+  --bg-elevated: #fff;
+  --card: #ffffff;
+  --border: #e8e4de;
+  --border-soft: #f0ece6;
+  --text: #141210;
+  --text-mid: #4a4540;
+  --text-light: #7a7268;
+  --header: #0c0b0a;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --max: 920px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+html, body { max-width: 100%; overflow-x: hidden; }
+img, svg, video { max-width: 100%; }
+
+body.cp-we-buy-page {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.72;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Top bar + nav (matches evb52526) ── */
+.cp-topbar {
+  background: #f97316;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cp-topbar a { color: #fff; text-decoration: none; opacity: 0.9; }
+.cp-topbar a:hover { opacity: 1; }
+
+.cp-header {
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.cp-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  gap: 12px;
+}
+.cp-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.cp-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+}
+.cp-header-nav {
+  display: none;
+  align-items: center;
+  gap: 1.75rem;
+}
+@media (min-width: 1024px) {
+  .cp-header-nav { display: flex; }
+}
+.cp-header-nav a {
+  color: #111 !important;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.cp-header-nav a:hover { color: var(--accent) !important; }
+.cp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cp-header-phone,
+.cp-header-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cp-header-text {
+  background: var(--accent) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+.cp-header-phone {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+}
+.cp-header-text:hover { transform: translateY(-1px); color: #fff !important; }
+.cp-header-phone:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+
+/* ── Mobile hamburger ── */
+.cp-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.cp-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s;
+}
+@media (max-width: 1023px) {
+  .cp-hamburger { display: flex; }
+  .cp-header-phone { display: none; }
+}
+body.nav-open .cp-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.nav-open .cp-hamburger span:nth-child(2) { opacity: 0; }
+body.nav-open .cp-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile nav drawer ── */
+.cp-mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+  pointer-events: none;
+}
+body.nav-open .cp-mobile-nav { display: block; pointer-events: all; }
+
+.cp-mobile-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  transition: opacity .25s;
+}
+body.nav-open .cp-mobile-overlay { opacity: 1; }
+
+.cp-mobile-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(320px, 85vw);
+  height: 100%;
+  background: #fff;
+  padding: 72px 0 2rem;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+body.nav-open .cp-mobile-drawer { transform: none; }
+
+.cp-mobile-drawer a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111 !important;
+  text-decoration: none;
+  border-bottom: 1px solid #f0ece6;
+  letter-spacing: .02em;
+}
+.cp-mobile-drawer a:hover { color: #f97316 !important; background: #faf9f7; }
+.cp-mobile-drawer .cp-mobile-cta {
+  margin: 1.5rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cp-mobile-drawer .cp-mobile-cta a {
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 12px 1.5rem;
+}
+.cp-mobile-drawer .cp-mobile-cta a.solid { background: #f97316; color: #fff !important; }
+.cp-mobile-drawer .cp-mobile-cta a.ghost { background: #f0ece6; color: #111 !important; }
+
+/* ── Page shell ── */
+.cp-page-shell {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.cp-article {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.25rem 1.25rem 4.5rem;
+}
+
+/* ── Breadcrumb ── */
+.cp-breadcrumb {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+.cp-breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.cp-breadcrumb a:hover { color: var(--accent); }
+
+/* ── Title block ── */
+.cp-title-block {
+  margin-bottom: 1.75rem;
+}
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.cp-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.cp-lead {
+  font-size: 1.0625rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  max-width: 640px;
+  font-weight: 500;
+}
+
+.cp-contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 1.25rem 0 0;
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+.cp-contact-line a {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Subtle imagery (not crowded) ── */
+.cp-visual-banner,
+.cp-img-hero-wrap {
+  position: relative;
+  margin: 2rem 0 2.25rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: clamp(140px, 22vw, 200px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.cp-visual-banner img,
+.cp-img-hero-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) contrast(1.02);
+}
+.cp-visual-banner::after,
+.cp-img-hero-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(12, 11, 10, 0.5) 0%,
+    rgba(12, 11, 10, 0.18) 45%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+.cp-visual-banner figcaption,
+.cp-img-hero-wrap figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.65rem 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+}
+
+/* Hide crowded 2-up image grids — single banner only */
+.cp-img-grid { display: none !important; }
+
+.cp-visual-aside {
+  float: right;
+  width: min(36%, 260px);
+  margin: 0.25rem 0 1.25rem 1.5rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  opacity: 0.95;
+}
+.cp-visual-aside img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.cp-visual-aside figcaption {
+  font-size: 0.65rem;
+  color: var(--text-light);
+  padding: 0.4rem 0.65rem;
+  background: var(--bg-elevated);
+  letter-spacing: 0.04em;
+  font-style: italic;
+}
+
+/* ── Typography ── */
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 2.75rem 0 1rem;
+  letter-spacing: -0.02em;
+  clear: both;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  opacity: 0.85;
+}
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: var(--text-mid);
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+}
+p:last-child { margin-bottom: 0; }
+
+.cp-article > p,
+.cp-prose > p {
+  max-width: 68ch;
+}
+
+/* ── Lists (purchase grid) ── */
+ul:not(.cp-footer-links) {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.55rem;
+  margin: 1rem 0 1.5rem;
+  clear: both;
+}
+ul:not(.cp-footer-links) li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  line-height: 1.45;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+ul:not(.cp-footer-links) li:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: var(--shadow);
+}
+
+/* ── Topic / FAQ / info cards ── */
+.cp-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+}
+.cp-topic,
+.cp-faq-block,
+.cp-info-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.cp-topic:hover,
+.cp-faq-block:hover,
+.cp-info-box:hover {
+  border-color: rgba(249, 115, 22, 0.22);
+  box-shadow: var(--shadow);
+}
+.cp-topic h3,
+.cp-faq-block h3 {
+  color: var(--accent-dark);
+  font-size: 0.9375rem;
+  margin-bottom: 0.55rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.cp-topic p,
+.cp-faq-block p,
+.cp-info-box p {
+  font-size: 0.9rem;
+  line-height: 1.68;
+  margin-bottom: 0.65rem;
+}
+.cp-topic p:last-child,
+.cp-faq-block p:last-child,
+.cp-info-box p:last-child { margin-bottom: 0; }
+
+.cp-faq-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+.cp-faq-block {
+  border-left: 3px solid var(--accent-muted);
+}
+.cp-faq-block:hover { border-left-color: var(--accent); }
+
+.cp-info-box h3 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.cp-info-box em {
+  color: var(--accent-dark);
+  font-style: normal;
+  font-weight: 600;
+}
+.cp-info-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+@media (max-width: 640px) {
+  .cp-info-pair { grid-template-columns: 1fr; }
+  .cp-visual-aside {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.25rem;
+  }
+}
+
+.cp-nobuy {
+  background: #fff9f8;
+  border: 1px solid #f5ddd9;
+  border-left: 4px solid #dc2626;
+  border-radius: var(--radius-sm);
+  padding: 1.15rem 1.25rem;
+  margin: 1rem 0 1.5rem;
+}
+.cp-nobuy h3 { color: #b91c1c; }
+.cp-nobuy ul { grid-template-columns: 1fr; }
+
+/* ── Search terms ── */
+.cp-search-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  margin: 1rem 0 0.4rem;
+  font-weight: 700;
+}
+.cp-search-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  margin-top: 0.5rem;
+}
+.cp-search-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.8125rem;
+  color: var(--text-mid);
+}
+.cp-search-list-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+@media (max-width: 560px) {
+  .cp-search-list { grid-template-columns: 1fr; }
+}
+
+.cp-accent-strip {
+  display: flex;
+  gap: 4px;
+  margin: 2.5rem 0 0.25rem;
+}
+.cp-accent-strip span {
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.cp-accent-strip span:nth-child(1) { flex: 4; opacity: 1; }
+.cp-accent-strip span:nth-child(2) { flex: 1; opacity: 0.35; }
+.cp-accent-strip span:nth-child(3) { flex: 1; opacity: 0.12; }
+
+.cp-page-divider {
+  height: 3px;
+  background: var(--accent);
+  margin: 2.5rem 0;
+  width: 100%;
+  border: none;
+}
+
+/* ── Address ── */
+.cp-address {
+  background: var(--header);
+  color: rgba(255, 255, 255, 0.82);
+  padding: 1.5rem 1.65rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1.85;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-lg);
+}
+.cp-address strong {
+  color: #fff;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+.cp-address a {
+  color: var(--accent) !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cp-address a:hover { text-decoration: underline; }
+
+.cp-article a:not(.cp-header-phone) {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cp-article a:not(.cp-header-phone):hover { color: var(--accent); }
+
+/* ── Footer ── */
+.cp-footer {
+  background: var(--header);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 2.5rem 1.5rem 2rem;
+  margin-top: 3rem;
+  border-top: 3px solid var(--accent);
+}
+.cp-footer > p {
+  font-size: 0.8rem;
+  margin-bottom: 0.65rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cp-footer > p:first-child {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.cp-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cp-footer-links a {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.72) !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.cp-footer-links a:hover,
+.cp-footer-links a.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff !important;
+}
+
+@media (max-width: 640px) {
+  .cp-article { padding: 1.5rem 1rem 3rem; }
+  .cp-header-inner { padding: 0 1rem; height: 58px; }
+  ul:not(.cp-footer-links) { grid-template-columns: 1fr; }
+  .cp-topic-grid { grid-template-columns: 1fr; }
+}
+
+/* In-page category jump grid */
+.cp-cat-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 1.75rem 0 2.5rem;
+}
+.cp-cat-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  border-top: 3px solid var(--pill-accent, var(--accent));
+}
+.cp-cat-pill:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.cp-cat-pill strong {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.cp-cat-pill > span:not(.cp-cat-pill-desc) {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.35;
+}
+.cp-cat-pill-desc {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.5;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
+}
+.cp-cat-section {
+  scroll-margin-top: 88px;
+  margin-bottom: 2.5rem;
+}
+.cp-cat-badge {
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--accent-muted);
+  color: var(--accent-dark);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.cp-cat-section--gold h2::after { background: #b8860b; }
+.cp-cat-section--diamonds h2::after { background: #5b8fc7; }
+.cp-cat-section--silver h2::after { background: #8a9baa; }
+.cp-cat-section--platinum h2::after { background: #6b7d8a; }
+.cp-cat-section--estate h2::after { background: #9a6b4a; }
+
+/* ── Page ticker (homepage band) ── */
+.cp-ticker {
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+.cp-ticker::before,
+.cp-ticker::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.cp-ticker::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
+.cp-ticker::after { right: 0; background: linear-gradient(to left, #fff, transparent); }
+.cp-ticker-inner { padding: 12px 0; overflow: hidden; display: flex; }
+.cp-ticker-track {
+  white-space: nowrap;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  animation: cpTicker 28s linear infinite;
+  display: inline-flex;
+  align-items: center;
+  will-change: transform;
+}
+.cp-ticker-track:hover { animation-play-state: paused; }
+@keyframes cpTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.cp-t-orange { color: #f97316; }
+.cp-t-white { color: rgba(0, 0, 0, 0.7); }
+.cp-t-gold { color: #b07d2e; }
+.cp-t-muted { color: rgba(0, 0, 0, 0.2); font-size: 11px; }
+
+/* ── Page hero ── */
+.cp-page-hero {
+  position: relative;
+  background: #f8f5f0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+.cp-page-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 48px;
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .cp-page-hero-inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 48px 40px 56px;
+  }
+}
+.cp-page-hero-copy .cp-lead { max-width: none; margin-bottom: 20px; }
+.cp-page-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cp-btn-primary,
+.cp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.cp-btn-primary {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff !important;
+  box-shadow: 0 5px 0 #c2410c, 0 8px 24px rgba(249, 115, 22, 0.35);
+}
+.cp-btn-secondary {
+  background: #fff;
+  color: #111 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+}
+.cp-btn-primary:hover { transform: translateY(-2px); color: #fff !important; }
+.cp-btn-secondary:hover { border-color: var(--accent); color: var(--accent) !important; }
+.cp-page-hero-visual {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  line-height: 0;
+}
+.cp-page-hero-visual img {
+  width: 100%;
+  height: clamp(220px, 32vw, 320px);
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Hero Q&A redesign ── */
+.cp-page-hero { background: var(--bg); border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+.cp-page-hero-inner {
+  background: var(--bg);
+  gap: 0;
+  padding: 0 !important;
+  align-items: stretch;
+  max-width: none;
+  width: 100%;
+  display: block;
+}
+
+.cp-page-hero-head {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px 28px;
+  text-align: center;
+}
+.cp-page-hero-foot {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 32px 40px;
+  text-align: center;
+}
+
+.cp-hero-eyebrow {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  margin-bottom: 8px !important;
+}
+.cp-hero-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem) !important;
+  font-weight: 900 !important;
+  color: #0c0b0a !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0 !important;
+}
+
+/* Accordion Q&A */
+.cp-qa-accordion { display: flex; flex-direction: column; gap: 0; margin-bottom: 0; }
+.cp-qa-item { border-bottom: 1px solid var(--border-soft); }
+.cp-qa-item:first-child { border-top: 1px solid var(--border-soft); }
+.cp-qa-col .cp-qa-item:first-child { border-top: none; }
+.cp-qa-col .cp-qa-item { border-bottom: 1px solid var(--border-soft); }
+.cp-qa-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+}
+.cp-qa-btn-q {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1814;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+.cp-qa-btn-q .cp-qa-q-tag {
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.cp-qa-btn-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgba(0,0,0,0.4);
+  font-size: 12px;
+  font-weight: 400;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.3s;
+}
+.cp-qa-item.is-open .cp-qa-btn-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: rotate(45deg);
+}
+.cp-qa-item.is-open .cp-qa-btn-q { color: var(--accent); }
+.cp-qa-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.38s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.cp-qa-item.is-open .cp-qa-body { max-height: 600px; opacity: 1; }
+.cp-qa-body-inner { padding: 0 0 12px; }
+.cp-qa-a-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 6px;
+}
+.cp-qa-answer-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+.cp-qa-answer-text:last-child { margin-bottom: 0; }
+.cp-qa-bullets {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cp-qa-bullets li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mid);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+.cp-qa-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Section divider inside accordion */
+.cp-qa-section-divider {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 16px 0 4px;
+}
+
+/* 2-column Q&A layout — full-width desktop */
+.cp-page-hero-qa-shell {
+  width: 100%;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.cp-qa-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+.cp-qa-col {
+  padding: 36px clamp(32px, 5vw, 72px) 40px;
+}
+.cp-qa-col:first-child {
+  background: var(--bg);
+  border-right: 1px solid var(--border-soft);
+}
+.cp-qa-col:last-child {
+  background: #fff;
+}
+.cp-qa-col-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 901px) {
+  .cp-page-hero-head { padding: 52px 48px 36px; }
+  .cp-page-hero-foot { padding: 36px 48px 52px; }
+  .cp-hero-title {
+    font-size: clamp(2rem, 3.6vw, 3rem) !important;
+    margin-bottom: 0 !important;
+  }
+  .cp-qa-col { padding: 44px clamp(40px, 6vw, 96px) 48px; }
+  .cp-qa-col-title {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    margin-bottom: 20px;
+  }
+  .cp-qa-btn { padding: 18px 0; }
+  .cp-qa-btn-q { font-size: 15px; line-height: 1.4; }
+  .cp-qa-btn-icon { width: 26px; height: 26px; font-size: 14px; }
+  .cp-qa-body-inner { padding: 0 0 18px; }
+  .cp-qa-answer-text { font-size: 14px; line-height: 1.7; }
+  .cp-qa-bullets { gap: 8px; margin-top: 10px; }
+  .cp-qa-bullets li { font-size: 13.5px; line-height: 1.6; padding-left: 16px; }
+  .cp-qa-item.is-open .cp-qa-body { max-height: 800px; }
+  .cp-hero-cta-row { justify-content: center; gap: 14px; margin-bottom: 18px; }
+  .cp-hero-cta-row .cp-btn-primary,
+  .cp-hero-cta-row .cp-btn-secondary { padding: 14px 24px; font-size: 13px; }
+  .cp-hero-hours { font-size: 12px; }
+  .cp-page-hero-visual--mobile { display: none; }
+  .cp-page-hero-visual--desktop {
+    display: block;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-height: 280px;
+    max-height: 320px;
+  }
+  .cp-page-hero-visual--desktop img {
+    width: 100% !important;
+    height: 280px !important;
+    max-height: 320px !important;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 900px) {
+  .cp-page-hero-head { padding: 24px 20px 20px; text-align: left; }
+  .cp-page-hero-foot { padding: 20px 20px 28px; text-align: left; }
+  .cp-hero-title { font-size: clamp(1.35rem, 6vw, 1.75rem) !important; }
+  .cp-qa-columns { grid-template-columns: 1fr; gap: 0; }
+  .cp-qa-col {
+    padding: 20px 20px 24px;
+  }
+  .cp-qa-col:first-child { border-right: none; border-bottom: 1px solid var(--border-soft); }
+  .cp-qa-col:last-child { background: var(--bg); }
+  .cp-qa-col-title { font-size: 9px; letter-spacing: 0.18em; margin-bottom: 10px; }
+  .cp-qa-btn { padding: 10px 0; }
+  .cp-qa-btn-q { font-size: 12px; line-height: 1.3; }
+  .cp-qa-btn-icon { width: 18px; height: 18px; font-size: 11px; }
+  .cp-qa-body-inner { padding: 0 0 10px; }
+  .cp-qa-answer-text { font-size: 11.5px; line-height: 1.55; }
+  .cp-qa-bullets { gap: 5px; margin-top: 5px; }
+  .cp-qa-bullets li { font-size: 11px; line-height: 1.45; padding-left: 12px; }
+  .cp-qa-bullets li::before { width: 3px; height: 3px; top: 6px; }
+  .cp-hero-cta-row { flex-direction: column; gap: 8px; margin-bottom: 12px; }
+  .cp-hero-cta-row .cp-btn-primary,
+  .cp-hero-cta-row .cp-btn-secondary { width: 100%; justify-content: center; padding: 11px 16px; font-size: 11px; }
+  .cp-hero-hours { font-size: 10px; }
+  .cp-page-hero-visual--desktop { display: none; }
+  .cp-page-hero-visual--mobile {
+    display: block;
+    order: -1;
+    min-height: 200px;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .cp-page-hero-visual--mobile img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover;
+  }
+}
+
+/* CTA row */
+.cp-hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.cp-hero-cta-row .cp-btn-primary {
+  background: var(--accent);
+  color: #fff !important;
+  box-shadow: 0 4px 14px var(--accent-glow);
+  padding: 12px 18px;
+  font-size: 12px;
+}
+.cp-hero-cta-row .cp-btn-secondary {
+  background: #fff;
+  color: #111 !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  padding: 12px 18px;
+  font-size: 12px;
+}
+.cp-hero-cta-row .cp-btn-secondary:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+
+.cp-hero-hours {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+}
+.cp-hero-hours strong { color: var(--text-mid); font-weight: 700; }
+
+/* Hero image panels */
+.cp-page-hero-visual {
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+  display: none;
+}
+.cp-page-hero-visual img {
+  display: block;
+  filter: none;
+}
+.cp-qa-col .cp-qa-item.cp-qa-item-first { border-top: 1px solid var(--border-soft); }
+
+/* ── How it works ── */
+.cp-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 1.25rem 0 2rem;
+}
+@media (min-width: 700px) {
+  .cp-steps { grid-template-columns: repeat(3, 1fr); }
+}
+.cp-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+}
+.cp-step-num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.cp-step h3 {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.cp-step p { font-size: 13px; margin: 0; }
+
+/* ── Jewelry types grid ── */
+.cp-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 1rem 0 1.75rem;
+}
+.cp-type-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+}
+.cp-type-card strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.cp-type-card span {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.45;
+}
+
+/* ── Brand list ── */
+.cp-brand-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0 1.5rem;
+}
+.cp-brand-chips span {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-mid);
+}
+
+/* ── FAQ accordion ── */
+.cp-faq-section {
+  background: #111;
+  color: #fff;
+  margin: 3rem -1.25rem 0;
+  padding: 48px 24px 56px;
+}
+@media (min-width: 700px) {
+  .cp-faq-section {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: max(24px, calc(50vw - 550px));
+    padding-right: max(24px, calc(50vw - 550px));
+  }
+}
+.cp-faq-section h2 {
+  color: #fff;
+  margin-top: 0;
+}
+.cp-faq-section h2::after { background: var(--accent); }
+.cp-faq-section .cp-faq-lede {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+.cp-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 900px;
+}
+.cp-faq-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cp-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.cp-faq-item summary::-webkit-details-marker { display: none; }
+.cp-faq-item summary::after {
+  content: '+';
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.cp-faq-item[open] summary::after { content: '−'; }
+.cp-faq-item[open] summary {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cp-faq-item .cp-faq-answer {
+  padding: 0 18px 16px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
+}
+.cp-faq-item .cp-faq-answer p { color: inherit; margin-bottom: 0.65rem; }
+.cp-faq-item .cp-faq-answer p:last-child { margin-bottom: 0; }
+
+.cp-info-box h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* ══════════════════════════════════════════════
+   FLOW LAYOUT — jewelry & long-form category pages
+   (no small white card grids)
+   ══════════════════════════════════════════════ */
+.cp-layout-flow {
+  max-width: 1100px;
+  padding-bottom: 0;
+}
+/* Full-bleed sections break out of article — keep article from clipping */
+.cp-layout-flow.cp-article {
+  overflow-x: visible;
+}
+.cp-layout-flow > h2 {
+  margin-top: 3rem;
+}
+.cp-section-head {
+  margin: 2.5rem 0 1.25rem;
+  max-width: 42rem;
+}
+.cp-section-head h2 {
+  margin: 0 0 10px;
+}
+.cp-section-head h2::after { display: none; }
+.cp-section-head p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-mid);
+}
+
+/* Sticky jump nav */
+.cp-jump-nav {
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 4px;
+  padding: 12px 0 16px;
+  margin: 0 0 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(248, 245, 240, 0.92);
+  backdrop-filter: blur(10px);
+}
+.cp-jump-nav a {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+.cp-jump-nav a:hover {
+  color: var(--accent);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+/* Process timeline — no boxes */
+.cp-process {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  border-left: 3px solid var(--accent);
+}
+.cp-process li {
+  position: relative;
+  padding: 0 0 1.75rem 1.5rem;
+  counter-increment: cp-step;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.cp-process li:last-child { padding-bottom: 0; }
+.cp-process li::before {
+  content: counter(cp-step);
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--bg);
+}
+.cp-process { counter-reset: cp-step; }
+.cp-process strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.cp-process li p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-mid);
+}
+
+/* Category showcase cards (homepage bwb style) */
+.jw-cat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0 0 2.5rem;
+}
+@media (min-width: 640px) {
+  .jw-cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .jw-cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.jw-cat-grid .jw-card--wide {
+  grid-column: 1 / -1;
+}
+@media (min-width: 640px) {
+  .jw-cat-grid .jw-card--wide { grid-column: span 2; }
+}
+@media (min-width: 1024px) {
+  .jw-cat-grid .jw-card--wide { grid-column: span 1; }
+}
+.jw-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.jw-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+.jw-card-media {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  background: #111;
+}
+.jw-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.jw-card:hover .jw-card-media img { transform: scale(1.04); }
+.jw-card-body {
+  padding: 14px 16px 16px;
+  border-top: 3px solid var(--jw-accent, #f97316);
+}
+.jw-card-title {
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+.jw-card-sub {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.jw-card-desc {
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+}
+
+/* Full-width detail bands */
+.cp-metal-band {
+  scroll-margin-top: 100px;
+  margin: 0 calc(50% - 50vw) 0;
+  padding: 2.5rem max(1.25rem, calc(50vw - 550px));
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.cp-metal-band--gold,
+.cp-metal-band--diamonds,
+.cp-metal-band--silver,
+.cp-metal-band--silverware,
+.cp-metal-band--coins,
+.cp-metal-band--platinum,
+.cp-metal-band--estate,
+.cp-metal-band--gemstones,
+.cp-metal-band--content {
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.09) 0%, transparent 32%), #fff;
+}
+
+/* Text-only bands (no photo) — same full-bleed as metal sections */
+.cp-metal-band--content .cp-metal-band-inner {
+  max-width: 800px;
+}
+.cp-metal-band-inner .cp-callout {
+  max-width: none;
+  margin-bottom: 1.5rem;
+}
+.cp-metal-band-inner .cp-callout--warn {
+  margin-bottom: 0;
+}
+
+.cp-metal-band-layout {
+  display: grid;
+  gap: 1.75rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .cp-metal-band-layout {
+    grid-template-columns: minmax(300px, 420px) 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  /* Alternate photos to right on even sections */
+  .cp-metal-band:nth-of-type(even) .cp-metal-band-layout {
+    grid-template-columns: 1fr minmax(300px, 420px);
+  }
+  .cp-metal-band:nth-of-type(even) .cp-metal-band-photos {
+    order: 2;
+  }
+  .cp-metal-band:nth-of-type(even) .cp-metal-band-inner {
+    order: 1;
+  }
+}
+
+/* ── Photo column: 2 stacked image boxes ── */
+.cp-metal-band-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Decorative photo frame ── */
+.cp-metal-band-photo {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+/* Offset accent block behind image */
+.cp-metal-band-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  translate: 8px 8px;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border-radius: 14px;
+  z-index: 0;
+  opacity: 0.3;
+}
+/* Corner bracket top-left */
+.cp-metal-band-photo::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 30px;
+  height: 30px;
+  border-top: 3px solid #f97316;
+  border-left: 3px solid #f97316;
+  border-radius: 4px 0 0 0;
+  z-index: 2;
+}
+/* The image itself */
+.cp-metal-band-photo img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.16), 0 2px 6px rgba(0,0,0,0.08);
+}
+/* Bottom-right corner bracket */
+.cp-metal-band-photo .cp-photo-corner {
+  position: absolute;
+  bottom: -7px;
+  right: -7px;
+  width: 30px;
+  height: 30px;
+  border-bottom: 3px solid #f97316;
+  border-right: 3px solid #f97316;
+  border-radius: 0 0 4px 0;
+  z-index: 2;
+}
+/* Label strip */
+.cp-metal-band-photo .cp-photo-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+  background: rgba(12,11,10,0.78);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  backdrop-filter: blur(4px);
+}
+
+/* Even sections: flip offset + brackets to mirror */
+@media (min-width: 768px) {
+  .cp-metal-band:nth-of-type(even) .cp-metal-band-photo::before {
+    translate: -8px 8px;
+  }
+  .cp-metal-band:nth-of-type(even) .cp-metal-band-photo::after {
+    left: auto;
+    right: -7px;
+    border-left: none;
+    border-right: 3px solid #f97316;
+    border-radius: 0 4px 0 0;
+  }
+  .cp-metal-band:nth-of-type(even) .cp-metal-band-photo .cp-photo-corner {
+    right: auto;
+    left: -7px;
+    border-right: none;
+    border-left: 3px solid #f97316;
+    border-radius: 0 0 0 4px;
+  }
+}
+
+.cp-metal-band-layout .cp-metal-band-inner { max-width: none; }
+
+.cp-metal-band-inner { max-width: 720px; }
+
+/* Prose sections with stock photo */
+.cp-prose-block--media {
+  max-width: 1100px;
+  display: grid;
+  gap: 1.75rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .cp-prose-block--media {
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+}
+.cp-prose-block--media .cp-section-photo {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  box-shadow: 0 10px 32px rgba(249, 115, 22, 0.14);
+}
+.cp-prose-block--media .cp-section-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Jewelry page — orange ticker accents */
+.cp-electronics-page .cp-t-gold { color: #f97316; }
+.cp-metal-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: block;
+}
+.cp-metal-band h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+}
+.cp-metal-band h2::after { display: none; }
+.cp-metal-band p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.cp-flow-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: block !important;
+}
+.cp-flow-list li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mid);
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  line-height: 1.5;
+}
+.cp-flow-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Prose blocks — no boxes (non–full-bleed pages only) */
+.cp-layout-flow .cp-prose-block:not(.cp-metal-band) {
+  max-width: none;
+  margin: 0;
+}
+.cp-prose-block {
+  max-width: 720px;
+  margin: 0 0 2.5rem;
+}
+.cp-prose-block h2 { margin-top: 0; }
+.cp-prose-block h2::after { display: none; }
+.cp-prose-block p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+.cp-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  line-height: 1.65;
+  padding: 12px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 12px;
+}
+.cp-tagline em {
+  font-style: normal;
+  color: var(--text-light);
+}
+
+/* Callout strips — border only, not cards */
+.cp-callout {
+  max-width: 720px;
+  margin: 0 0 2rem;
+  padding: 0 0 0 1.25rem;
+  border-left: 4px solid var(--accent);
+}
+.cp-callout h3 {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.cp-callout p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.cp-callout--muted { border-left-color: rgba(0, 0, 0, 0.15); }
+.cp-callout--warn {
+  border-left-color: #dc2626;
+  margin-bottom: 3rem;
+}
+.cp-callout--warn h3 { color: #b91c1c; }
+.cp-callout ul {
+  display: block !important;
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+.cp-callout ul li {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.2rem 0;
+  font-size: 14px;
+  list-style: disc;
+  color: var(--text-mid);
+}
+.cp-callout p,
+.cp-callout li {
+  color: var(--text-mid);
+}
+
+/* "Yes! We Buy …" chips (jewelry page) */
+.cp-yes-buy-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0 2rem;
+}
+.cp-yes-buy-chip {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 7px 13px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  color: var(--text-mid);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.cp-metal-band .cp-yes-buy-lead {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  margin: -6px 0 12px;
+  font-style: italic;
+}
+
+/* FAQ — white variant (legacy) */
+.cp-faq-section--white {
+  background: #fff;
+  color: var(--text);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 0 calc(50% - 50vw) 0;
+  padding: 48px max(1.25rem, calc(50vw - 550px)) 56px;
+}
+.cp-faq-section--white h2 { color: var(--text); }
+.cp-faq-section--white .cp-eyebrow { color: var(--accent); }
+.cp-faq-section--white .cp-faq-lede { color: var(--text-mid); }
+.cp-faq-section--white .cp-faq-item {
+  background: #f8f5f0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.cp-faq-section--white .cp-faq-item summary { color: var(--text); }
+.cp-faq-section--white .cp-faq-item .cp-faq-answer { color: var(--text-mid); }
+
+/* FAQ — flow layout (jewelry page): grouped grid, divider rows */
+.cp-faq-section.cp-faq-section--flow {
+  background: #f8f5f0;
+  color: var(--text);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 0 calc(50% - 50vw) 0;
+  padding: 3rem max(1.25rem, calc(50vw - 550px)) 3.5rem;
+}
+.cp-faq-section.cp-faq-section--flow h2 {
+  color: var(--text) !important;
+  margin-top: 0;
+}
+.cp-faq-section.cp-faq-section--flow .cp-faq-header,
+.cp-faq-section.cp-faq-section--flow .cp-faq-group,
+.cp-faq-section.cp-faq-section--flow .cp-faq-stack {
+  color: var(--text);
+}
+.cp-faq-section.cp-faq-section--flow .cp-faq-item summary {
+  color: var(--text) !important;
+}
+.cp-faq-section.cp-faq-section--flow .cp-faq-item[open] summary {
+  color: var(--accent-dark) !important;
+}
+.cp-faq-section.cp-faq-section--flow .cp-faq-item .cp-faq-answer,
+.cp-faq-section.cp-faq-section--flow .cp-faq-item .cp-faq-answer p,
+.cp-faq-section.cp-faq-section--flow .cp-faq-item .cp-faq-answer li {
+  color: var(--text-mid) !important;
+}
+.cp-faq-section.cp-faq-section--flow .cp-faq-item .cp-faq-answer a {
+  color: var(--accent-dark) !important;
+}
+.cp-faq-section.cp-faq-section--flow .cp-faq-item .cp-faq-answer a:hover {
+  color: var(--accent) !important;
+}
+.cp-faq-section--flow h2 {
+  color: var(--text);
+  margin-top: 0;
+}
+.cp-faq-section--flow h2::after { display: none; }
+.cp-faq-section--flow .cp-eyebrow { color: var(--accent); }
+.cp-faq-header {
+  max-width: 42rem;
+  margin-bottom: 1.25rem;
+}
+.cp-faq-section--flow .cp-faq-lede {
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+.cp-faq-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.cp-faq-nav a {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--accent-dark);
+  background: #fff;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  border-radius: 999px;
+  padding: 8px 14px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.cp-faq-nav a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.cp-faq-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  max-width: 1100px;
+}
+@media (min-width: 900px) {
+  .cp-faq-groups {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3rem;
+    align-items: start;
+  }
+}
+.cp-faq-group {
+  scroll-margin-top: 100px;
+}
+.cp-faq-group h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+.cp-faq-stack {
+  display: flex;
+  flex-direction: column;
+}
+.cp-faq-section--flow .cp-faq-item {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: visible;
+}
+.cp-faq-section--flow .cp-faq-stack > .cp-faq-item:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cp-faq-section--flow .cp-faq-item summary {
+  padding: 15px 28px 15px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+}
+.cp-faq-section--flow .cp-faq-item summary::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 0.2s ease;
+}
+.cp-faq-section--flow .cp-faq-item[open] summary::after {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+.cp-faq-section--flow .cp-faq-item[open] summary {
+  color: var(--accent-dark);
+  border-bottom: none;
+}
+.cp-faq-section--flow .cp-faq-item .cp-faq-answer {
+  padding: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+.cp-faq-section--flow .cp-faq-item .cp-faq-answer p {
+  color: inherit;
+  margin-bottom: 0.65rem;
+}
+.cp-faq-section--flow .cp-faq-item .cp-faq-answer ul {
+  display: block !important;
+  margin: 0.35rem 0 0;
+  padding-left: 1.15rem;
+}
+.cp-faq-section--flow .cp-faq-item .cp-faq-answer ul li {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  list-style: disc;
+  padding: 0.2rem 0;
+  color: var(--text-mid);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-mid);
+}
+
+.cp-faq-section .cp-faq-group-title {
+  color: rgba(255, 255, 255, 0.4);
+}
+.cp-faq-group-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 28px 0 12px;
+}
+.cp-faq-group-title:first-of-type { margin-top: 0; }
+
+/* Two-column flow lists on wide screens */
+@media (min-width: 720px) {
+  .cp-flow-list--cols {
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .cp-flow-list--cols li {
+    break-inside: avoid;
+  }
+}
+
+.cp-keywords-section {
+  max-width: 900px;
+  margin: 0 0 2.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.cp-keywords-section h2 { margin-top: 0; }
+.cp-keywords-section h2::after { display: none; }
+.cp-keywords-section > p {
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-bottom: 1rem;
+}
+
+/* Visit CTA band */
+.cp-visit-band {
+  margin: 0 calc(50% - 50vw);
+  padding: 3rem max(1.25rem, calc(50vw - 550px));
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  text-align: center;
+}
+.cp-visit-band h2 {
+  color: #fff;
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+.cp-visit-band h2::after { display: none; }
+.cp-visit-band p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  max-width: 520px;
+  margin: 0 auto 20px;
+}
+.cp-visit-band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.cp-visit-band .cp-btn-visit {
+  display: inline-flex;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.cp-btn-visit--solid {
+  background: #fff;
+  color: #c2410c !important;
+}
+.cp-btn-visit--ghost {
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.cp-btn-visit:hover { transform: translateY(-2px); }
+.cp-layout-flow .cp-address { display: none; }
+
+  </style>
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; overflow-x: hidden; background: #f8f5f0; }
-    img { max-width: 100%; display: block; }
-
-    /* ── TICKER ── */
-    .ticker { overflow: hidden; background: #f7f7f7; border-bottom: 1px solid #e2e2e2; }
-    .ticker-inner { overflow: hidden; padding: 8px 0; }
-    .ticker-track {
-      display: flex; width: max-content; align-items: center;
-      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase; color: #444; white-space: nowrap;
-      animation: tickerScroll 45s linear infinite;
+    .cp-section-faq { margin-top: 1.25rem; display: flex; flex-direction: column; max-width: 720px; }
+    /* In-section FAQ accordions (process + metal bands) — light theme */
+    .cp-electronics-page .cp-section-faq .cp-faq-item {
+      background: #fff; border: none; border-bottom: 1px solid rgba(0,0,0,.1);
+      border-radius: 0; overflow: hidden;
     }
-    @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .ticker-set { display: inline-flex; align-items: center; flex-shrink: 0; }
-    .t-group { display: inline-flex; align-items: center; white-space: nowrap; }
-    .t-actions { color: #666; font-size: 10px; font-weight: 600; }
-    .t-act { color: #666; }
-    .t-act-sep { color: #ccc; margin: 0 3px; }
-    .t-pipe { color: #e8690a; margin: 0 10px; font-weight: 700; }
-    .t-cat { color: #222; font-weight: 700; }
-    .t-bullet { color: #ccc; margin: 0 20px; }
-    .t-item { display: inline-flex; align-items: baseline; gap: 4px; white-space: nowrap; }
-    .t-label { color: #e8690a; }
-    .t-ink { color: #444; }
-    .t-sep { color: #ccc; margin: 0 10px; }
-    @media (prefers-reduced-motion: reduce) {
-      .ticker-track { animation: none; flex-wrap: wrap; width: 100%; justify-content: center; gap: 6px 16px; }
-      .ticker-set + .ticker-set { display: none; }
+    .cp-electronics-page .cp-section-faq > .cp-faq-item:first-child { border-top: 1px solid rgba(0,0,0,.1); }
+    .cp-electronics-page .cp-section-faq .cp-faq-item summary {
+      padding: 14px 2rem 14px 0; font-size: 14px; font-weight: 600;
+      color: var(--text) !important;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
-    /* ── PAGE HERO ── */
-    .page-hero {
-      position: relative; overflow: hidden;
-      background: #111; min-height: 300px;
-      display: flex; flex-direction: column; justify-content: flex-end;
-    }
-    .page-hero-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      opacity: 0.45;
-    }
-    .page-hero-inner {
-      position: relative; z-index: 2;
-      padding: 28px 18px 36px; max-width: 1180px; margin: 0 auto; width: 100%;
-    }
-    @media (min-width: 600px) { .page-hero-inner { padding: 36px 28px 44px; } }
-    @media (min-width: 1024px) { .page-hero-inner { padding: 60px 40px 64px; } }
-    .page-hero-kicker {
-      font-size: 9px; font-weight: 800; letter-spacing: 0.28em;
-      text-transform: uppercase; color: #f97316; margin-bottom: 12px;
-    }
-    .page-hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(42px, 7vw, 80px);
-      color: #fff; line-height: 0.95; letter-spacing: 0.01em;
-      margin: 0 0 16px;
-    }
-    .page-hero-sub {
-      font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9);
-      max-width: 560px; line-height: 1.7;
-    }
-    .page-hero-badges {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
-    }
-    .page-hero-badge {
-      background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.4);
-      color: #f97316; font-size: 8px; font-weight: 800; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 4px 9px;
-    }
-
-    /* ── SECTION LABELS ── */
-    .section-label {
-      font-size: 9px; font-weight: 800; letter-spacing: 0.28em;
-      text-transform: uppercase; color: #f97316;
-      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
-    }
-    .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: #f97316; }
-
-    /* ── CATEGORY CARDS (matches bwb-card style) ── */
-    .elec-grid {
-      display: grid; grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    @media (min-width: 480px) { .elec-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 900px) { .elec-grid { grid-template-columns: repeat(4, 1fr); } }
-
-    .elec-card {
-      background: #fff; border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 0; text-decoration: none; color: inherit;
-      display: flex; flex-direction: column;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      position: relative; overflow: hidden;
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-    }
-    .elec-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--ec, #f97316);
-      transform: scaleX(0); transform-origin: left; transition: transform 0.28s ease;
-    }
-    .elec-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.12); }
-    .elec-card:hover::before { transform: scaleX(1); }
-    .elec-card-img { height: 100px; overflow: hidden; background: #1a1a1a; }
-    @media (min-width: 480px) { .elec-card-img { height: 120px; } }
-    .elec-card-img img { width: 100%; height: 100%; object-fit: cover; }
-    .elec-card-body { padding: 12px 13px 14px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
-    @media (min-width: 480px) { .elec-card-body { padding: 14px 16px 16px; } }
-    .elec-card-title { font-size: 13px; font-weight: 800; color: #111; letter-spacing: 0.01em; }
-    .elec-card-sub { font-size: 11px; font-weight: 600; color: #444; line-height: 1.4; }
-    .elec-card-go { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ec, #f97316); margin-top: 10px; }
-
-    /* ── PROCESS STEPS ── */
-    .process-steps { display: flex; flex-direction: column; gap: 0; }
-    @media (min-width: 768px) { .process-steps { flex-direction: row; gap: 0; } }
-    .process-step {
-      flex: 1; padding: 28px 24px; background: #fff;
-      border-bottom: 1px solid #eee; position: relative;
-    }
-    @media (min-width: 768px) {
-      .process-step { border-bottom: none; border-right: 1px solid #eee; }
-      .process-step:last-child { border-right: none; }
-    }
-    .process-step-num {
-      font-family: 'Teko', sans-serif; font-size: 48px;
-      color: rgba(249,115,22,0.15); line-height: 1; margin-bottom: 8px;
-    }
-    .process-step-title { font-size: 14px; font-weight: 800; color: #111; margin-bottom: 8px; }
-    .process-step-desc { font-size: 12px; font-weight: 500; color: rgba(0,0,0,0.55); line-height: 1.7; }
-
-    /* ── WHAT WE BUY DETAIL SECTIONS ── */
-    .item-section { padding: 44px 18px; }
-    @media (min-width: 600px) { .item-section { padding: 56px 28px; } }
-    @media (min-width: 1024px) { .item-section { padding: 72px 40px; } }
-    .item-section-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
-    .item-section h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(32px, 5vw, 52px);
-      color: #111; line-height: 1; letter-spacing: 0.01em; margin: 0 0 8px;
-    }
-    .item-section-sub { font-size: 13px; color: #333; font-weight: 600; margin: 0 0 24px; max-width: 600px; line-height: 1.65; }
-    @media (min-width: 600px) { .item-section-sub { font-size: 14px; margin: 0 0 32px; } }
-    .item-detail-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 600px) { .item-detail-grid { gap: 20px; } }
-    @media (min-width: 768px) { .item-detail-grid { grid-template-columns: 1fr 1fr; } }
-    .item-detail-box {
-      background: #fff; border: 1px solid rgba(0,0,0,0.07);
-      padding: 18px 16px 16px;
-    }
-    @media (min-width: 600px) { .item-detail-box { padding: 24px 24px 22px; } }
-    .item-detail-box-title {
-      font-size: 13px; font-weight: 800; color: #111;
-      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px;
-      padding-bottom: 10px; border-bottom: 2px solid #f97316;
-      display: inline-block;
-    }
-    .item-detail-box p { font-size: 13px; font-weight: 600; color: #333; line-height: 1.75; margin: 0; }
-    .item-detail-box ul { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .item-detail-box ul li { font-size: 13px; font-weight: 700; color: #222; padding-left: 16px; position: relative; line-height: 1.5; }
-    .item-detail-box ul li::before { content: '›'; position: absolute; left: 0; color: #f97316; font-weight: 700; }
-
-    /* ── REQUIREMENT BANNER ── */
-    .req-banner {
-      background: #fff;
-      padding: 36px 18px;
-      border-top: 3px solid #f97316;
-    }
-    @media (min-width: 600px) { .req-banner { padding: 44px 28px; } }
-    @media (min-width: 1024px) { .req-banner { padding: 52px 40px; } }
-    .req-banner-inner { max-width: 1100px; margin: 0 auto; }
-    .req-banner-inner h3 {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #f97316;
-      margin: 0 0 28px;
-    }
-    .req-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .req-list li {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 14px 0;
-      border-bottom: 1px solid #ebebeb;
-    }
-    @media (min-width: 520px) { .req-list li { flex-direction: row; align-items: baseline; gap: 16px; } }
-    .req-list li:first-child { border-top: 1px solid #ebebeb; }
-    .req-list-title {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: #111;
+    .cp-electronics-page .cp-section-faq .cp-faq-item summary::-webkit-details-marker { display: none; }
+    .cp-electronics-page .cp-section-faq .cp-faq-item summary::after {
+      content: ''; width: 8px; height: 8px; border-right: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent); transform: rotate(45deg); margin-top: -4px;
       flex-shrink: 0;
     }
-    @media (min-width: 520px) { .req-list-title { min-width: 180px; font-size: 14px; } }
-    .req-list-desc {
-      font-size: 13px;
-      font-weight: 500;
-      color: #555;
+    .cp-electronics-page .cp-section-faq .cp-faq-item[open] summary::after {
+      transform: rotate(-135deg); margin-top: 2px;
+    }
+    .cp-electronics-page .cp-section-faq .cp-faq-item[open] summary {
+      color: var(--accent-dark) !important; border-bottom: none;
+    }
+    .cp-electronics-page .cp-section-faq .cp-faq-answer {
+      padding: 0 0 16px; font-size: 14px; line-height: 1.7;
+      color: var(--text-mid) !important;
+    }
+    .cp-electronics-page .cp-section-faq .cp-faq-answer p {
+      color: var(--text-mid) !important; margin-bottom: 0.65rem;
+    }
+    .cp-electronics-page .cp-section-faq .cp-faq-answer p:last-child { margin-bottom: 0; }
+    .cp-electronics-page .cp-section-faq .cp-faq-answer a {
+      color: var(--accent-dark) !important;
+    }
+    .cp-electronics-page #process .cp-section-faq { margin-top: 2rem; }
+    .cp-faq-section--flow .cp-faq-groups--single {
+      grid-template-columns: 1fr; max-width: 720px; margin: 0 auto;
+    }
+    /* ── What We Buy block ── */
+    .wb-block { margin: 1.5rem 0 2.5rem; }
+
+    .wb-intro {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+      align-items: center;
+    }
+    @media (min-width: 760px) {
+      .wb-intro { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    .wb-intro-text .cp-eyebrow { margin-bottom: 6px; }
+    .wb-intro-text h2 { margin: 0 0 12px; }
+    .wb-lead {
+      font-size: 14px !important;
+      color: #4a4540 !important;
+      line-height: 1.7;
+      margin: 0 !important;
+    }
+    .wb-lead strong { color: #141210; }
+
+    /* ══════════════════════════════════════
+       FAQ2 — Light theme, simple & clear
+    ══════════════════════════════════════ */
+    .faq2-section {
+      background: #f8f5f0;
+      padding: 3.5rem 0 4rem;
+      width: 100%;
+    }
+    .faq2-header {
+      max-width: 920px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+    }
+    .faq2-header .cp-eyebrow { color: #f97316 !important; margin-bottom: 6px; }
+    .faq2-header h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+      font-weight: 800 !important;
+      color: #1a1814 !important;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px !important;
+      line-height: 1.2;
+    }
+    .faq2-header h2::after { display: none !important; }
+    .faq2-lede {
+      font-size: 14px;
+      color: #6b6560;
       line-height: 1.6;
+      max-width: 500px;
+      margin: 0;
     }
-    .req-icon { display: none; }
-    .req-grid { display: none; }
-    .req-item { display: none; }
-    .req-num { display: none; }
-    .req-text-title { display: none; }
-    .req-text-desc { display: none; }
+    .faq2-shell {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .faq2-tabs { display: none; }
+    .faq2-tab {
+      background: #fff;
+      border: 1.5px solid #ddd9d3;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #5a5550;
+      cursor: pointer;
+      transition: all .15s;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .faq2-tab:hover { border-color: #f97316; color: #f97316; }
+    .faq2-tab--active { background: #f97316; border-color: #f97316; color: #fff; font-weight: 700; }
 
-    /* ── FAQ ── */
-    .elec-faq { background: #fff; padding: 44px 18px; }
-    @media (min-width: 600px) { .elec-faq { padding: 56px 28px; } }
-    @media (min-width: 1024px) { .elec-faq { padding: 72px 40px; } }
-    .elec-faq-inner { max-width: 1100px; margin: 0 auto; }
-    .elec-faq-head { margin-bottom: 48px; }
-    .elec-faq-head h2 { font-family: 'Syne', sans-serif; font-size: clamp(28px, 4vw, 42px); color: #111; margin: 0 0 6px; }
-    .elec-faq-lede { font-size: 14px; color: #555; font-weight: 500; line-height: 1.6; margin: 0; }
-    .faq-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-    @media (min-width: 860px) { .faq-grid { grid-template-columns: 1fr 1fr; gap: 32px 48px; } }
-    .faq-group-label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 9px; font-weight: 800; letter-spacing: 0.22em;
-      text-transform: uppercase; color: #e8690a;
-      border-bottom: 2px solid #e8690a;
-      padding-bottom: 8px; margin-bottom: 0;
-    }
-    .faq-list { display: flex; flex-direction: column; gap: 0; }
-    .faq-item { border-bottom: 1px solid #ebebeb; }
-    .faq-item:first-child { border-top: 1px solid #ebebeb; }
-    .faq-btn {
-      width: 100%; text-align: left; background: none; border: none; cursor: pointer;
-      padding: 14px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .faq-q { font-size: 13px; font-weight: 700; color: #111; line-height: 1.35; }
-    .faq-toggle { font-size: 18px; font-weight: 400; color: #e8690a; flex-shrink: 0; line-height: 1; transition: transform 0.18s; margin-top: 1px; }
-    .faq-item.open .faq-toggle { transform: rotate(45deg); }
-    .faq-panel { max-height: 0; overflow: hidden; transition: max-height 0.28s ease; }
-    .faq-panel-inner { padding: 0 0 14px; }
-    .faq-a { font-size: 12.5px; font-weight: 500; color: #444; line-height: 1.75; }
-    .faq-general-inner { display: grid; grid-template-columns: 1fr; gap: 0; }
-    @media (min-width: 860px) { .faq-general-inner { grid-template-columns: 1fr 1fr; gap: 0 48px; } }
+    .faq2-panel { display: block; }
 
-    /* ── QUOTE SECTION (matches evbupdate quote-simple) ── */
-    .quote-simple { background: #fff; padding: 64px 24px 80px; }
-    @media (min-width: 1024px) { .quote-simple { padding: 80px 40px; } }
-    .quote-simple-inner { max-width: 1060px; margin: 0 auto; }
-    .quote-section-label {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 9.5px; font-weight: 800; letter-spacing: 0.28em;
-      text-transform: uppercase; color: #f97316; margin-bottom: 14px;
+    .faq2-item {
+      background: #fff;
+      border: 1.5px solid #e8e4de;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      overflow: hidden;
     }
-    .quote-section-label::before { content: ''; display: block; width: 24px; height: 2px; background: #f97316; }
-    .quote-simple h2 {
-      font-family: 'DM Sans', sans-serif; font-size: clamp(34px, 5vw, 58px);
-      font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; color: #111; margin: 0 0 36px;
+    .faq2-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.1rem 1.25rem;
+      cursor: pointer;
+      text-align: left;
     }
-    .quote-simple h2 em { font-style: normal; color: #f97316; }
-    .quote-simple-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 900px) { .quote-simple-grid { grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; } }
-    .quote-option-card {
-      background: #fafafa; border: 1px solid rgba(0,0,0,0.08); border-radius: 20px;
-      padding: 26px 26px 24px; display: flex; flex-direction: column;
-      transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-      position: relative; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    .faq2-q:hover { background: #fdfaf7; }
+    .faq2-q-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1814;
+      line-height: 1.45;
+      flex: 1;
+      transition: color .15s;
     }
-    .quote-option-card:hover { background: #fff; border-color: rgba(249,115,22,0.35); transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.09); }
-    .quote-option-primary { background: #fff8f4; border-color: rgba(249,115,22,0.22); box-shadow: 0 2px 16px rgba(249,115,22,0.08); }
-    .quote-option-primary::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #f97316, #ea580c); }
-    .quote-card-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; flex-shrink: 0; }
-    .quote-option-primary .quote-card-icon { background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.25); }
-    .quote-option-secondary .quote-card-icon { background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); }
-    .quote-card-icon svg { width: 22px; height: 22px; }
-    .quote-option-primary .quote-card-icon svg { color: #f97316; }
-    .quote-option-secondary .quote-card-icon svg { color: rgba(0,0,0,0.5); }
-    .quote-card-title { font-size: 17px; font-weight: 900; letter-spacing: -0.02em; color: #111; margin: 0 0 6px; }
-    .quote-card-desc { font-size: 13px; font-weight: 500; color: rgba(0,0,0,0.48); line-height: 1.6; margin: 0 0 20px; }
-    .quote-steps { list-style: none; margin: 0 0 22px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-    .quote-steps li { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; font-weight: 600; color: rgba(0,0,0,0.62); line-height: 1.45; }
-    .quote-step-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.28); color: #f97316; font-size: 10px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
-    .quote-steps li a { color: #f97316; text-decoration: none; font-weight: 700; }
-    .quote-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 18px; border-radius: 12px; text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; transition: transform 0.18s, box-shadow 0.18s; width: 100%; margin-bottom: 8px; }
-    .quote-cta-btn:last-of-type { margin-bottom: 0; }
-    .quote-cta-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
-    .quote-cta-btn:hover { transform: translateY(-2px); }
-    .quote-cta-primary { background: #f97316; color: #fff; box-shadow: 0 5px 0 #c2410c, 0 8px 22px rgba(249,115,22,0.32); }
-    .quote-cta-primary:hover { box-shadow: 0 7px 0 #c2410c, 0 12px 30px rgba(249,115,22,0.42); }
-    .quote-cta-primary:active { transform: translateY(4px); box-shadow: 0 1px 0 #c2410c; }
-    .quote-cta-outline { background: transparent; color: #333; border: 1.5px solid rgba(0,0,0,0.14); box-shadow: none; }
-    .quote-cta-outline:hover { border-color: rgba(249,115,22,0.5); color: #f97316; }
-    .quote-trust-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 14px; }
-    .quote-trust-item { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; color: rgba(0,0,0,0.38); letter-spacing: 0.04em; }
-    .quote-trust-item svg { width: 12px; height: 12px; color: #f97316; flex-shrink: 0; }
-    .quote-walkin-hours { display: flex; flex-direction: column; gap: 0; margin-bottom: 14px; }
-    .quote-walkin-row { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .quote-walkin-row:last-child { border-bottom: none; }
-    .quote-walkin-label { font-weight: 700; color: rgba(0,0,0,0.38); text-transform: uppercase; font-size: 9px; letter-spacing: 0.15em; }
-    .quote-walkin-val { font-weight: 700; color: #111; text-align: right; }
-    .quote-walkin-val.closed { color: #ef4444; }
+    .faq2-item.is-open .faq2-q-text { color: #c2410c; }
+    .faq2-item.is-open .faq2-q { background: #fff8f2; }
 
-    /* ── FOOTER ── */
-    .evb-footer { background: #111; padding: 40px 18px 28px; }
-    @media (min-width: 1024px) { .evb-footer { padding: 56px 40px 36px; } }
-    .evb-footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 28px; }
-    @media (min-width: 768px) { .evb-footer-inner { grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; } }
-    .evb-footer-logo { font-family: 'Syne', sans-serif; font-size: 22px; color: #fff; margin-bottom: 10px; }
-    .evb-footer-desc { font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 500; line-height: 1.7; }
-    .evb-footer-cats { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; }
-    .evb-footer-cats a { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: 0.04em; }
-    .evb-footer-cats a:hover { color: #f97316; }
-    .evb-footer-cats a.is-active { color: #f97316; }
-    .evb-footer-heading { font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #f97316; margin-bottom: 14px; }
-    .evb-footer-link { display: block; font-size: 12px; color: rgba(255,255,255,0.8); text-decoration: none; margin-bottom: 8px; font-weight: 600; }
-    .evb-footer-link:hover { color: #fff; }
-    .evb-footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); margin-top: 40px; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; }
-    .evb-footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); }
-    .evb-footer-legal { font-size: 10px; color: rgba(255,255,255,0.2); }
+    .faq2-icon {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border: 1.5px solid #ddd9d3;
+      border-radius: 50%;
+      background: #f8f5f0;
+      position: relative;
+      transition: background .2s, border-color .2s;
+    }
+    .faq2-icon::before, .faq2-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      background: #9a9490;
+      border-radius: 2px;
+      transition: transform .25s cubic-bezier(.4,0,.2,1), opacity .2s, background .2s;
+    }
+    .faq2-icon::before { width: 10px; height: 1.5px; transform: translate(-50%,-50%); }
+    .faq2-icon::after  { width: 1.5px; height: 10px; transform: translate(-50%,-50%); }
+    .faq2-item.is-open .faq2-icon { border-color: #f97316; background: #fff4ec; }
+    .faq2-item.is-open .faq2-icon::before,
+    .faq2-item.is-open .faq2-icon::after { background: #f97316; }
+    .faq2-item.is-open .faq2-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+
+    .faq2-a { overflow: hidden; height: 0; transition: height .3s cubic-bezier(.4,0,.2,1); }
+    .faq2-a-inner {
+      padding: 0.9rem 1.25rem 1.15rem;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #5a5550;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .2s .05s ease, transform .2s .05s ease;
+      border-top: 1px solid #f0ece6;
+    }
+    .faq2-item.is-open .faq2-a-inner { opacity: 1; transform: none; }
+    .faq2-a-inner p { margin: 0 0 .5rem; }
+    .faq2-a-inner p:last-child { margin: 0; }
+    .faq2-a-inner a { color: #f97316; text-decoration: none; font-weight: 600; }
+    .faq2-a-inner a:hover { text-decoration: underline; }
+    .faq2-a-inner strong { color: #1a1814; font-weight: 700; }
+
+    .faq2-group-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #f97316;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1.5px solid #e8e4de;
+    }
+    .faq2-group-label:first-child { margin-top: 0; }
+
+    @media (max-width: 600px) {
+      .faq2-section  { padding: 2.5rem 0 3rem; }
+      .faq2-header   { padding: 0 1rem; margin-bottom: 1.5rem; }
+      .faq2-shell    { padding: 0 1rem; }
+      .faq2-q        { padding: 1rem; }
+      .faq2-q-text   { font-size: 14px; }
+      .faq2-a-inner  { padding: 0.85rem 1rem 1rem; font-size: 13.5px; }
+    }
+    /* ══ end FAQ2 ══ */
+
+    /* ── Storefront image ── */
+    .cp-storefront-wrap {
+      margin: 1rem 0 2rem;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,.1);
+      line-height: 0;
+    }
+    .cp-storefront-img {
+      width: 100%;
+      height: 220px;
+      display: block;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    /* ── end storefront ── */
+    /* ── Common Questions ── */
+    .cq-block { margin: 2rem 0; }
+    .cq-section-head { margin-bottom: 1.25rem; }
+    .cq-section-head .cp-eyebrow { margin-bottom: 4px; }
+    .cq-section-head h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1814;
+      margin: 0;
+    }
+    .cq-grid {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e6e1db;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .cq-item { border-bottom: 1px solid #e6e1db; }
+    .cq-item:last-child { border-bottom: none; }
+    .cq-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      background: #fff;
+      border: none;
+      padding: 0.95rem 1.1rem;
+      cursor: pointer;
+      text-align: left;
+    }
+    .cq-trigger:hover { background: #faf9f7; }
+    .cq-q {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #1a1814;
+      line-height: 1.4;
+      flex: 1;
+    }
+    .cq-item.is-open .cq-q { color: #f97316; }
+    .cq-arrow {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      border: 1px solid #d4cfc9;
+      border-radius: 50%;
+      position: relative;
+      transition: border-color .2s, background .2s;
+    }
+    .cq-arrow::before, .cq-arrow::after {
+      content: '';
+      position: absolute;
+      background: #9a9490;
+      border-radius: 2px;
+      transition: transform .25s ease, opacity .25s, background .2s;
+    }
+    .cq-arrow::before { width: 6px; height: 1.5px; top: 50%; left: 3px; transform: translateY(-50%); }
+    .cq-arrow::after  { width: 6px; height: 1.5px; top: 50%; left: 3px; transform: translateY(-50%) rotate(90deg); }
+    .cq-item.is-open .cq-arrow { border-color: #f97316; background: #fff7f0; }
+    .cq-item.is-open .cq-arrow::before,
+    .cq-item.is-open .cq-arrow::after { background: #f97316; }
+    .cq-item.is-open .cq-arrow::after { opacity: 0; }
+    .cq-panel { overflow: hidden; height: 0; transition: height .3s cubic-bezier(.4,0,.2,1); }
+    .cq-body {
+      padding: 0.85rem 1.1rem 1rem;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #6b6560;
+      background: #faf9f7;
+      border-top: 1px solid #e6e1db;
+    }
+    .cq-body p { margin: 0; }
+    .cq-body a { color: #f97316; text-decoration: none; }
+    .cq-body a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      .cq-trigger { padding: 0.85rem 0.9rem; }
+      .cq-body { padding: 0.75rem 0.9rem 0.9rem; }
+    }
+    /* ── Gold vs Plated Comparison Tool ── */
+    .gvp-wrap {
+      margin: 1.5rem 0 2rem;
+      border: 1px solid #e6e1db;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .gvp-toggle-bar {
+      display: flex;
+      border-bottom: 1px solid #e6e1db;
+      background: #f9f7f4;
+    }
+    .gvp-tab {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: none;
+      background: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: #9a9490;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+    .gvp-tab--active {
+      color: #f97316;
+      border-bottom-color: #f97316;
+      background: #fff;
+    }
+    .gvp-panel { padding: 0; }
+    .gvp-panel--hidden { display: none; }
+
+    /* Compare table */
+    .gvp-header-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 1fr;
+      background: #f9f7f4;
+      border-bottom: 1px solid #e6e1db;
+    }
+    .gvp-col-label {
+      padding: 0.7rem 0.9rem;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #b0a89e;
+    }
+    .gvp-col-head {
+      padding: 0.7rem 0.9rem;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .gvp-col-head.gvp-col-real { color: #15803d; border-left: 1px solid #e6e1db; }
+    .gvp-col-head.gvp-col-plated { color: #b91c1c; border-left: 1px solid #e6e1db; }
+
+    .gvp-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      padding: 2px 7px;
+      border-radius: 3px;
+      width: fit-content;
+    }
+    .gvp-badge--yes { background: #dcfce7; color: #15803d; }
+    .gvp-badge--no  { background: #fee2e2; color: #b91c1c; }
+
+    .gvp-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 1fr;
+      border-bottom: 1px solid #f0ece6;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .gvp-row:last-of-type { border-bottom: none; }
+    .gvp-row:hover { background: #fffaf6; }
+    .gvp-row.is-active { background: #fff8f2; }
+
+    .gvp-row .gvp-col-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #4a4540;
+      padding: 0.75rem 0.9rem;
+      display: flex;
+      align-items: center;
+    }
+    .gvp-row .gvp-col-real,
+    .gvp-row .gvp-col-plated {
+      padding: 0.75rem 0.9rem;
+      font-size: 12px;
+      color: #4a4540;
+      border-left: 1px solid #f0ece6;
+      display: flex;
+      align-items: center;
+    }
+    .gvp-row.is-active .gvp-col-real { color: #15803d; font-weight: 600; }
+    .gvp-row.is-active .gvp-col-plated { color: #b91c1c; font-weight: 600; }
+
+    .gvp-detail-box {
+      padding: 0.9rem 1rem;
+      background: #fffaf5;
+      border-top: 1px solid #ffe4c4;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+    }
+    .gvp-detail-hint {
+      font-size: 11.5px;
+      color: #b0a89e;
+      font-style: italic;
+    }
+    .gvp-detail-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      width: 100%;
+      animation: gvpFadeIn .2s ease;
+    }
+    @keyframes gvpFadeIn { from { opacity:0; transform: translateY(4px); } to { opacity:1; transform: none; } }
+    .gvp-detail-real { font-size: 12px; line-height: 1.6; color: #166534; }
+    .gvp-detail-plated { font-size: 12px; line-height: 1.6; color: #991b1b; }
+    .gvp-detail-real::before { content: '✔  '; font-weight: 700; }
+    .gvp-detail-plated::before { content: '✖  '; font-weight: 700; }
+
+    /* Stamps grid */
+    .gvp-stamps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    @media (max-width: 560px) { .gvp-stamps-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gvp-stamp-card {
+      padding: 0.9rem 0.9rem 0.85rem;
+      border-right: 1px solid #e6e1db;
+      border-bottom: 1px solid #e6e1db;
+    }
+    .gvp-stamp-card:nth-child(3n) { border-right: none; }
+    .gvp-stamp-mark {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      margin-bottom: 4px;
+    }
+    .gvp-stamp-card strong {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 3px;
+    }
+    .gvp-stamp-card p {
+      font-size: 11px !important;
+      line-height: 1.55;
+      color: #7a7268 !important;
+      margin: 0 !important;
+    }
+    .gvp-stamp--yes .gvp-stamp-mark { color: #15803d; }
+    .gvp-stamp--yes { background: #f0fdf4; }
+    .gvp-stamp--maybe .gvp-stamp-mark { color: #92400e; }
+    .gvp-stamp--maybe { background: #fffbeb; }
+    .gvp-stamp--no .gvp-stamp-mark { color: #b91c1c; }
+    .gvp-stamp--no { background: #fff5f5; }
+    @media (max-width: 560px) {
+      .gvp-header-row, .gvp-row { grid-template-columns: 100px 1fr 1fr; }
+      .gvp-col-head, .gvp-row .gvp-col-label,
+      .gvp-row .gvp-col-real, .gvp-row .gvp-col-plated { padding: 0.6rem 0.6rem; font-size: 11px; }
+    }
+    /* ── end Gold vs Plated ── */
+    .cp-electronics-page .cp-metal-band-inner h2 { color: var(--text); }
+    .cp-electronics-page .cp-metal-band-inner p { color: var(--text-mid); }
+    .cp-electronics-page .cp-metal-band-inner .cp-yes-buy-lead { color: var(--text-light); }
+    .cp-electronics-page .cp-metal-band-inner .cp-callout h3 { color: var(--text); }
+    .cp-electronics-page .cp-metal-band-inner .cp-callout p,
+    .cp-electronics-page .cp-metal-band-inner .cp-callout li { color: var(--text-mid); }
+
+    /* ── Hero Q&A — styling only (layout + content unchanged) ── */
+    .cp-electronics-page .cp-page-hero-head {
+      text-align: center;
+      padding: 36px 24px 28px;
+      background: var(--bg);
+    }
+    .cp-electronics-page .cp-hero-title {
+      font-size: clamp(1.75rem, 4vw, 2.65rem) !important;
+      line-height: 1.06 !important;
+    }
+    .cp-electronics-page .cp-page-hero-qa-shell {
+      border-top: 3px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
+      background: #fff;
+    }
+    .cp-electronics-page .cp-qa-col-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--accent-dark);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(249, 115, 22, 0.2);
+    }
+    .cp-electronics-page .cp-qa-col:first-child {
+      background: #faf8f5;
+    }
+    .cp-electronics-page .cp-qa-item {
+      border-bottom-color: rgba(0, 0, 0, 0.07);
+    }
+    .cp-electronics-page .cp-qa-btn {
+      padding: 14px 0;
+    }
+    .cp-electronics-page .cp-qa-btn-q .cp-qa-q-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      margin-right: 10px;
+      background: var(--accent);
+      color: #fff !important;
+      font-size: 10px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .cp-electronics-page .cp-qa-a-tag {
+      display: inline-flex;
+      align-items: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      margin-bottom: 8px;
+      background: #eeeae4;
+      color: var(--text-mid) !important;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+    .cp-electronics-page .cp-qa-item.is-open {
+      background: rgba(249, 115, 22, 0.04);
+      margin: 0 -12px;
+      padding: 0 12px;
+      border-radius: 8px;
+    }
+    .cp-electronics-page .cp-qa-item.is-open .cp-qa-btn-q {
+      color: var(--accent-dark);
+    }
+    .cp-electronics-page .cp-qa-answer-text {
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .cp-electronics-page .cp-qa-bullets li {
+      font-size: 12.5px;
+      padding-left: 18px;
+    }
+    .cp-electronics-page .cp-qa-bullets li::before {
+      width: 6px;
+      height: 6px;
+      top: 8px;
+      background: var(--accent-dark);
+    }
+    .cp-electronics-page .cp-page-hero-foot {
+      background: var(--bg);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .cp-electronics-page .cp-hero-cta-row {
+      justify-content: center;
+    }
+    .cp-electronics-page .cp-hero-hours {
+      text-align: center;
+    }
+    @media (min-width: 901px) {
+      .cp-electronics-page .cp-qa-col { padding: 40px clamp(32px, 5vw, 64px) 44px; }
+      .cp-electronics-page .cp-page-hero-head { padding: 44px 40px 32px; }
+      .cp-electronics-page .cp-page-hero-foot { padding: 32px 40px 40px; }
+    }
+
+    .evb-cta-band {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      padding: 3rem 1.5rem; text-align: center; color: #fff;
+    }
+    .evb-cta-band h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; text-transform: uppercase; margin: 0 0 0.5rem; }
+    .evb-cta-band h2::after { display: none; }
+    .evb-cta-band p { color: rgba(255,255,255,0.85); font-size: 14px; margin: 0 0 1.5rem; }
+    .evb-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .evb-cta-solid { display: inline-flex; align-items: center; padding: 14px 24px; background: #fff; color: #f97316 !important; font-weight: 800; font-size: 13px; border-radius: 10px; text-decoration: none; letter-spacing: 0.04em; transition: transform 0.18s; }
+    .evb-cta-solid:hover { transform: translateY(-2px); }
+    .evb-cta-ghost { display: inline-flex; align-items: center; padding: 14px 24px; background: transparent; color: #fff !important; font-weight: 800; font-size: 13px; border-radius: 10px; text-decoration: none; letter-spacing: 0.04em; border: 2px solid rgba(255,255,255,0.6); transition: border-color 0.18s; }
+    .evb-cta-ghost:hover { border-color: #fff; }
+
   </style>
   <link rel="stylesheet" href="site-mobile.css">
   <link rel="stylesheet" href="site-ticker.css">
+  <link rel="stylesheet" href="site-footer.css">
 </head>
-<body>
+<body class="cp-we-buy-page cp-electronics-page">
 
-  <!-- NAV -->
   <div class="site-topbar"></div>
   <header class="site-nav" id="evbNav">
     <div class="site-nav-inner">
-      <a href="index.html" class="site-nav-logo">
+      <a href="index_82.html" class="site-nav-logo">
         <img src="evbbanner.png" alt="East Village Buyers" onerror="this.onerror=null;this.src='evblogo.png';">
       </a>
       <nav class="site-nav-links" aria-label="Main navigation">
-        <a href="index.html#what-we-buy" class="site-nav-link">Buy</a>
-        <a href="index.html#sell" class="site-nav-link">Sell</a>
-        <a href="index.html#what-we-buy" class="site-nav-link">Trade</a>
-        <a href="index.html#sell" class="site-nav-link">Consign</a>
-        <a href="index.html#store" class="site-nav-link">Shop</a>
-        <a href="index.html#sell" class="site-nav-link">About</a>
+        <a href="index_82.html" class="site-nav-link">Home</a>
+        <a href="about.html" class="site-nav-link">About</a>
         <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
       <div class="site-nav-right">
@@ -423,12 +2848,8 @@
       <button class="site-mob-x" onclick="toggleEvbNav()" aria-label="Close">&times;</button>
     </div>
     <nav class="site-mob-links" aria-label="Mobile navigation">
-      <a href="index.html#what-we-buy" class="site-mob-link" onclick="toggleEvbNav()">Buy</a>
-      <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">Sell</a>
-      <a href="index.html#what-we-buy" class="site-mob-link" onclick="toggleEvbNav()">Trade</a>
-      <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">Consign</a>
-      <a href="index.html#store" class="site-mob-link" onclick="toggleEvbNav()">Shop</a>
-      <a href="index.html#sell" class="site-mob-link" onclick="toggleEvbNav()">About</a>
+      <a href="index_82.html" class="site-mob-link" onclick="toggleEvbNav()">Home</a>
+      <a href="about.html" class="site-mob-link" onclick="toggleEvbNav()">About</a>
       <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
     <div class="site-mob-footer">
@@ -445,700 +2866,940 @@
   <script src="site-nav.js"></script>
   <script src="site-ticker.js"></script>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <img src="evbplaceholder.png" alt="Electronics we buy and sell in NYC" class="page-hero-img">
-    <div class="page-hero-inner">
-      <p class="page-hero-kicker">Buy &bull; Sell &bull; Trade &mdash; East Village, NYC</p>
-      <h1 class="page-hero-title">We Buy &amp; Sell<br>Electronics NYC</h1>
-      <p class="page-hero-sub">iPhone 16 &amp; 17, brand-new iPads, AirPods and AirPods Max, cameras from Nikon, Canon, Sony, Fujifilm, Leica &amp; more, PlayStation 5, and Ray-Ban Meta glasses. Walk into 39 Avenue A — no appointment, same-day cash, real prices.</p>
-      <div class="page-hero-badges">
-        <span class="page-hero-badge">iPhone 16 &amp; 17</span>
-        <span class="page-hero-badge">AirPods &amp; AirPods Max</span>
-        <span class="page-hero-badge">PS5</span>
-        <span class="page-hero-badge">Nikon · Canon · Sony · Fujifilm · Leica</span>
-        <span class="page-hero-badge">Working Condition Only</span>
-        <span class="page-hero-badge">iPad (New Only)</span>
-        <span class="page-hero-badge">Ray-Ban Meta</span>
-        <span class="page-hero-badge">Same-Day Cash</span>
+  <section class="cp-page-hero">
+    <div class="cp-page-hero-visual cp-page-hero-visual--mobile">
+      <img src="evbplaceholder.png" alt="Electronics we buy and sell in NYC — East Village Buyers">
+    </div>
+
+    <div class="cp-page-hero-inner">
+            <div class="cp-page-hero-head">
+        <h1 class="cp-hero-title">WE BUY &amp; SELL<br>ELECTRONICS IN NYC</h1>
+      </div>
+
+      <div class="cp-page-hero-qa-shell">
+        <div class="cp-qa-accordion" id="cpQaAccordion">
+          <div class="cp-qa-columns">
+            <div class="cp-qa-col">
+              <div class="cp-qa-col-title">Quick Answers</div>
+              <div class="cp-qa-item cp-qa-item-first is-open">
+                <button class="cp-qa-btn" aria-expanded="true">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>Want to sell electronics in NYC?</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">iPhone 16 &amp; 17, brand-new iPads, AirPods and AirPods Max, cameras from Nikon, Canon, Sony, Fujifilm, Leica &amp; more, PlayStation 5, and Ray-Ban Meta glasses. Walk into 39 Avenue A — no appointment, same-day cash, real prices.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>What do you buy and sell?</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <ul class="cp-qa-bullets">
+                      <li>iPhone 16 &amp; 17</li>
+                      <li>AirPods &amp; AirPods Max</li>
+                      <li>PS5</li>
+                      <li>Nikon · Canon · Sony · Fujifilm · Leica</li>
+                      <li>Working Condition Only</li>
+                      <li>iPad (New Only)</li>
+                      <li>Ray-Ban Meta</li>
+                      <li>Same-Day Cash</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>Do I need an appointment?</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">Walk into 39 Avenue A — no appointment. Buy &bull; Sell &bull; Trade — East Village, NYC.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>How do I get paid?</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">Same-day cash, real prices.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-qa-col">
+              <div class="cp-qa-col-title">Electronics We Buy &amp; Sell</div>
+              <div class="cp-qa-item cp-qa-item-first">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>What qualifies?</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">We buy and sell a very specific range of electronics in NYC. We keep it tight because we know these products inside and out — which means you get a real, fair price, not a guess. Here's exactly what qualifies.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>Working condition only</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">Powers on, functions as designed. Dead screens, broken buttons, won't boot — we can't buy it. Minor scratches and wear are fine.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>Accounts signed out</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">iPhones need iCloud removed and Find My off. PS5s need PSN signed out and factory reset. Ray-Ban Meta must be unpaired from Meta View. Locked = no offer.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>Photo ID required</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">New York State law — every seller needs a government-issued photo ID. Driver's license, passport, or state ID. No exceptions.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cp-qa-item">
+                <button class="cp-qa-btn" aria-expanded="false">
+                  <span class="cp-qa-btn-q"><span class="cp-qa-q-tag">Q</span>We inspect before we pay</span>
+                  <span class="cp-qa-btn-icon">+</span>
+                </button>
+                <div class="cp-qa-body">
+                  <div class="cp-qa-body-inner">
+                    <span class="cp-qa-a-tag">A</span>
+                    <p class="cp-qa-answer-text">Every item is tested at the counter in front of you before we make an offer. What we see is what we quote — no surprises either way.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="cp-page-hero-foot">
+        <div class="cp-hero-cta-row">
+          <a href="sms:9176088939" class="cp-btn-primary">Send Photos for a Quote</a>
+          <a href="tel:9176088939" class="cp-btn-secondary">Call 917-608-8939</a>
+        </div>
+        <p class="cp-hero-hours">Sun&ndash;Thu 12:30&ndash;6:30 &bull; Fri 12:30&ndash;6 &bull; <strong>Walk-ins Welcome</strong></p>
+      </div>
+
+      <div class="cp-page-hero-visual cp-page-hero-visual--desktop">
+        <img src="evbplaceholder.png" alt="Electronics we buy and sell in NYC — East Village Buyers at 39 Avenue A">
       </div>
     </div>
   </section>
 
-  <!-- WHAT CATEGORIES WE BUY / SELL -->
-  <section class="item-section bg-white" id="what-we-buy">
-    <div class="item-section-inner">
-      <div class="section-label">Electronics We Buy &amp; Sell</div>
-      <h2>What We Buy &amp; Sell</h2>
-      <p class="item-section-sub">We buy and sell a very specific range of electronics in NYC. We keep it tight because we know these products inside and out — which means you get a real, fair price, not a guess. Here's exactly what qualifies.</p>
+  <script>
+  (function() {
+    var items = document.querySelectorAll('#cpQaAccordion .cp-qa-item');
+    items.forEach(function(item) {
+      var btn = item.querySelector('.cp-qa-btn');
+      btn.addEventListener('click', function() {
+        var isOpen = item.classList.contains('is-open');
+        items.forEach(function(i) { i.classList.remove('is-open'); i.querySelector('.cp-qa-btn').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { item.classList.add('is-open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+  })();
+  </script>
 
-      <div class="elec-grid">
-        <a href="#iphones" class="elec-card" style="--ec:#555;">
-          <div class="elec-card-img"><img src="evbplaceholder.png" alt="iPhone 16 pair" style="object-position:center top;"></div>
-          <div class="elec-card-body">
-            <div class="elec-card-title">Buy &amp; Sell iPhones</div>
-            <div class="elec-card-sub">iPhone 16, 16 Plus, 16 Pro, 16 Pro Max and newer models only</div>
-            <div class="elec-card-go">View iPhone details ›</div>
+  <article class="cp-article cp-layout-flow">
+    <p class="cp-breadcrumb"><a href="index_82.html">Home</a> &rsaquo; Electronics</p>
+
+    <section id="what-we-buy">
+      <div class="cp-section-head">
+        <p class="cp-eyebrow">Electronics We Buy &amp; Sell</p>
+        <h2>What We Buy &amp; Sell</h2>
+        <p>We buy and sell a very specific range of electronics in NYC. We keep it tight because we know these products inside and out — which means you get a real, fair price, not a guess. Here's exactly what qualifies.</p>
+      </div>
+      <div class="jw-cat-grid">
+        <a href="#iphones" class="jw-card">
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="iPhone 16 pair"></div>
+          <div class="jw-card-body">
+            <div class="jw-card-title">Buy &amp; Sell iPhones</div>
+            <div class="jw-card-sub">iPhone 16, 16 Plus, 16 Pro, 16 Pro Max and newer models only</div>
+            <p class="jw-card-desc">View iPhone details ›</p>
           </div>
         </a>
-        <a href="#airpods" class="elec-card" style="--ec:#f97316;">
-          <div class="elec-card-img"><img src="evbplaceholder.png" alt="AirPods Max" style="object-position:center;"></div>
-          <div class="elec-card-body">
-            <div class="elec-card-title">Buy &amp; Sell AirPods</div>
-            <div class="elec-card-sub">Brand new AirPods, AirPods Pro, and AirPods Max — sealed or open box</div>
-            <div class="elec-card-go">View AirPods details ›</div>
+        <a href="#airpods" class="jw-card">
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="AirPods Max"></div>
+          <div class="jw-card-body">
+            <div class="jw-card-title">Buy &amp; Sell AirPods</div>
+            <div class="jw-card-sub">Brand new AirPods, AirPods Pro, and AirPods Max — sealed or open box</div>
+            <p class="jw-card-desc">View AirPods details ›</p>
           </div>
         </a>
-        <a href="#cameras" class="elec-card" style="--ec:#1a1a1a;">
-          <div class="elec-card-img"><img src="evbplaceholder.png" alt="Sony mirrorless camera" style="object-position:center;"></div>
-          <div class="elec-card-body">
-            <div class="elec-card-title">Buy &amp; Sell Cameras</div>
-            <div class="elec-card-sub">Nikon · Canon · Sony · Fujifilm · Leica · Lumix · Pentax · Ricoh</div>
-            <div class="elec-card-go">View camera details ›</div>
+        <a href="#cameras" class="jw-card">
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Sony mirrorless camera"></div>
+          <div class="jw-card-body">
+            <div class="jw-card-title">Buy &amp; Sell Cameras</div>
+            <div class="jw-card-sub">Nikon · Canon · Sony · Fujifilm · Leica · Lumix · Pentax · Ricoh</div>
+            <p class="jw-card-desc">View camera details ›</p>
           </div>
         </a>
-        <a href="#ps5" class="elec-card" style="--ec:#003087;">
-          <div class="elec-card-img"><img src="evbplaceholder.png" alt="PlayStation 5 console with DualSense controller" style="object-position:center;"></div>
-          <div class="elec-card-body">
-            <div class="elec-card-title">Buy &amp; Sell PS5</div>
-            <div class="elec-card-sub">PlayStation 5 console — disc edition and digital edition</div>
-            <div class="elec-card-go">View PS5 details ›</div>
+        <a href="#ps5" class="jw-card">
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="PlayStation 5 console with DualSense controller"></div>
+          <div class="jw-card-body">
+            <div class="jw-card-title">Buy &amp; Sell PS5</div>
+            <div class="jw-card-sub">PlayStation 5 console — disc edition and digital edition</div>
+            <p class="jw-card-desc">View PS5 details ›</p>
           </div>
         </a>
-        <a href="#rayban" class="elec-card" style="--ec:#1a1a1a;">
-          <div class="elec-card-img"><img src="evbplaceholder.png" alt="Ray-Ban sunglasses" style="object-position:center;"></div>
-          <div class="elec-card-body">
-            <div class="elec-card-title">Buy &amp; Sell Ray-Ban Meta</div>
-            <div class="elec-card-sub">All models — new and used — Gen 1 &amp; Gen 2</div>
-            <div class="elec-card-go">View Ray-Ban Meta details ›</div>
+        <a href="#rayban" class="jw-card">
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="Ray-Ban sunglasses"></div>
+          <div class="jw-card-body">
+            <div class="jw-card-title">Buy &amp; Sell Ray-Ban Meta</div>
+            <div class="jw-card-sub">All models — new and used — Gen 1 &amp; Gen 2</div>
+            <p class="jw-card-desc">View Ray-Ban Meta details ›</p>
           </div>
         </a>
-        <a href="#ipads" class="elec-card" style="--ec:#1d6fa4;">
-          <div class="elec-card-img"><img src="evbplaceholder.png" alt="iPad Pro on white desk" style="object-position:center;"></div>
-          <div class="elec-card-body">
-            <div class="elec-card-title">Buy &amp; Sell iPads</div>
-            <div class="elec-card-sub">Brand new only — latest iPad, iPad Air, and iPad Pro models</div>
-            <div class="elec-card-go">View iPad details ›</div>
+        <a href="#ipads" class="jw-card jw-card--wide">
+          <div class="jw-card-media"><img src="evbplaceholder.png" alt="iPad Pro on white desk"></div>
+          <div class="jw-card-body">
+            <div class="jw-card-title">Buy &amp; Sell iPads</div>
+            <div class="jw-card-sub">Brand new only — latest iPad, iPad Air, and iPad Pro models</div>
+            <p class="jw-card-desc">View iPad details ›</p>
           </div>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- REQUIREMENTS -->
-  <div class="req-banner">
-    <div class="req-banner-inner">
-      <h3>Before You Come In</h3>
-      <ul class="req-list">
-        <li>
-          <span class="req-list-title">Working condition only</span>
-          <span class="req-list-desc">Powers on, functions as designed. Dead screens, broken buttons, won't boot — we can't buy it. Minor scratches and wear are fine.</span>
-        </li>
-        <li>
-          <span class="req-list-title">Accounts signed out</span>
-          <span class="req-list-desc">iPhones need iCloud removed and Find My off. PS5s need PSN signed out and factory reset. Ray-Ban Meta must be unpaired from Meta View. Locked = no offer.</span>
-        </li>
-        <li>
-          <span class="req-list-title">Photo ID required</span>
-          <span class="req-list-desc">New York State law — every seller needs a government-issued photo ID. Driver's license, passport, or state ID. No exceptions.</span>
-        </li>
-        <li>
-          <span class="req-list-title">We inspect before we pay</span>
-          <span class="req-list-desc">Every item is tested at the counter in front of you before we make an offer. What we see is what we quote — no surprises either way.</span>
-        </li>
-      </ul>
+    <div class="wb-block">
+      <div class="wb-intro">
+        <div class="wb-intro-text">
+          <p class="cp-eyebrow">Buy &bull; Sell &bull; Trade &mdash; East Village, NYC</p>
+          <h2>We Buy &amp; Sell Electronics NYC</h2>
+          <p class="wb-lead">iPhone 16 &amp; 17, brand-new iPads, AirPods and AirPods Max, cameras from Nikon, Canon, Sony, Fujifilm, Leica &amp; more, PlayStation 5, and Ray-Ban Meta glasses. Walk into <strong>39 Avenue A</strong> — no appointment, same-day cash, real prices.</p>
+        </div>
+        <div class="cp-storefront-wrap" aria-label="East Village Buyers storefront">
+          <img src="evbplaceholder.png" alt="Electronics we buy and sell in NYC" class="cp-storefront-img">
+        </div>
+      </div>
     </div>
+
+    <div class="cp-page-divider" aria-hidden="true"></div>
+
+    <section id="requirements">
+      <div class="cp-callout cp-callout--warn">
+        <h3>Before You Come In</h3>
+        <ul>
+          <li><strong>Working condition only</strong> — Powers on, functions as designed. Dead screens, broken buttons, won't boot — we can't buy it. Minor scratches and wear are fine.</li>
+          <li><strong>Accounts signed out</strong> — iPhones need iCloud removed and Find My off. PS5s need PSN signed out and factory reset. Ray-Ban Meta must be unpaired from Meta View. Locked = no offer.</li>
+          <li><strong>Photo ID required</strong> — New York State law — every seller needs a government-issued photo ID. Driver's license, passport, or state ID. No exceptions.</li>
+          <li><strong>We inspect before we pay</strong> — Every item is tested at the counter in front of you before we make an offer. What we see is what we quote — no surprises either way.</li>
+        </ul>
+      </div>
+    </section>
+
+<section id="iphones" class="cp-metal-band cp-metal-band--content">
+      <div class="cp-metal-band-layout">
+        <div class="cp-metal-band-photos">
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="iPhone 16 pair" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">iPhones · NYC</span>
+          </figure>
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Buy and sell iPhones at East Village Buyers" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Smartphones · 39 Avenue A</span>
+          </figure>
+        </div>
+        <div class="cp-metal-band-inner">
+        <span class="cp-metal-tag">Smartphones</span>
+        <h2>Buy &amp; Sell iPhones in NYC</h2>
+        <p class="cp-yes-buy-lead">We buy and sell iPhone 16 and iPhone 17 — all models and all colors. Walk in with any variant and we'll make you an offer on the spot.</p>
+        <div class="cp-section-faq" aria-label="iPhone questions">
+          <details class="cp-faq-item">
+            <summary>Models &amp; Colors We Buy &amp; Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>iPhone 16 — Black, White, Pink, Teal, Ultramarine</li>
+              <li>iPhone 16 Plus — Black, White, Pink, Teal, Ultramarine</li>
+              <li>iPhone 16 Pro — Black Titanium, White Titanium, Natural Titanium, Desert Titanium</li>
+              <li>iPhone 16 Pro Max — Black Titanium, White Titanium, Natural Titanium, Desert Titanium</li>
+              <li>iPhone 17 — all colors as released</li>
+              <li>iPhone 17 Air — all colors as released</li>
+              <li>iPhone 17 Pro — all colors as released</li>
+              <li>iPhone 17 Pro Max — all colors as released</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What Affects Your Price</summary>
+            <div class="cp-faq-answer"><p>Think of your iPhone like a used car. Same make and model, but condition matters a lot. Here's what we look at:</p><ul>
+              <li>Storage size — 256GB gets more than 128GB</li>
+              <li>Screen condition — cracks drop the value significantly</li>
+              <li>Battery health — we check this right in front of you</li>
+              <li>iCloud locked vs unlocked — locked phones get zero offer</li>
+              <li>Original box and accessories — adds a small bonus</li>
+            </ul></div>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="airpods" class="cp-metal-band cp-metal-band--content">
+      <div class="cp-metal-band-layout">
+        <div class="cp-metal-band-photos">
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="AirPods Max" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">AirPods · NYC</span>
+          </figure>
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Buy and sell AirPods at East Village Buyers" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Apple Audio · 39 Avenue A</span>
+          </figure>
+        </div>
+        <div class="cp-metal-band-inner">
+        <span class="cp-metal-tag">Apple Audio</span>
+        <h2>Buy &amp; Sell AirPods in NYC</h2>
+        <p class="cp-yes-buy-lead">We buy and sell brand-new AirPods, AirPods Pro, and AirPods Max only. If you have a sealed box or an open box that's never been used, bring it in. Used AirPods are not something we purchase — the reason is simple: earbuds are very personal, condition is hard to verify after use, and the resale market for used AirPods is tough.</p>
+        <div class="cp-section-faq" aria-label="AirPods questions">
+          <details class="cp-faq-item">
+            <summary>What We Buy &amp; Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>AirPods (latest generation) — sealed or brand new open box</li>
+              <li>AirPods Pro (latest generation) — sealed or brand new</li>
+              <li>AirPods Max — all colorways, must be brand new or like new sealed</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What "Brand New" Means to Us</summary>
+            <div class="cp-faq-answer"><p>Brand new means the AirPods have never been paired with a phone and are in original unused condition. The box should be intact. Sealed is ideal. Open box is okay if everything inside is untouched. We'll check the pairing status on the spot — AirPods tell us if they've ever been used before. If they have, we won't be able to make an offer.</p></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>AirPods Max — Special Notes</summary>
+            <div class="cp-faq-answer"><p>AirPods Max hold their value better than regular AirPods because they're a premium over-ear headphone. All colorways are welcome — Midnight, Starlight, Blue, Purple, and Orange. They must be brand new. Bring the Smart Case if you have it. The original box adds value too. We see a lot of gift AirPods Max that were never opened — if that's you, you're in the right place.</p></div>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cameras" class="cp-metal-band cp-metal-band--content">
+      <div class="cp-metal-band-layout">
+        <div class="cp-metal-band-photos">
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Sony mirrorless camera" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Cameras · NYC</span>
+          </figure>
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Buy and sell cameras at East Village Buyers" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Photography · 39 Avenue A</span>
+          </figure>
+        </div>
+        <div class="cp-metal-band-inner">
+        <span class="cp-metal-tag">Photography</span>
+        <h2>Buy &amp; Sell Cameras in NYC</h2>
+        <p class="cp-yes-buy-lead">We buy and sell cameras from Nikon, Canon, Sony, Fujifilm, Lumix, Leica, Pentax, and Ricoh — bodies, lenses, and complete kits. All must be in full working condition.</p>
+        <div class="cp-section-faq" aria-label="Camera questions">
+          <details class="cp-faq-item">
+            <summary>Brands We Buy &amp; Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>Nikon — Z-series mirrorless, DSLR bodies, Nikkor lenses</li>
+              <li>Canon — EOS R mirrorless, DSLR bodies, RF and EF lenses</li>
+              <li>Sony — Alpha A7, A7R, A7C, A6xxx mirrorless, G and FE lenses</li>
+              <li>Fujifilm — X-series and GFX bodies, XF and GF lenses</li>
+              <li>Lumix (Panasonic) — S-series and G-series bodies, L and MFT lenses</li>
+              <li>Leica — M, Q, and SL series bodies and lenses</li>
+              <li>Pentax — K-series DSLR and 645 medium format</li>
+              <li>Ricoh — GR III, GR IIIx, and GRIII HDF</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>Our Inspection Process for Cameras</summary>
+            <div class="cp-faq-answer"><p>Cameras go through the most thorough check of anything we buy. We power it on, fire the shutter multiple times, test autofocus, take a test shot to check the sensor, inspect the LCD for dead pixels, and check all ports. This takes 10–15 minutes and happens right at the counter in front of you.</p></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What Affects Your Camera's Price</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>Shutter count — lower is better, like mileage on a car</li>
+              <li>Sensor condition — dust or damage affects value</li>
+              <li>Body wear — light scratches fine, cracks are a problem</li>
+              <li>Original box, straps, batteries, and charger add value</li>
+              <li>Lenses included with the body increase the offer significantly</li>
+            </ul></div>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ps5" class="cp-metal-band cp-metal-band--content">
+      <div class="cp-metal-band-layout">
+        <div class="cp-metal-band-photos">
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="PlayStation 5 console with DualSense controller" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">PS5 · NYC</span>
+          </figure>
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Buy and sell PlayStation 5 at East Village Buyers" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Gaming · 39 Avenue A</span>
+          </figure>
+        </div>
+        <div class="cp-metal-band-inner">
+        <span class="cp-metal-tag">Gaming</span>
+        <h2>Buy &amp; Sell PlayStation 5 in NYC</h2>
+        <p class="cp-yes-buy-lead">We buy and sell the PlayStation 5 console — disc edition and digital edition. The PS5 is one of the most actively traded consoles in the secondhand market right now, and we see them come through the store regularly. If you have one to sell or you're looking to buy one, come in.</p>
+        <div class="cp-section-faq" aria-label="PS5 questions">
+          <details class="cp-faq-item">
+            <summary>What We Buy &amp; Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>PS5 Disc Edition — standard console with disc drive</li>
+              <li>PS5 Digital Edition — the slimmer, disc-free version</li>
+              <li>PS5 Slim — both disc and digital versions</li>
+              <li>DualSense controllers — adds value when included with console</li>
+              <li>Original cables and power brick — adds value</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>Condition Requirements</summary>
+            <div class="cp-faq-answer"><p>The PS5 must be in full working condition. We test every console before making an offer. Here's what our inspection looks at:</p><ul>
+              <li>Powers on and boots to the PlayStation menu normally</li>
+              <li>HDMI port and video output working — we test with a TV</li>
+              <li>No loud fan noise or overheating signs</li>
+              <li>All USB ports functional</li>
+              <li>Disc drive accepts and reads discs (disc edition only)</li>
+              <li>DualSense controller charges and responds correctly</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>How to Prepare Your PS5 to Sell</summary>
+            <div class="cp-faq-answer"><p>Getting your PS5 ready takes about five minutes and makes the whole process faster:</p><ul>
+              <li>Sign out of your PlayStation Network account from the console settings</li>
+              <li>Go to Settings → System → Reset Console → Full Factory Reset</li>
+              <li>Bring all original accessories — cables, power brick, controller</li>
+              <li>The original box is a bonus but not required</li>
+              <li>Bring your valid photo ID — required by New York State law</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What About Games &amp; Accessories</summary>
+            <div class="cp-faq-answer"><p>We buy the PS5 console and DualSense controllers. We don't purchase individual games separately — the games market fluctuates too much for us to offer fair prices on individual titles. If you have a bundle with the console and several games, we'll factor in the extras when we look at the whole package. Extra DualSense controllers in good working condition are something we do buy alongside the console.</p></div>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ipads" class="cp-metal-band cp-metal-band--content">
+      <div class="cp-metal-band-layout">
+        <div class="cp-metal-band-photos">
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="iPad Pro on white desk" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">iPads · NYC</span>
+          </figure>
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Buy and sell iPads at East Village Buyers" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Tablets · 39 Avenue A</span>
+          </figure>
+        </div>
+        <div class="cp-metal-band-inner">
+        <span class="cp-metal-tag">Tablets</span>
+        <h2>Buy &amp; Sell iPads in NYC</h2>
+        <p class="cp-yes-buy-lead">We buy and sell brand-new iPads only — the latest iPad, iPad Air, and iPad Pro models. Sealed or open-box unused. Walk in and we'll make you an offer on the spot.</p>
+        <div class="cp-section-faq" aria-label="iPad questions">
+          <details class="cp-faq-item">
+            <summary>Models We Buy &amp; Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>iPad (latest generation) — standard model, WiFi and Cellular</li>
+              <li>iPad Air (latest generation, M-series chip) — 11-inch and 13-inch</li>
+              <li>iPad Pro (latest generation, M-series chip) — 11-inch and 13-inch</li>
+              <li>All storage sizes — 128GB, 256GB, 512GB, 1TB, 2TB</li>
+              <li>All colors as released per model</li>
+              <li>Future iPad models as they release</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>Brand New Only — Why</summary>
+            <div class="cp-faq-answer"><p>We only purchase iPads that are brand new — sealed box or open box that has never been set up or used. Used iPads are not something we currently buy. The iPad resale market for used units is competitive and margins are tight enough that we can't offer fair prices on pre-owned iPads. A brand-new sealed iPad, on the other hand, is something we can price confidently and sell quickly.</p></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What "Brand New" Means</summary>
+            <div class="cp-faq-answer"><p>Brand new means the iPad has never been powered on and set up with an Apple ID. Sealed box is ideal. Open box is fine if the iPad inside has never been activated — we'll verify this by powering it on. If the setup screen shows Apple's welcome screen with no account linked, it qualifies. If it shows someone's home screen or asks for a passcode, it doesn't.</p></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What Affects Your Price</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>Model tier — iPad Pro gets the strongest offer, standard iPad the lowest</li>
+              <li>Storage size — more storage means a better offer</li>
+              <li>WiFi vs Cellular — Cellular models command more</li>
+              <li>Sealed vs open box — sealed gets a slight premium</li>
+              <li>Apple Pencil or keyboard included — factors into a bundle offer</li>
+              <li>Original receipt or proof of purchase — helpful but not required</li>
+            </ul></div>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rayban" class="cp-metal-band cp-metal-band--content">
+      <div class="cp-metal-band-layout">
+        <div class="cp-metal-band-photos">
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Ray-Ban sunglasses" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Ray-Ban Meta · NYC</span>
+          </figure>
+          <figure class="cp-metal-band-photo">
+            <img src="evbplaceholder.png" alt="Buy and sell Ray-Ban Meta at East Village Buyers" width="800" height="600" loading="lazy">
+            <span class="cp-photo-corner"></span>
+            <span class="cp-photo-label">Wearable Tech · 39 Avenue A</span>
+          </figure>
+        </div>
+        <div class="cp-metal-band-inner">
+        <span class="cp-metal-tag">Wearable Tech</span>
+        <h2>Buy &amp; Sell Ray-Ban Meta Glasses</h2>
+        <p class="cp-yes-buy-lead">We buy and sell Ray-Ban Meta smart glasses — all models, all colorways, new and used. Bring them in and we'll make you an offer on the spot.</p>
+        <div class="cp-section-faq" aria-label="Ray-Ban Meta questions">
+          <details class="cp-faq-item">
+            <summary>Models We Buy &amp; Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>Ray-Ban Meta Wayfarer — Gen 1 &amp; Gen 2</li>
+              <li>Ray-Ban Meta Headliner — oversized square frame</li>
+              <li>Ray-Ban Meta Round — round frame variant</li>
+              <li>Ray-Ban Meta Skyler — rectangular frame</li>
+              <li>Ray-Ban Meta Skyler Round — round frame</li>
+              <li>Ray-Ban Meta Wayfarer Large — wider fit</li>
+              <li>All colorways — clear, sunglass, photochromic lenses</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>New &amp; Used — Both Welcome</summary>
+            <div class="cp-faq-answer"><p>Unlike AirPods, we buy Ray-Ban Meta in both new and used condition. Used pairs are welcome as long as the core features work. Here's what we check:</p><ul>
+              <li>Both speakers produce clear audio with no distortion</li>
+              <li>Camera captures photos and video — tested in store</li>
+              <li>Microphones work for Meta AI voice commands</li>
+              <li>Touchpad on the arm responds correctly</li>
+              <li>Charging case holds a charge and powers the glasses</li>
+              <li>Frame is not cracked or heavily warped</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>What Affects the Price</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>Generation — Gen 2 commands a stronger offer than Gen 1</li>
+              <li>Condition — scratched lenses or frame damage reduce value</li>
+              <li>Charging case included — significantly affects the offer</li>
+              <li>Original box and USB-C cable — adds value</li>
+              <li>New vs used — sealed new pairs get the strongest offer</li>
+            </ul></div>
+          </details>
+          <details class="cp-faq-item">
+            <summary>How to Prepare to Sell</summary>
+            <div class="cp-faq-answer"><ul>
+              <li>Open the Meta View app and unpair the glasses from your account</li>
+              <li>Hold the button on the right arm for 10 seconds to factory reset</li>
+              <li>Include the charging case — it matters for the offer</li>
+              <li>Bring the USB-C cable if you have it</li>
+              <li>Bring your valid photo ID — required by NY State law</li>
+            </ul></div>
+          </details>
+        </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+
+<section class="faq2-section" id="faq">
+  <div class="faq2-header">
+    <p class="cp-eyebrow">Common Questions</p>
+    <h2>Frequently Asked Questions</h2>
+    <p class="faq2-lede">Quick answers broken down by category. Tap any question to expand.</p>
   </div>
 
-  <!-- iPHONE SECTION -->
-  <section class="item-section" id="iphones" style="background:#f8f5f0;">
-    <div class="item-section-inner">
-      <div class="section-label">Smartphones</div>
-      <h2>Buy &amp; Sell iPhones in NYC</h2>
-      <p class="item-section-sub">We buy and sell iPhone 16 and iPhone 17 — all models and all colors. Walk in with any variant and we'll make you an offer on the spot.</p>
+  <div class="faq2-shell">
 
-      <div class="item-detail-grid">
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Models &amp; Colors We Buy &amp; Sell</div>
-          <ul>
-            <li>iPhone 16 — Black, White, Pink, Teal, Ultramarine</li>
-            <li>iPhone 16 Plus — Black, White, Pink, Teal, Ultramarine</li>
-            <li>iPhone 16 Pro — Black Titanium, White Titanium, Natural Titanium, Desert Titanium</li>
-            <li>iPhone 16 Pro Max — Black Titanium, White Titanium, Natural Titanium, Desert Titanium</li>
-            <li>iPhone 17 — all colors as released</li>
-            <li>iPhone 17 Air — all colors as released</li>
-            <li>iPhone 17 Pro — all colors as released</li>
-            <li>iPhone 17 Pro Max — all colors as released</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What Affects Your Price</div>
-          <p>Think of your iPhone like a used car. Same make and model, but condition matters a lot. Here's what we look at:</p>
-          <ul>
-            <li>Storage size — 256GB gets more than 128GB</li>
-            <li>Screen condition — cracks drop the value significantly</li>
-            <li>Battery health — we check this right in front of you</li>
-            <li>iCloud locked vs unlocked — locked phones get zero offer</li>
-            <li>Original box and accessories — adds a small bonus</li>
-          </ul>
-        </div>
+    <div class="faq2-group-label">iPhones</div>
 
-
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Which iPhone models do you buy?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>iPhone 16, 16 Plus, 16 Pro, 16 Pro Max — and all iPhone 17 models as they release. All colors qualify. We do not buy iPhone 15 or older.</p></div>
       </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">My phone is iCloud locked — can I sell it?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>No. iCloud-locked iPhones have zero resale value — nobody can activate them. Before coming in: Settings → your name → Sign Out, then Settings → General → Transfer or Reset iPhone → Erase All Content.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy cracked-screen iPhones?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Hairline cracks that don't affect touch or display — yes, with a reduced offer. Shattered screens with dead zones or screen separation — no. Text us a photo first so you know before making the trip.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Does color or storage size affect the price?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Color doesn't — we buy every colorway equally. Storage does: 256GB gets more than 128GB, 512GB more than 256GB. Battery health and screen condition matter most.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do I need the original box?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Not required. The phone itself drives 90% of the offer. Original box, cable, and charger add a small bonus but don't stay home without them.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-group-label">AirPods</div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy used AirPods?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>No — brand new only. Sealed box or open box that has never been paired. AirPods show us their pairing history when we check, so there's no way to get around this.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">I got AirPods as a gift — can I sell them?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes — this is the most common AirPods situation we see. Sealed gift AirPods are exactly what we buy. Bring them in, no questions asked. We just need your ID as required by law.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do AirPods Max get a better price than regular AirPods?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes, significantly. AirPods Max are premium over-ear headphones and hold value much better. All colorways welcome. Bring the Smart Case — it matters for the offer.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Does the model generation matter?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes. Latest-generation AirPods Pro and AirPods Max get the best offers. Older sealed pairs still qualify but command less. Bring what you have and we'll quote it straight.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-group-label">Cameras</div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Which camera brands do you buy?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Nikon, Canon, Sony, Fujifilm, Lumix, Leica, Pentax, and Ricoh — bodies, lenses, and kits. The camera must be in full working condition.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy lenses without a camera body?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes. All mounts for our supported brands — Nikon Z/F, Canon RF/EF, Sony E/FE, Fujifilm XF/GF, Leica M/SL, Lumix L/MFT. Autofocus must work, glass must be clean, no fungus.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">What is shutter count and does it matter?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Shutter count is how many photos the camera has taken — like mileage on a car. Lower is better. We check it during inspection. Very high shutter counts reduce the offer; low counts can increase it.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">My camera has dust on the sensor. Can I still sell it?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Light dust that doesn't show in photos — yes, with a small reduction. Heavy contamination or sensor damage is a bigger problem. We take a test shot during inspection so you can see exactly what we see.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy older DSLR cameras?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes, for brands we carry. A Nikon D800, Canon 5D Mark III, or Sony A7 II can still hold real value if they're in working condition. Text us the model and some photos and we'll tell you if it's worth the trip.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-group-label">PlayStation 5</div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy the PS5 Slim?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes — PS5 Slim disc and digital editions both qualify. Same inspection process as the original PS5. Bring all cables and the DualSense controller.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Can I sell a console-banned PS5?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>No. A hardware ban from PlayStation Network is permanent — the console can't access PSN, download games, or receive updates. We can't make an offer on a console-banned unit.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy PS5 games or extra controllers?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Individual games — no. Extra DualSense controllers in working condition — yes, alongside the console. A bundle with games and the console will factor in the extras.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">How do I factory reset my PS5 before selling?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Settings → System → System Software → Reset Options → Reset Your Console. This removes your account and wipes all data. Don't forget to bring all cables, the power brick, and your DualSense.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-group-label">iPads</div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Why only brand new iPads?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Used iPad margins are too tight to make fair offers. Brand-new sealed or unactivated iPads are something we can price confidently and move quickly — that's where we can actually pay you well.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">What counts as "brand new"?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Never powered on and set up with an Apple ID. Sealed box is ideal. Open box is fine if the iPad shows Apple's welcome screen — no prior account linked. We verify this during inspection.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do iPad Pro models get a better offer than standard iPad?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes — iPad Pro commands the strongest offer, followed by iPad Air, then standard iPad. Higher storage and Cellular models also get more. A 1TB iPad Pro Cellular is at the top of the range.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Can I include an Apple Pencil or keyboard?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Yes — bring them and we'll factor them into a bundle offer. Apple Pencil and Magic Keyboard especially add meaningful value when new and unused.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-group-label">Ray-Ban Meta</div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">What's the difference between Gen 1 and Gen 2?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Gen 1 (Ray-Ban Stories, 2021) — 5MP camera, basic audio, no Meta AI. Gen 2 (2023 onwards) — 12MP camera, open-ear speakers, Meta AI, livestreaming. Gen 2 gets a noticeably stronger offer. Not sure which you have? The Gen 2 camera lens is visibly larger.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do you buy scratched or case-missing pairs?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Light frame scratches — yes with a reduction. Scratched lenses hurt more since buyers feel it immediately. Missing charging case is a significant hit. Cracked frames — text us a photo first.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Do all frame styles get the same offer?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Roughly. Wayfarer and Headliner tend to have the widest buyer base. Condition, generation, and whether the case is included matter more than frame style.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">How do I unpair before selling?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Open the Meta View app → tap your glasses → Device Settings → Unpair. Then hold the button on the right arm for 10 seconds for a factory reset. Bring the charging case and USB-C cable.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-group-label">General</div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Why do you need my ID?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>New York State law requires all secondhand dealers to record seller information. A government-issued photo ID — driver's license, state ID, or passport — is required for every transaction. It protects both sides.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">How do you decide what price to offer?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>We check recent completed eBay sales, trade-in competitors, and local demand — then factor in your item's specific condition from our inspection. We'll explain the number. If you think we're off, show us and we'll talk.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">What if I change my mind after the offer?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>No problem — you never have to sell. The evaluation is free and no-obligation. Take your item and go. Come back another day and we'll make a fresh offer based on current market conditions.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Us vs eBay — what's the difference?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>eBay might get you more, but you wait days or weeks, deal with buyers, handle shipping, pay 10–15% in fees, and risk scams. With us: walk in, get a real offer, walk out with cash same day. No fees, no strangers.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">How long does an inspection take?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>iPhones: 5–10 min. Cameras: 15–20 min. PS5: 10–15 min. AirPods and iPads: 5 min or less. Everything happens at the counter in front of you — nothing behind closed doors.</p></div>
+      </div>
+    </div>
+
+    <div class="faq2-item">
+      <button class="faq2-q" aria-expanded="false">
+        <span class="faq2-q-text">Is there a minimum to make it worth coming in?</span>
+        <span class="faq2-icon" aria-hidden="true"></span>
+      </button>
+      <div class="faq2-a">
+        <div class="faq2-a-inner"><p>Not officially, but if the resale value is under $50 the offer will be small. Text us photos first at 917-608-8939 and we'll tell you straight if it's worth the trip — we'd rather save you the ride.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="evb-cta-band">
+    <h2>Ready to Sell? Come See Us.</h2>
+    <p>39 Avenue A, East Village NYC · Walk-ins welcome · Sun–Thu 12:30–6:30 · Fri 12:30–6</p>
+    <div class="evb-cta-btns">
+      <a href="sms:9176088939" class="evb-cta-solid">Text Photos for a Quote</a>
+      <a href="tel:9176088939" class="evb-cta-ghost">Call 917-608-8939</a>
     </div>
   </section>
 
-  <!-- AIRPODS SECTION -->
-  <section class="item-section bg-white" id="airpods">
-    <div class="item-section-inner">
-      <div class="section-label">Apple Audio</div>
-      <h2>Buy &amp; Sell AirPods in NYC</h2>
-      <p class="item-section-sub">We buy and sell brand-new AirPods, AirPods Pro, and AirPods Max only. If you have a sealed box or an open box that's never been used, bring it in. Used AirPods are not something we purchase — the reason is simple: earbuds are very personal, condition is hard to verify after use, and the resale market for used AirPods is tough.</p>
-
-      <div class="item-detail-grid">
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What We Buy &amp; Sell</div>
-          <ul>
-            <li>AirPods (latest generation) — sealed or brand new open box</li>
-            <li>AirPods Pro (latest generation) — sealed or brand new</li>
-            <li>AirPods Max — all colorways, must be brand new or like new sealed</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What "Brand New" Means to Us</div>
-          <p>Brand new means the AirPods have never been paired with a phone and are in original unused condition. The box should be intact. Sealed is ideal. Open box is okay if everything inside is untouched. We'll check the pairing status on the spot — AirPods tell us if they've ever been used before. If they have, we won't be able to make an offer.</p>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">AirPods Max — Special Notes</div>
-          <p>AirPods Max hold their value better than regular AirPods because they're a premium over-ear headphone. All colorways are welcome — Midnight, Starlight, Blue, Purple, and Orange. They must be brand new. Bring the Smart Case if you have it. The original box adds value too. We see a lot of gift AirPods Max that were never opened — if that's you, you're in the right place.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CAMERAS SECTION -->
-  <section class="item-section" id="cameras" style="background:#f8f5f0;">
-    <div class="item-section-inner">
-      <div class="section-label">Photography</div>
-      <h2>Buy &amp; Sell Cameras in NYC</h2>
-      <p class="item-section-sub">We buy and sell cameras from Nikon, Canon, Sony, Fujifilm, Lumix, Leica, Pentax, and Ricoh — bodies, lenses, and complete kits. All must be in full working condition.</p>
-
-      <div class="item-detail-grid">
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Brands We Buy &amp; Sell</div>
-          <ul>
-            <li>Nikon — Z-series mirrorless, DSLR bodies, Nikkor lenses</li>
-            <li>Canon — EOS R mirrorless, DSLR bodies, RF and EF lenses</li>
-            <li>Sony — Alpha A7, A7R, A7C, A6xxx mirrorless, G and FE lenses</li>
-            <li>Fujifilm — X-series and GFX bodies, XF and GF lenses</li>
-            <li>Lumix (Panasonic) — S-series and G-series bodies, L and MFT lenses</li>
-            <li>Leica — M, Q, and SL series bodies and lenses</li>
-            <li>Pentax — K-series DSLR and 645 medium format</li>
-            <li>Ricoh — GR III, GR IIIx, and GRIII HDF</li>
-          </ul>
-        </div>
-
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Our Inspection Process for Cameras</div>
-          <p>Cameras go through the most thorough check of anything we buy. We power it on, fire the shutter multiple times, test autofocus, take a test shot to check the sensor, inspect the LCD for dead pixels, and check all ports. This takes 10–15 minutes and happens right at the counter in front of you.</p>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What Affects Your Camera's Price</div>
-          <ul>
-            <li>Shutter count — lower is better, like mileage on a car</li>
-            <li>Sensor condition — dust or damage affects value</li>
-            <li>Body wear — light scratches fine, cracks are a problem</li>
-            <li>Original box, straps, batteries, and charger add value</li>
-            <li>Lenses included with the body increase the offer significantly</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PS5 SECTION -->
-  <section class="item-section bg-white" id="ps5">
-    <div class="item-section-inner">
-      <div class="section-label">Gaming</div>
-      <h2>Buy &amp; Sell PlayStation 5 in NYC</h2>
-      <p class="item-section-sub">We buy and sell the PlayStation 5 console — disc edition and digital edition. The PS5 is one of the most actively traded consoles in the secondhand market right now, and we see them come through the store regularly. If you have one to sell or you're looking to buy one, come in.</p>
-
-      <div class="item-detail-grid">
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What We Buy &amp; Sell</div>
-          <ul>
-            <li>PS5 Disc Edition — standard console with disc drive</li>
-            <li>PS5 Digital Edition — the slimmer, disc-free version</li>
-            <li>PS5 Slim — both disc and digital versions</li>
-            <li>DualSense controllers — adds value when included with console</li>
-            <li>Original cables and power brick — adds value</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Condition Requirements</div>
-          <p>The PS5 must be in full working condition. We test every console before making an offer. Here's what our inspection looks at:</p>
-          <ul>
-            <li>Powers on and boots to the PlayStation menu normally</li>
-            <li>HDMI port and video output working — we test with a TV</li>
-            <li>No loud fan noise or overheating signs</li>
-            <li>All USB ports functional</li>
-            <li>Disc drive accepts and reads discs (disc edition only)</li>
-            <li>DualSense controller charges and responds correctly</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">How to Prepare Your PS5 to Sell</div>
-          <p>Getting your PS5 ready takes about five minutes and makes the whole process faster:</p>
-          <ul>
-            <li>Sign out of your PlayStation Network account from the console settings</li>
-            <li>Go to Settings → System → Reset Console → Full Factory Reset</li>
-            <li>Bring all original accessories — cables, power brick, controller</li>
-            <li>The original box is a bonus but not required</li>
-            <li>Bring your valid photo ID — required by New York State law</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What About Games &amp; Accessories</div>
-          <p>We buy the PS5 console and DualSense controllers. We don't purchase individual games separately — the games market fluctuates too much for us to offer fair prices on individual titles. If you have a bundle with the console and several games, we'll factor in the extras when we look at the whole package. Extra DualSense controllers in good working condition are something we do buy alongside the console.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- iPAD SECTION -->
-  <section class="item-section bg-white" id="ipads">
-    <div class="item-section-inner">
-      <div class="section-label">Tablets</div>
-      <h2>Buy &amp; Sell iPads in NYC</h2>
-      <p class="item-section-sub">We buy and sell brand-new iPads only — the latest iPad, iPad Air, and iPad Pro models. Sealed or open-box unused. Walk in and we'll make you an offer on the spot.</p>
-      <div class="item-detail-grid">
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Models We Buy &amp; Sell</div>
-          <ul>
-            <li>iPad (latest generation) — standard model, WiFi and Cellular</li>
-            <li>iPad Air (latest generation, M-series chip) — 11-inch and 13-inch</li>
-            <li>iPad Pro (latest generation, M-series chip) — 11-inch and 13-inch</li>
-            <li>All storage sizes — 128GB, 256GB, 512GB, 1TB, 2TB</li>
-            <li>All colors as released per model</li>
-            <li>Future iPad models as they release</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Brand New Only — Why</div>
-          <p>We only purchase iPads that are brand new — sealed box or open box that has never been set up or used. Used iPads are not something we currently buy. The iPad resale market for used units is competitive and margins are tight enough that we can't offer fair prices on pre-owned iPads. A brand-new sealed iPad, on the other hand, is something we can price confidently and sell quickly.</p>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What "Brand New" Means</div>
-          <p>Brand new means the iPad has never been powered on and set up with an Apple ID. Sealed box is ideal. Open box is fine if the iPad inside has never been activated — we'll verify this by powering it on. If the setup screen shows Apple's welcome screen with no account linked, it qualifies. If it shows someone's home screen or asks for a passcode, it doesn't.</p>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What Affects Your Price</div>
-          <ul>
-            <li>Model tier — iPad Pro gets the strongest offer, standard iPad the lowest</li>
-            <li>Storage size — more storage means a better offer</li>
-            <li>WiFi vs Cellular — Cellular models command more</li>
-            <li>Sealed vs open box — sealed gets a slight premium</li>
-            <li>Apple Pencil or keyboard included — factors into a bundle offer</li>
-            <li>Original receipt or proof of purchase — helpful but not required</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RAY-BAN META SECTION -->
-  <section class="item-section" id="rayban" style="background:#f8f5f0;">
-    <div class="item-section-inner">
-      <div class="section-label">Wearable Tech</div>
-      <h2>Buy &amp; Sell Ray-Ban Meta Glasses</h2>
-      <p class="item-section-sub">We buy and sell Ray-Ban Meta smart glasses — all models, all colorways, new and used. Bring them in and we'll make you an offer on the spot.</p>
-      <div class="item-detail-grid">
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">Models We Buy &amp; Sell</div>
-          <ul>
-            <li>Ray-Ban Meta Wayfarer — Gen 1 &amp; Gen 2</li>
-            <li>Ray-Ban Meta Headliner — oversized square frame</li>
-            <li>Ray-Ban Meta Round — round frame variant</li>
-            <li>Ray-Ban Meta Skyler — rectangular frame</li>
-            <li>Ray-Ban Meta Skyler Round — round frame</li>
-            <li>Ray-Ban Meta Wayfarer Large — wider fit</li>
-            <li>All colorways — clear, sunglass, photochromic lenses</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">New &amp; Used — Both Welcome</div>
-          <p>Unlike AirPods, we buy Ray-Ban Meta in both new and used condition. Used pairs are welcome as long as the core features work. Here's what we check:</p>
-          <ul>
-            <li>Both speakers produce clear audio with no distortion</li>
-            <li>Camera captures photos and video — tested in store</li>
-            <li>Microphones work for Meta AI voice commands</li>
-            <li>Touchpad on the arm responds correctly</li>
-            <li>Charging case holds a charge and powers the glasses</li>
-            <li>Frame is not cracked or heavily warped</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">What Affects the Price</div>
-          <ul>
-            <li>Generation — Gen 2 commands a stronger offer than Gen 1</li>
-            <li>Condition — scratched lenses or frame damage reduce value</li>
-            <li>Charging case included — significantly affects the offer</li>
-            <li>Original box and USB-C cable — adds value</li>
-            <li>New vs used — sealed new pairs get the strongest offer</li>
-          </ul>
-        </div>
-        <div class="item-detail-box">
-          <div class="item-detail-box-title">How to Prepare to Sell</div>
-          <ul>
-            <li>Open the Meta View app and unpair the glasses from your account</li>
-            <li>Hold the button on the right arm for 10 seconds to factory reset</li>
-            <li>Include the charging case — it matters for the offer</li>
-            <li>Bring the USB-C cable if you have it</li>
-            <li>Bring your valid photo ID — required by NY State law</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="elec-faq" id="faq">
-    <div class="elec-faq-inner">
-
-      <div class="elec-faq-head">
-        <div class="section-label">Common Questions</div>
-        <h2>Frequently Asked Questions</h2>
-        <p class="elec-faq-lede">Quick answers broken down by category. Tap any question to expand.</p>
-      </div>
-
-      <div class="faq-grid">
-
-        <!-- iPhones -->
-        <div class="faq-group">
-          <div class="faq-group-label">iPhones</div>
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Which iPhone models do you buy?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">iPhone 16, 16 Plus, 16 Pro, 16 Pro Max — and all iPhone 17 models as they release. All colors qualify. We do not buy iPhone 15 or older.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">My phone is iCloud locked — can I sell it?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">No. iCloud-locked iPhones have zero resale value — nobody can activate them. Before coming in: Settings → your name → Sign Out, then Settings → General → Transfer or Reset iPhone → Erase All Content.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy cracked-screen iPhones?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Hairline cracks that don't affect touch or display — yes, with a reduced offer. Shattered screens with dead zones or screen separation — no. Text us a photo first so you know before making the trip.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Does color or storage size affect the price?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Color doesn't — we buy every colorway equally. Storage does: 256GB gets more than 128GB, 512GB more than 256GB. Battery health and screen condition matter most.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do I need the original box?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Not required. The phone itself drives 90% of the offer. Original box, cable, and charger add a small bonus but don't stay home without them.</p></div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- AirPods -->
-        <div class="faq-group">
-          <div class="faq-group-label">AirPods</div>
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy used AirPods?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">No — brand new only. Sealed box or open box that has never been paired. AirPods show us their pairing history when we check, so there's no way to get around this.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">I got AirPods as a gift — can I sell them?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes — this is the most common AirPods situation we see. Sealed gift AirPods are exactly what we buy. Bring them in, no questions asked. We just need your ID as required by law.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do AirPods Max get a better price than regular AirPods?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes, significantly. AirPods Max are premium over-ear headphones and hold value much better. All colorways welcome. Bring the Smart Case — it matters for the offer.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Does the model generation matter?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes. Latest-generation AirPods Pro and AirPods Max get the best offers. Older sealed pairs still qualify but command less. Bring what you have and we'll quote it straight.</p></div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Cameras -->
-        <div class="faq-group">
-          <div class="faq-group-label">Cameras</div>
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Which camera brands do you buy?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Nikon, Canon, Sony, Fujifilm, Lumix, Leica, Pentax, and Ricoh — bodies, lenses, and kits. The camera must be in full working condition.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy lenses without a camera body?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes. All mounts for our supported brands — Nikon Z/F, Canon RF/EF, Sony E/FE, Fujifilm XF/GF, Leica M/SL, Lumix L/MFT. Autofocus must work, glass must be clean, no fungus.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">What is shutter count and does it matter?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Shutter count is how many photos the camera has taken — like mileage on a car. Lower is better. We check it during inspection. Very high shutter counts reduce the offer; low counts can increase it.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">My camera has dust on the sensor. Can I still sell it?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Light dust that doesn't show in photos — yes, with a small reduction. Heavy contamination or sensor damage is a bigger problem. We take a test shot during inspection so you can see exactly what we see.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy older DSLR cameras?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes, for brands we carry. A Nikon D800, Canon 5D Mark III, or Sony A7 II can still hold real value if they're in working condition. Text us the model and some photos and we'll tell you if it's worth the trip.</p></div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- PS5 & Gaming -->
-        <div class="faq-group">
-          <div class="faq-group-label">PlayStation 5</div>
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy the PS5 Slim?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes — PS5 Slim disc and digital editions both qualify. Same inspection process as the original PS5. Bring all cables and the DualSense controller.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Can I sell a console-banned PS5?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">No. A hardware ban from PlayStation Network is permanent — the console can't access PSN, download games, or receive updates. We can't make an offer on a console-banned unit.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy PS5 games or extra controllers?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Individual games — no. Extra DualSense controllers in working condition — yes, alongside the console. A bundle with games and the console will factor in the extras.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">How do I factory reset my PS5 before selling?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Settings → System → System Software → Reset Options → Reset Your Console. This removes your account and wipes all data. Don't forget to bring all cables, the power brick, and your DualSense.</p></div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- iPads -->
-        <div class="faq-group">
-          <div class="faq-group-label">iPads</div>
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Why only brand new iPads?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Used iPad margins are too tight to make fair offers. Brand-new sealed or unactivated iPads are something we can price confidently and move quickly — that's where we can actually pay you well.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">What counts as "brand new"?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Never powered on and set up with an Apple ID. Sealed box is ideal. Open box is fine if the iPad shows Apple's welcome screen — no prior account linked. We verify this during inspection.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do iPad Pro models get a better offer than standard iPad?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes — iPad Pro commands the strongest offer, followed by iPad Air, then standard iPad. Higher storage and Cellular models also get more. A 1TB iPad Pro Cellular is at the top of the range.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Can I include an Apple Pencil or keyboard?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Yes — bring them and we'll factor them into a bundle offer. Apple Pencil and Magic Keyboard especially add meaningful value when new and unused.</p></div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Ray-Ban Meta -->
-        <div class="faq-group">
-          <div class="faq-group-label">Ray-Ban Meta</div>
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">What's the difference between Gen 1 and Gen 2?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Gen 1 (Ray-Ban Stories, 2021) — 5MP camera, basic audio, no Meta AI. Gen 2 (2023 onwards) — 12MP camera, open-ear speakers, Meta AI, livestreaming. Gen 2 gets a noticeably stronger offer. Not sure which you have? The Gen 2 camera lens is visibly larger.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do you buy scratched or case-missing pairs?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Light frame scratches — yes with a reduction. Scratched lenses hurt more since buyers feel it immediately. Missing charging case is a significant hit. Cracked frames — text us a photo first.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">Do all frame styles get the same offer?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Roughly. Wayfarer and Headliner tend to have the widest buyer base. Condition, generation, and whether the case is included matter more than frame style.</p></div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-btn" onclick="toggleFaq(this)">
-                <span class="faq-q">How do I unpair before selling?</span>
-                <span class="faq-toggle">+</span>
-              </button>
-              <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Open the Meta View app → tap your glasses → Device Settings → Unpair. Then hold the button on the right arm for 10 seconds for a factory reset. Bring the charging case and USB-C cable.</p></div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- General -->
-        <div class="faq-group" style="grid-column: 1 / -1;">
-          <div class="faq-group-label">General</div>
-          <div style="display:grid;grid-template-columns:1fr;gap:0;">
-            <div class="faq-general-inner">
-              <div class="faq-list">
-
-                <div class="faq-item">
-                  <button class="faq-btn" onclick="toggleFaq(this)">
-                    <span class="faq-q">Why do you need my ID?</span>
-                    <span class="faq-toggle">+</span>
-                  </button>
-                  <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">New York State law requires all secondhand dealers to record seller information. A government-issued photo ID — driver's license, state ID, or passport — is required for every transaction. It protects both sides.</p></div></div>
-                </div>
-
-                <div class="faq-item">
-                  <button class="faq-btn" onclick="toggleFaq(this)">
-                    <span class="faq-q">How do you decide what price to offer?</span>
-                    <span class="faq-toggle">+</span>
-                  </button>
-                  <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">We check recent completed eBay sales, trade-in competitors, and local demand — then factor in your item's specific condition from our inspection. We'll explain the number. If you think we're off, show us and we'll talk.</p></div></div>
-                </div>
-
-                <div class="faq-item">
-                  <button class="faq-btn" onclick="toggleFaq(this)">
-                    <span class="faq-q">What if I change my mind after the offer?</span>
-                    <span class="faq-toggle">+</span>
-                  </button>
-                  <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">No problem — you never have to sell. The evaluation is free and no-obligation. Take your item and go. Come back another day and we'll make a fresh offer based on current market conditions.</p></div></div>
-                </div>
-
-              </div>
-              <div class="faq-list">
-
-                <div class="faq-item">
-                  <button class="faq-btn" onclick="toggleFaq(this)">
-                    <span class="faq-q">Us vs eBay — what's the difference?</span>
-                    <span class="faq-toggle">+</span>
-                  </button>
-                  <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">eBay might get you more, but you wait days or weeks, deal with buyers, handle shipping, pay 10–15% in fees, and risk scams. With us: walk in, get a real offer, walk out with cash same day. No fees, no strangers.</p></div></div>
-                </div>
-
-                <div class="faq-item">
-                  <button class="faq-btn" onclick="toggleFaq(this)">
-                    <span class="faq-q">How long does an inspection take?</span>
-                    <span class="faq-toggle">+</span>
-                  </button>
-                  <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">iPhones: 5–10 min. Cameras: 15–20 min. PS5: 10–15 min. AirPods and iPads: 5 min or less. Everything happens at the counter in front of you — nothing behind closed doors.</p></div></div>
-                </div>
-
-                <div class="faq-item">
-                  <button class="faq-btn" onclick="toggleFaq(this)">
-                    <span class="faq-q">Is there a minimum to make it worth coming in?</span>
-                    <span class="faq-toggle">+</span>
-                  </button>
-                  <div class="faq-panel"><div class="faq-panel-inner"><p class="faq-a">Not officially, but if the resale value is under $50 the offer will be small. Text us photos first at 917-608-8939 and we'll tell you straight if it's worth the trip — we'd rather save you the ride.</p></div></div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="evb-footer">
     <div class="evb-footer-inner">
       <div>
@@ -1172,27 +3833,116 @@
     </div>
     <div style="max-width:1100px;margin:0 auto;padding:0 0;">
       <div class="evb-footer-bottom">
-        <span class="evb-footer-copy">&copy; 2026 East Village Buyers. All rights reserved. &nbsp;&middot;&nbsp; <a href="index.html" style="color:inherit;">Back to Home</a></span>
+        <span class="evb-footer-copy">&copy; 2026 East Village Buyers. All rights reserved. &nbsp;&middot;&nbsp; <a href="index_82.html" style="color:inherit;">Back to Home</a></span>
         <span class="evb-footer-legal">Vintage USA Inc &nbsp;&middot;&nbsp; DBA East Village Buyers &nbsp;&middot;&nbsp; DCA Lic. #2070477</span>
       </div>
     </div>
   </footer>
 
   <script>
-    function toggleFaq(btn) {
-      var item = btn.parentElement;
-      var panel = item.querySelector('.faq-panel');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(el) {
-        el.classList.remove('open');
-        el.querySelector('.faq-panel').style.maxHeight = '0';
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
-    }
-  </script>
+    document.querySelectorAll('.cq-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item  = btn.closest('.cq-item');
+        const panel = item.querySelector('.cq-panel');
+        const isOpen = item.classList.contains('is-open');
 
+        // Close any open item first
+        document.querySelectorAll('.cq-item.is-open').forEach(open => {
+          const p = open.querySelector('.cq-panel');
+          p.style.height = p.scrollHeight + 'px';
+          requestAnimationFrame(() => { p.style.height = '0'; });
+          open.classList.remove('is-open');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          panel.style.height = '0';
+          requestAnimationFrame(() => {
+            panel.style.height = panel.scrollHeight + 'px';
+            panel.addEventListener('transitionend', () => {
+              panel.style.height = 'auto';
+            }, { once: true });
+          });
+        }
+      });
+    });
+  </script>
+  <script>
+    // Gold vs Plated tab toggle
+    document.querySelectorAll('.gvp-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.gvp-tab').forEach(t => t.classList.remove('gvp-tab--active'));
+        tab.classList.add('gvp-tab--active');
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.gvp-panel').forEach(p => p.classList.add('gvp-panel--hidden'));
+        document.getElementById('gvp-' + target).classList.remove('gvp-panel--hidden');
+      });
+    });
+
+    // Row tap to expand detail
+    document.querySelectorAll('.gvp-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const wasActive = row.classList.contains('is-active');
+        document.querySelectorAll('.gvp-row').forEach(r => r.classList.remove('is-active'));
+        const detail = document.getElementById('gvp-detail');
+        if (wasActive) {
+          detail.innerHTML = '<span class="gvp-detail-hint">↑ Tap any row above to learn more</span>';
+          return;
+        }
+        row.classList.add('is-active');
+        const parts = row.dataset.detail.split('||');
+        detail.innerHTML = `<div class="gvp-detail-cols">
+          <span class="gvp-detail-real">${parts[0]}</span>
+          <span class="gvp-detail-plated">${parts[1]}</span>
+        </div>`;
+      });
+    });
+  </script>
+  <script>
+    // ── FAQ2: tab switching ──
+    document.querySelectorAll('.faq2-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.faq2-tab').forEach(t => t.classList.remove('faq2-tab--active'));
+        document.querySelectorAll('.faq2-panel').forEach(p => p.classList.remove('faq2-panel--active'));
+        tab.classList.add('faq2-tab--active');
+        const panel = document.getElementById(tab.dataset.panel);
+        if (panel) panel.classList.add('faq2-panel--active');
+      });
+    });
+
+    // ── FAQ2: accordion ──
+    document.querySelectorAll('.faq2-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item  = btn.closest('.faq2-item');
+        const panel = item.querySelector('.faq2-a');
+        const isOpen = item.classList.contains('is-open');
+
+        // close all in same panel
+        const parentPanel = item.closest('.faq2-panel');
+        parentPanel.querySelectorAll('.faq2-item.is-open').forEach(open => {
+          const p = open.querySelector('.faq2-a');
+          p.style.height = p.scrollHeight + 'px';
+          requestAnimationFrame(() => { p.style.height = '0'; });
+          open.classList.remove('is-open');
+          open.querySelector('.faq2-q').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+          panel.style.height = '0';
+          requestAnimationFrame(() => {
+            panel.style.height = panel.scrollHeight + 'px';
+            panel.addEventListener('transitionend', () => {
+              panel.style.height = 'auto';
+            }, { once: true });
+          });
+        }
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="evb-assistant.css">
+  <script src="evb-knowledge.js"></script>
+  <script src="evb-assistant.js" defer data-evb-assistant></script>
 </body>
 </html>
