@@ -3481,12 +3481,12 @@
 
   <header class="site-nav" id="evbNav">
     <div class="site-nav-inner">
-      <a href="index.html" class="site-nav-logo">
+      <a href="index_82.html" class="site-nav-logo">
         <img src="evbbanner.png" alt="East Village Buyers" onerror="this.onerror=null;this.src='evblogo.png';">
       </a>
       <nav class="site-nav-links" aria-label="Main navigation">
-        <a href="#store" class="site-nav-link">Shop</a>
-        <a href="#sell" class="site-nav-link">About</a>
+        <a href="index_82.html" class="site-nav-link is-active">Home</a>
+        <a href="about.html" class="site-nav-link">About</a>
         <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
       <div class="site-nav-right">
@@ -3526,8 +3526,8 @@
       <button class="site-mob-x" onclick="toggleEvbNav()" aria-label="Close">&times;</button>
     </div>
     <nav class="site-mob-links" aria-label="Mobile navigation">
-      <a href="#store" class="site-mob-link" onclick="toggleEvbNav()">Shop</a>
-      <a href="#sell" class="site-mob-link" onclick="toggleEvbNav()">About</a>
+      <a href="index_82.html" class="site-mob-link" onclick="toggleEvbNav()">Home</a>
+      <a href="about.html" class="site-mob-link" onclick="toggleEvbNav()">About</a>
       <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
     <div class="site-mob-footer">
@@ -4380,7 +4380,7 @@
       <div class="evb-footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="#sell">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="#location">Our Location</a></li>
           <li><a href="sms:9176088939">Get a Quote</a></li>
           <li><a href="https://instagram.com/eastvillagebuyers" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -4924,9 +4924,88 @@
   }
 
   /* ── Hero section ── */
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
+    .hero-cta-pair {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+      gap: 8px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .hero-cta-pair .hero-btn-call,
+    .hero-cta-pair .hero-btn-text {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+
+    .hero-cta-pair .hero-btn-sub {
+      display: none !important;
+    }
+
     .hero-cards { flex-wrap: wrap !important; }
     .hero-cards > * { flex: 1 1 calc(50% - 8px) !important; min-width: 0 !important; }
+  }
+
+  /* ── Nav: compact Text + Call side by side on mobile/tablet ── */
+  @media (max-width: 1023px) {
+    .site-nav-right {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+
+    .site-btn-sms {
+      display: inline-flex !important;
+      padding: 6px 8px !important;
+      gap: 6px !important;
+    }
+
+    .site-btn-call {
+      padding: 6px 8px !important;
+      gap: 6px !important;
+    }
+
+    .site-btn-sub {
+      display: none !important;
+    }
+
+    .site-btn-label {
+      font-size: 9px !important;
+      letter-spacing: 0.03em !important;
+    }
+
+    .site-btn-icon {
+      width: 24px !important;
+      height: 24px !important;
+    }
+
+    .site-btn-icon svg {
+      width: 12px !important;
+      height: 12px !important;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .site-nav-inner {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    .site-nav-logo img {
+      height: 30px !important;
+    }
+
+    .site-btn-label {
+      font-size: 8px !important;
+    }
   }
 
   /* ── General section padding on small screens ── */
