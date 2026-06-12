@@ -1015,8 +1015,8 @@
         letter-spacing: 0.05em;
         line-height: 1.2;
       }
-      .hero-card-stat { bottom: 8px; padding: 5px 10px; max-width: calc(100% - 10px); }
-      .hero-card-stat-text { font-size: clamp(8.5px, 2.3vw, 10.5px); letter-spacing: 0.08em; }
+      .hero-card-stat { bottom: 7px; padding: 3px 8px; max-width: calc(100% - 14px); }
+      .hero-card-stat-text { font-size: clamp(7px, 1.75vw, 8.5px); letter-spacing: 0.06em; }
       .hero-card-sub,
       .hero-card-go,
       .hero-card-icon { display: none; }
@@ -2575,365 +2575,6 @@
       box-shadow: 0 12px 32px rgba(0,0,0,.06);
     }
 
-    /* FOOTER — CORPORATE REDESIGN */
-
-    .evb-footer {
-      background: #080808;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle background texture */
-    .evb-footer::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 40% at 10% 0%, rgba(249,115,22,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 90% 100%, rgba(249,115,22,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    /*  TOP ACCENT BAR  */
-    .evb-footer-topbar {
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent 0%, #f97316 30%, #ff8c00 50%, #f97316 70%, transparent 100%);
-    }
-
-    /*  MAIN GRID  */
-    .evb-footer-main {
-      position: relative;
-      z-index: 2;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 40px 40px 32px;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.4fr;
-      gap: 48px;
-    }
-
-    @media (max-width: 1024px) {
-      .evb-footer-main {
-        grid-template-columns: 1fr 1fr;
-        gap: 36px 48px;
-        padding: 36px 28px 28px;
-      }
-      .evb-footer-brand {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .evb-footer-main {
-        grid-template-columns: 1fr;
-        padding: 32px 24px 24px;
-        gap: 36px;
-      }
-    }
-
-    /*  BRAND COLUMN  */
-    .evb-footer-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .evb-footer-logo-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .evb-footer-logo-img {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      object-fit: contain;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .evb-footer-logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .evb-footer-logo-name {
-      font-size: 15px;
-      font-weight: 900;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: #fff;
-      line-height: 1;
-    }
-
-    .evb-footer-logo-sub {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-top: 4px;
-    }
-
-    .evb-footer-tagline {
-      font-size: 13px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.55);
-      max-width: 280px;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-
-    /* Orange divider */
-    .evb-footer-divider {
-      width: 32px;
-      height: 2px;
-      background: #f97316;
-      margin-bottom: 28px;
-      border-radius: 2px;
-    }
-
-    .evb-footer-social {
-      display: flex;
-      gap: 10px;
-    }
-
-    .evb-footer-social a {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      transition: border-color .2s, color .2s, background .2s;
-    }
-
-    .evb-footer-social a:hover {
-      border-color: #f97316;
-      color: #f97316;
-      background: rgba(249,115,22,0.08);
-    }
-
-    /*  NAV COLUMNS  */
-    .evb-footer-col h5 {
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: #f97316;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .evb-footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .evb-footer-col ul li a {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      transition: color .18s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .evb-footer-col ul li a::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(249,115,22,0);
-      flex-shrink: 0;
-      transition: background .18s;
-    }
-
-    .evb-footer-col ul li a:hover {
-      color: #fff;
-    }
-
-    .evb-footer-col ul li a:hover::before {
-      background: #f97316;
-    }
-
-    /*  CONTACT COLUMN  */
-    .evb-footer-contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .evb-footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      text-decoration: none;
-      color: rgba(255,255,255,0.65);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.5;
-      transition: color .18s;
-    }
-
-    .evb-footer-contact-item:hover {
-      color: #fff;
-    }
-
-    .evb-footer-contact-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: rgba(249,115,22,0.08);
-      border: 1px solid rgba(249,115,22,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .evb-footer-contact-icon svg {
-      width: 14px;
-      height: 14px;
-      color: #f97316;
-    }
-
-    /*  HOURS BADGE  */
-    .evb-hours-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .evb-hours-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.55);
-    }
-
-    .evb-hours-row span:last-child {
-      color: rgba(255,255,255,0.6);
-    }
-
-    /*  WHAT WE BUY STRIP  */
-    .evb-footer-cats {
-      position: relative;
-      z-index: 2;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
-      padding: 32px 40px;
-    }
-
-    .evb-footer-cats-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .evb-footer-cats-label {
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 18px;
-    }
-
-    .evb-footer-cats-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .evb-footer-cat-link {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      padding: 8px 16px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 4px;
-      background: transparent;
-      transition: color .18s, border-color .18s, background .18s;
-    }
-
-    .evb-footer-cat-link:hover {
-      color: #fff;
-      border-color: rgba(249,115,22,0.5);
-      background: rgba(249,115,22,0.06);
-    }
-
-    /*  BOTTOM BAR  */
-    .evb-footer-bottom {
-      position: relative;
-      z-index: 2;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 600px) {
-      .evb-footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 24px;
-        gap: 8px;
-      }
-      .evb-footer-cats {
-        padding: 28px 24px;
-      }
-    }
-
-    .evb-footer-copy {
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.45);
-      letter-spacing: .02em;
-    }
-
-    .evb-footer-legal {
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.38);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .evb-footer-legal span {
-      margin: 0 8px;
-      opacity: 0.4;
-    }
-
-
-
-  
     /* Mobile scroll hint dots */
     .hero-cards-wrap { position: relative; }
     .hero-scroll-hint {
@@ -3050,19 +2691,27 @@
       .hero-btn-text {
         flex: 1;
         min-width: 0;
-        padding: 14px 10px;
-        border-radius: 13px;
+        padding: 12px 10px;
+        border-radius: 11px;
         gap: 8px;
-        justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
-        text-align: center;
+        text-align: left;
       }
-      .hero-btn-icon { width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; }
-      .hero-btn-icon svg { width: 18px; height: 18px; }
-      .hero-btn-copy { align-items: center; text-align: center; }
-      .hero-btn-label { font-size: 13px; line-height: 1.2; }
+      .hero-btn-icon { width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0; }
+      .hero-btn-icon svg { width: 17px; height: 17px; }
+      .hero-btn-copy { align-items: flex-start; text-align: left; flex: 1; min-width: 0; }
+      .hero-btn-label { font-size: 11.5px; line-height: 1.15; }
       .hero-btn-sub { display: none; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-btn-call,
+      .hero-btn-text { padding: 11px 8px; gap: 6px; }
+      .hero-btn-icon { width: 28px; height: 28px; }
+      .hero-btn-icon svg { width: 15px; height: 15px; }
+      .hero-btn-label { font-size: 10.5px; }
     }
 
     /* HERO DESKTOP REDESIGN */
@@ -3415,6 +3064,32 @@
       gap: 24px 40px; margin-bottom: 2.5rem;
     }
     .bwb-section-heading { flex: 0 1 auto; min-width: min(100%, 260px); }
+    .bwb-section-tagline {
+      position: relative;
+      margin: 0 0 10px;
+      padding-top: 11px;
+      max-width: 28rem;
+    }
+    .bwb-section-tagline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, rgba(249, 115, 22, 0.85), rgba(249, 115, 22, 0.12));
+    }
+    .bwb-section-tagline span {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(9.5px, 2.4vw, 10.5px);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(234, 88, 12, 0.68);
+      line-height: 1.7;
+    }
 
     /* ════════════════════════════════════════
        BWB BRAND CAROUSEL — BOLD TILE REDESIGN
@@ -3565,8 +3240,19 @@
 
     /* ── Mobile ── */
     @media (max-width: 900px) {
+      #what-we-buy { padding-top: 2.25rem !important; }
       .bwb-section-header { flex-direction: column; align-items: stretch; gap: 16px; }
-      .bwb-brand-carousel.brand-carousel { flex: 1 1 100%; width: 100%; gap: 10px; }
+      .bwb-section-heading { width: 100%; max-width: none; }
+      .bwb-section-tagline {
+        margin-bottom: 8px;
+        padding-top: 10px;
+      }
+      .bwb-section-tagline span {
+        letter-spacing: 0.18em;
+        color: rgba(234, 88, 12, 0.62);
+      }
+      .bwb-brand-carousel.brand-carousel { flex: 1 1 100%; width: 100%; gap: 10px; order: 2; }
+      .bwb-section-heading { order: 1; }
       .bwb-carousel-pill { display: none; }
       .bwb-brand-carousel .brand-logo-wrap {
         width: clamp(72px, 20vw, 96px);
@@ -3580,6 +3266,7 @@
   </style>
   <link rel="stylesheet" href="site-mobile.css">
   <link rel="stylesheet" href="site-ticker.css">
+  <link rel="stylesheet" href="site-footer.css">
 </head>
 
 <body class="bg-[#f8f5f0] text-black">
@@ -4242,7 +3929,7 @@
         <!-- Header + brand carousel -->
         <div class="bwb-section-header">
           <div class="bwb-section-heading">
-            <p class="uppercase text-orange-500 tracking-[.22em] font-bold text-xs mb-2">Brands We...</p>
+            <p class="bwb-section-tagline"><span>The finest brands across designer, streetwear &amp; luxury goods</span></p>
             <h2 class="text-4xl font-black uppercase mb-2">Buy &bull; Sell &bull; Trade</h2>
             <p class="text-black/50 text-sm max-w-lg">Top dollar paid across jewelry, designer, streetwear, watches, sneakers, accessories, handbags, and electronics. Tap a category for details.</p>
           </div>
@@ -4345,13 +4032,13 @@
         </div>
       </a>
 
-      <a href="we-buy-designer-nyc.html" class="bwb-card" style="--bwb-color:#7c3aed;">
+      <a href="we-buy-accessories-nyc.html" class="bwb-card" style="--bwb-color:#7c3aed;">
         <div class="bwb-media">
           <img src="evbplaceholder.png" alt="Designer accessories">
         </div>
         <div class="bwb-body">
           <div class="bwb-title">Buy &amp; Sell Accessories</div>
-          <div class="bwb-subtitle">Belts · Wallets · Sunglasses · SLG</div>
+          <div class="bwb-subtitle">Gucci · LV · Hermès · Goyard · YSL · Tiffany</div>
           <span class="bwb-go">View accessories <svg fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
@@ -4707,6 +4394,7 @@
         <ul>
           <li><a href="we-buy-jewelry-nyc.html">Jewelry</a></li>
           <li><a href="we-buy-designer-nyc.html">Designer</a></li>
+          <li><a href="we-buy-accessories-nyc.html">Accessories</a></li>
           <li><a href="we-buy-streetwear-nyc.html">Streetwear</a></li>
           <li><a href="we-buy-watches-nyc.html">Watches</a></li>
           <li><a href="we-buy-electronics-nyc.html">Electronics</a></li>
@@ -4723,7 +4411,7 @@
               <svg fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
             </div>
             <div>
-              <div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;">Phone</div>
+              <div class="evb-footer-contact-label">Phone</div>
               917-608-8939
             </div>
           </a>
@@ -4733,7 +4421,7 @@
               <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
             </div>
             <div>
-              <div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;">Address</div>
+              <div class="evb-footer-contact-label">Address</div>
               39 Avenue A, New York, NY 10009
             </div>
           </a>
@@ -4743,11 +4431,11 @@
               <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div>
-              <div style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;">Hours</div>
+              <div class="evb-footer-contact-label evb-footer-contact-label--spaced">Hours</div>
               <div class="evb-hours-grid">
                 <div class="evb-hours-row"><span>Sun – Thu</span><span>12:30 – 6:30 PM</span></div>
                 <div class="evb-hours-row"><span>Friday</span><span>12:30 – 6:00 PM</span></div>
-                <div class="evb-hours-row"><span>Saturday</span><span style="color:rgba(255,80,80,0.7)">Closed</span></div>
+                <div class="evb-hours-row"><span>Saturday</span><span class="evb-hours-closed">Closed</span></div>
               </div>
             </div>
           </div>
