@@ -3489,21 +3489,20 @@
       position: relative;
       overflow: hidden;
       border-radius: 16px;
-      /* Crisp orange top + bottom rule */
       border-top: 3px solid #f97316;
       border-bottom: 3px solid #f97316;
-      background: #fff;
+      background: #fdf6ee;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.9);
     }
-    /* Edge fades that match the white strip bg */
+    /* Edge fades matching cream bg */
     .bwb-carousel-strip::before,
     .bwb-carousel-strip::after {
       content: '';
       position: absolute; top: 0; bottom: 0;
       width: 56px; z-index: 3; pointer-events: none;
     }
-    .bwb-carousel-strip::before { left:  0; background: linear-gradient(to right, #fff 20%, transparent); }
-    .bwb-carousel-strip::after  { right: 0; background: linear-gradient(to left,  #fff 20%, transparent); }
+    .bwb-carousel-strip::before { left:  0; background: linear-gradient(to right, #fdf6ee 20%, transparent); }
+    .bwb-carousel-strip::after  { right: 0; background: linear-gradient(to left,  #fdf6ee 20%, transparent); }
 
     /* Track */
     .bwb-brand-carousel .brand-carousel-track {
@@ -3511,7 +3510,7 @@
       align-items: center;
       width: max-content;
       animation: bwbScroll 28s linear infinite;
-      padding: 16px 0;
+      padding: 10px 0;
     }
     .bwb-brand-carousel .brand-carousel-track:hover {
       animation-play-state: paused;
@@ -3523,8 +3522,8 @@
       flex-shrink: 0;
     }
     .bwb-brand-carousel .brand-logo-wrap {
-      width: clamp(90px, 10vw, 120px);
-      height: clamp(90px, 10vw, 120px);
+      width: clamp(70px, 8vw, 90px);
+      height: clamp(70px, 8vw, 90px);
       border-radius: 12px;
       overflow: hidden;
       display: block;
