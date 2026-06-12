@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,53 +41,87 @@
     }
     img { max-width: 100%; display: block; }
 
-    .about-page {
-      padding-bottom: 4rem;
+    :root {
+      --about-orange: #f97316;
+      --about-orange-soft: rgba(249, 115, 22, 0.12);
+      --about-orange-line: rgba(249, 115, 22, 0.22);
     }
 
-    .about-hero {
-      width: 100%;
-      max-height: 420px;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    .about-page {
+      padding: 2.5rem 0 4rem;
+      position: relative;
     }
-    .about-hero img {
-      width: 100%;
-      height: clamp(220px, 42vw, 420px);
-      object-fit: cover;
-      object-position: center;
+
+    .about-page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--about-orange) 20%, #fb923c 50%, var(--about-orange) 80%, transparent 100%);
+      opacity: 0.55;
     }
 
     .about-wrap {
-      max-width: 640px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 0;
+      padding: 0 1.5rem;
+      position: relative;
     }
 
     .about-kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #f97316;
+      color: #ea580c;
       margin-bottom: 0.75rem;
     }
 
+    .about-kicker::before {
+      content: '';
+      flex-shrink: 0;
+      width: 28px;
+      height: 2px;
+      background: var(--about-orange);
+      border-radius: 2px;
+      opacity: 0.85;
+    }
+
     .about-wrap h1 {
-      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-size: clamp(1.75rem, 4vw, 2.35rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.2;
       color: #141210;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .about-wrap h1::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--about-orange), rgba(249, 115, 22, 0.25));
+      border-radius: 2px;
     }
 
     .about-wrap h2 {
       font-size: 1.15rem;
       font-weight: 700;
       color: #141210;
-      margin: 2.5rem 0 0.85rem;
+      margin: 0 0 0.85rem;
       letter-spacing: -0.01em;
+      padding-left: 0.85rem;
+      border-left: 3px solid var(--about-orange-line);
     }
 
     .about-wrap p {
@@ -103,36 +138,151 @@
     .about-wrap a {
       color: #ea580c;
       text-decoration: underline;
-      text-underline-offset: 2px;
+      text-decoration-color: rgba(249, 115, 22, 0.35);
+      text-underline-offset: 3px;
+      transition: color 0.15s, text-decoration-color 0.15s;
     }
     .about-wrap a:hover {
       color: #c2410c;
+      text-decoration-color: rgba(194, 65, 12, 0.5);
     }
 
-    .about-photo {
-      margin: 2.25rem 0;
-    }
-    .about-photo img {
-      width: 100%;
-      border-radius: 6px;
-    }
-    .about-photo figcaption {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #7a7268;
-      margin-top: 0.6rem;
-      line-height: 1.5;
+    .about-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2.75rem 0;
+      border-bottom: 1px solid var(--about-orange-line);
     }
 
-    .about-divider {
-      border: none;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-      margin: 2.75rem 0;
+    .about-row:first-child {
+      padding-top: 0.5rem;
+    }
+
+    .about-row-text {
+      position: relative;
     }
 
     @media (min-width: 768px) {
+      .about-row-text::before {
+        content: '';
+        position: absolute;
+        left: -1.25rem;
+        top: 0.15rem;
+        bottom: 0.15rem;
+        width: 2px;
+        border-radius: 2px;
+        background: linear-gradient(180deg, var(--about-orange) 0%, rgba(249, 115, 22, 0.08) 100%);
+        opacity: 0.45;
+      }
+
+      .about-row--reverse .about-row-text::before {
+        left: auto;
+        right: -1.25rem;
+      }
+    }
+
+    .about-row-media {
+      margin: 0;
+      position: relative;
+    }
+
+    .about-row-media::after {
+      content: '';
+      position: absolute;
+      inset: 8px -8px -8px 8px;
+      border: 1px solid var(--about-orange-line);
+      border-radius: 8px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-row-media img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(249, 115, 22, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-row-media figcaption {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #7a7268;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+      padding-left: 0.1rem;
+    }
+
+    .about-row-media figcaption::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      margin-top: 0.45rem;
+      border-radius: 50%;
+      background: var(--about-orange);
+      opacity: 0.5;
+    }
+
+    .about-row-text > *:first-child {
+      margin-top: 0;
+    }
+
+    .about-visit {
+      max-width: 640px;
+      margin-top: 0.5rem;
+      padding: 1.75rem 1.5rem 1.5rem;
+      background: linear-gradient(135deg, rgba(255, 247, 237, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+      border: 1px solid var(--about-orange-line);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.06);
+    }
+
+    .about-visit h2 {
+      border-left-color: var(--about-orange);
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .about-page {
+        padding: 3.5rem 0 4.5rem;
+      }
+
       .about-wrap {
-        padding: 3rem 2rem 0;
+        padding: 0 2rem;
+      }
+
+      .about-row {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 3rem;
+        padding: 3.25rem 0;
+      }
+
+      .about-row--reverse {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      }
+
+      .about-row--reverse .about-row-text {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .about-row--reverse .about-row-media {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .about-row-media img {
+        aspect-ratio: 3 / 4;
+        max-height: 520px;
       }
     }
   </style>
@@ -142,11 +292,11 @@
   <div class="site-topbar"></div>
   <header class="site-nav" id="evbNav">
     <div class="site-nav-inner">
-      <a href="index_82.html" class="site-nav-logo">
+      <a href="index.html" class="site-nav-logo">
         <img src="evbbanner.png" alt="East Village Buyers" onerror="this.onerror=null;this.src='evblogo.png';">
       </a>
       <nav class="site-nav-links" aria-label="Main navigation">
-        <a href="index_82.html" class="site-nav-link">Home</a>
+        <a href="index.html" class="site-nav-link">Home</a>
         <a href="about.html" class="site-nav-link is-active">About</a>
         <a href="bloghome.html" class="site-nav-link">Blog</a>
       </nav>
@@ -174,7 +324,7 @@
       <button class="site-mob-x" onclick="toggleEvbNav()" aria-label="Close">&times;</button>
     </div>
     <nav class="site-mob-links" aria-label="Mobile navigation">
-      <a href="index_82.html" class="site-mob-link" onclick="toggleEvbNav()">Home</a>
+      <a href="index.html" class="site-mob-link" onclick="toggleEvbNav()">Home</a>
       <a href="about.html" class="site-mob-link" onclick="toggleEvbNav()">About</a>
       <a href="bloghome.html" class="site-mob-link" onclick="toggleEvbNav()">Blog</a>
     </nav>
@@ -192,54 +342,55 @@
   <script src="site-nav.js"></script>
 
   <main class="about-page">
-    <figure class="about-hero">
-      <img src="evbplaceholder.png" alt="East Village Buyers storefront on Avenue A">
-    </figure>
-
     <article class="about-wrap">
-      <p class="about-kicker">39 Avenue A · East Village</p>
-      <h1>About East Village Buyers</h1>
 
-      <p>East Village Buyers is a small shop on Avenue A where people come to buy, sell, and trade things they actually use — gold and jewelry, designer bags, streetwear and sneakers, watches, electronics, and more. We're not a big chain or an online-only operation. We're a real storefront with a counter, real people behind it, and the same address we've had for years.</p>
+      <section class="about-row">
+        <div class="about-row-text">
+          <p class="about-kicker">39 Avenue A · East Village</p>
+          <h1>About East Village Buyers</h1>
+          <p>East Village Buyers is a small shop on Avenue A where people come to buy, sell, and trade things they actually use — gold and jewelry, designer bags, streetwear and sneakers, watches, electronics, and more. We're not a big chain or an online-only operation. We're a real storefront with a counter, real people behind it, and the same address we've had for years.</p>
+          <p>When you walk in, we'll look at what you brought, tell you what we see, and give you an honest number. If you like it, you get paid the same day. If you don't, no hard feelings — you take your stuff and go. That's how we've always run it.</p>
+        </div>
+        <figure class="about-row-media">
+          <img src="evbplaceholder.png" alt="East Village Buyers storefront on Avenue A">
+          <figcaption>Our storefront at 39 Avenue A, East Village.</figcaption>
+        </figure>
+      </section>
 
-      <p>When you walk in, we'll look at what you brought, tell you what we see, and give you an honest number. If you like it, you get paid the same day. If you don't, no hard feelings — you take your stuff and go. That's how we've always run it.</p>
+      <section class="about-row about-row--reverse">
+        <div class="about-row-text">
+          <h2>What we do</h2>
+          <p>Most days, someone walks in with a gold chain they don't wear anymore, or a handbag sitting in a closet, or a pair of sneakers still in the box. Someone else walks in looking to buy. We sit in the middle of that — checking authenticity, talking through condition, and agreeing on a fair price both sides can live with.</p>
+          <p>We buy and sell across a few categories: precious metals and jewelry, designer and luxury goods, streetwear and sneakers, watches, electronics, and accessories. If you're not sure whether we take something, text us a photo at <a href="sms:9176088939">917-608-8939</a>. We'd rather tell you before you make the trip.</p>
+        </div>
+        <figure class="about-row-media">
+          <img src="evbplaceholder.png" alt="Inside East Village Buyers on Avenue A" loading="lazy">
+          <figcaption>The counter at 39 Avenue A — where we inspect everything in front of you.</figcaption>
+        </figure>
+      </section>
 
-      <figure class="about-photo">
-        <img src="evbplaceholder.png" alt="Inside East Village Buyers on Avenue A" loading="lazy">
-        <figcaption>The counter at 39 Avenue A — where we inspect everything in front of you.</figcaption>
-      </figure>
+      <section class="about-row">
+        <div class="about-row-text">
+          <h2>The building we're in</h2>
+          <p>Our shop at 39 Avenue A is part of a group of brick buildings known as <strong>First Houses</strong>. If you've walked past us, you've probably noticed they don't look like the tall tenements on most Manhattan blocks. There's a reason for that — and it's a piece of New York history.</p>
+          <p>In the middle of the Great Depression, the city tore down overcrowded tenements on this block and built something new: low-rise apartment buildings wrapped around a shared courtyard, with light and air built into the plan from the start. It opened in 1935 and 1936 under Mayor LaGuardia, with architect Frederick L. Ackerman leading the design. It was the first project of the New York City Housing Authority — and the first public housing built by a city in the United States.</p>
+          <p>The idea was straightforward: give working families a decent place to live at a rent they could afford, using New Deal work programs to get it done. Bricks from the old demolished buildings were reused in the new ones. The result is human-scaled — four and five stories, red brick, quiet compared to the rest of the neighborhood.</p>
+          <p>The Landmarks Preservation Commission designated First Houses in 1974. The complex is also listed on the National Register of Historic Places. That means the buildings are protected — their character and history are recognized as worth keeping, not just for the people who live here but for the city as a whole.</p>
+          <p>We think about that when we open the door in the morning. This block has been through a lot — tenements, demolition, rebuilding, nearly a century of New Yorkers living their lives in these walls. We're one small shop in a long story. We try to run it in a way that fits the neighborhood: straight talk, fair dealing, and respect for the people who walk through the door.</p>
+        </div>
+        <figure class="about-row-media">
+          <img src="evbplaceholder.png" alt="First Houses brick buildings on Avenue A, East Village" loading="lazy">
+          <figcaption>First Houses on Avenue A — a New York City landmark since 1974.</figcaption>
+        </figure>
+      </section>
 
-      <h2>What we do</h2>
-      <p>Most days, someone walks in with a gold chain they don't wear anymore, or a handbag sitting in a closet, or a pair of sneakers still in the box. Someone else walks in looking to buy. We sit in the middle of that — checking authenticity, talking through condition, and agreeing on a fair price both sides can live with.</p>
+      <section class="about-visit">
+        <h2>Visit us</h2>
+        <p>We're at <a href="https://maps.app.goo.gl/X5ov5HtS6mGtD7rH6" target="_blank" rel="noopener noreferrer">39 Avenue A, New York, NY 10009</a>, between East 2nd and East 3rd Streets. Walk-ins are welcome — no appointment needed.</p>
+        <p>We're open Sunday through Thursday, 12:30 to 6:30 PM, and Friday until 6:00 PM. We're closed on Saturdays. If you want to talk before coming in, call or text <a href="tel:9176088939">917-608-8939</a>.</p>
+        <p>East Village Buyers is operated by Vintage USA Inc, licensed by the NYC Department of Consumer and Worker Protection (DCA #2070477).</p>
+      </section>
 
-      <p>We buy and sell across a few categories: precious metals and jewelry, designer and luxury goods, streetwear and sneakers, watches, electronics, and accessories. If you're not sure whether we take something, text us a photo at <a href="sms:9176088939">917-608-8939</a>. We'd rather tell you before you make the trip.</p>
-
-      <hr class="about-divider">
-
-      <h2>The building we're in</h2>
-      <p>Our shop at 39 Avenue A is part of a group of brick buildings known as <strong>First Houses</strong>. If you've walked past us, you've probably noticed they don't look like the tall tenements on most Manhattan blocks. There's a reason for that — and it's a piece of New York history.</p>
-
-      <p>In the middle of the Great Depression, the city tore down overcrowded tenements on this block and built something new: low-rise apartment buildings wrapped around a shared courtyard, with light and air built into the plan from the start. It opened in 1935 and 1936 under Mayor LaGuardia, with architect Frederick L. Ackerman leading the design. It was the first project of the New York City Housing Authority — and the first public housing built by a city in the United States.</p>
-
-      <p>The idea was straightforward: give working families a decent place to live at a rent they could afford, using New Deal work programs to get it done. Bricks from the old demolished buildings were reused in the new ones. The result is human-scaled — four and five stories, red brick, quiet compared to the rest of the neighborhood.</p>
-
-      <figure class="about-photo">
-        <img src="evbplaceholder.png" alt="First Houses brick buildings on Avenue A, East Village" loading="lazy">
-        <figcaption>First Houses on Avenue A — a New York City landmark since 1974.</figcaption>
-      </figure>
-
-      <p>The Landmarks Preservation Commission designated First Houses in 1974. The complex is also listed on the National Register of Historic Places. That means the buildings are protected — their character and history are recognized as worth keeping, not just for the people who live here but for the city as a whole.</p>
-
-      <p>We think about that when we open the door in the morning. This block has been through a lot — tenements, demolition, rebuilding, nearly a century of New Yorkers living their lives in these walls. We're one small shop in a long story. We try to run it in a way that fits the neighborhood: straight talk, fair dealing, and respect for the people who walk through the door.</p>
-
-      <hr class="about-divider">
-
-      <h2>Visit us</h2>
-      <p>We're at <a href="https://maps.app.goo.gl/X5ov5HtS6mGtD7rH6" target="_blank" rel="noopener noreferrer">39 Avenue A, New York, NY 10009</a>, between East 2nd and East 3rd Streets. Walk-ins are welcome — no appointment needed.</p>
-
-      <p>We're open Sunday through Thursday, 12:30 to 6:30 PM, and Friday until 6:00 PM. We're closed on Saturdays. If you want to talk before coming in, call or text <a href="tel:9176088939">917-608-8939</a>.</p>
-
-      <p>East Village Buyers is operated by Vintage USA Inc, licensed by the NYC Department of Consumer and Worker Protection (DCA #2070477).</p>
     </article>
   </main>
 
@@ -260,7 +411,7 @@
     </div>
     <div class="evb-footer-bottom">
       <p>&copy; 2026 East Village Buyers</p>
-      <p><a href="index_82.html">Return to Homepage</a></p>
+      <p><a href="index.html">Return to Homepage</a></p>
     </div>
   </footer>
 
