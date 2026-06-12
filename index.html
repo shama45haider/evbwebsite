@@ -3375,222 +3375,229 @@
       0%, 100% { transform: translateY(0px); }
       50%       { transform: translateY(-4px); }
     }
-    /* ── BRAND LOGO CAROUSEL ── */
+    /* ── BRAND LOGO CAROUSEL (generic, used elsewhere) ── */
     @keyframes brandScroll {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    @keyframes orangePulse {
-      0%, 100% { opacity: 0.6; box-shadow: 0 0 0px rgba(249,115,22,0); }
-      50%       { opacity: 1;   box-shadow: 0 0 10px rgba(249,115,22,0.5); }
-    }
     .brand-carousel {
-      width: 100%;
-      overflow: hidden;
-      margin-bottom: 10px;
-      position: relative;
-      padding: 4px 0;
+      width: 100%; overflow: hidden; margin-bottom: 10px; position: relative; padding: 4px 0;
     }
     .brand-carousel::before,
     .brand-carousel::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0; width: clamp(48px, 8vw, 120px); z-index: 2; pointer-events: none;
+      content: ''; position: absolute; top: 0; bottom: 0;
+      width: clamp(48px, 8vw, 120px); z-index: 2; pointer-events: none;
     }
     .brand-carousel::before { left: 0; background: linear-gradient(to right, #f8f5f0 18%, transparent); }
-    .brand-carousel::after  { right: 0; background: linear-gradient(to left, #f8f5f0 18%, transparent); }
+    .brand-carousel::after  { right: 0; background: linear-gradient(to left,  #f8f5f0 18%, transparent); }
     .brand-carousel-track {
-      display: flex;
-      align-items: center;
-      width: max-content;
+      display: flex; align-items: center; width: max-content;
       animation: brandScroll 22s linear infinite;
     }
     .brand-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 32px;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 32px; flex-shrink: 0;
     }
     .brand-logo {
-      height: 36px;
-      width: auto;
-      display: block;
-      mix-blend-mode: multiply;
-      opacity: 0.55;
-      filter: grayscale(0.2);
-      transition: opacity 0.3s, filter 0.3s;
-      object-fit: contain;
+      height: 36px; width: auto; display: block;
+      mix-blend-mode: multiply; opacity: 0.55; filter: grayscale(0.2);
+      transition: opacity 0.3s, filter 0.3s; object-fit: contain;
     }
-    .brand-logo:hover {
-      opacity: 1;
-      filter: grayscale(0);
-    }
+    .brand-logo:hover { opacity: 1; filter: grayscale(0); }
     .brand-sep {
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: #f97316;
-      opacity: 0.35;
-      flex-shrink: 0;
+      width: 3px; height: 3px; border-radius: 50%;
+      background: #f97316; opacity: 0.35; flex-shrink: 0;
     }
-    /* Brands We Buy — heading + inline carousel */
+
+    /* ── BWB SECTION HEADER LAYOUT ── */
     .bwb-section-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 20px 32px;
-      margin-bottom: 2.5rem;
+      display: flex; flex-wrap: wrap; align-items: stretch;
+      gap: 24px 40px; margin-bottom: 2.5rem;
     }
-    .bwb-section-heading {
-      flex: 0 1 auto;
-      min-width: min(100%, 260px);
+    .bwb-section-heading { flex: 0 1 auto; min-width: min(100%, 260px); }
+
+    /* ════════════════════════════════════════
+       BWB BRAND CAROUSEL — BOLD TILE REDESIGN
+    ════════════════════════════════════════ */
+    @keyframes bwbScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
+    @keyframes bwbTilePop {
+      0%   { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.06) rotate(-1deg); }
+    }
+
     .bwb-brand-carousel.brand-carousel {
-      flex: 1 1 320px;
+      flex: 1 1 340px;
       min-width: 0;
       margin-bottom: 0;
-      align-self: center;
-      background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
-      border-radius: 20px;
-      padding: 18px 0;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-top: 2px solid #f97316;
-      box-shadow:
-        0 4px 16px rgba(0,0,0,0.18),
-        0 -1px 0 rgba(249,115,22,0.3) inset,
-        0 1px 0 rgba(255,255,255,0.04) inset;
-      overflow: hidden;
+      overflow: visible;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
-    .bwb-brand-carousel::before,
-    .bwb-brand-carousel::after {
-      background: transparent !important;
-      width: 0 !important;
-    }
-    /* Remove the fade edges inherited from .brand-carousel */
+    /* Kill inherited ::before/::after fade edges */
     .bwb-brand-carousel.brand-carousel::before,
-    .bwb-brand-carousel.brand-carousel::after {
+    .bwb-brand-carousel.brand-carousel::after { display: none; }
+
+    /* Top row: eyebrow label + stat pills */
+    .bwb-carousel-toprow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .bwb-carousel-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f97316;
+    }
+    .bwb-carousel-pills {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .bwb-carousel-pill {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #111;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 999px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .bwb-carousel-pill.pill-orange {
+      color: #fff;
+      background: #f97316;
+      border-color: #f97316;
+    }
+
+    /* The scrolling strip itself */
+    .bwb-carousel-strip {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      /* Crisp orange top + bottom rule */
+      border-top: 3px solid #f97316;
+      border-bottom: 3px solid #f97316;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.9);
+    }
+    /* Edge fades that match the white strip bg */
+    .bwb-carousel-strip::before,
+    .bwb-carousel-strip::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0;
+      width: 56px; z-index: 3; pointer-events: none;
+    }
+    .bwb-carousel-strip::before { left:  0; background: linear-gradient(to right, #fff 20%, transparent); }
+    .bwb-carousel-strip::after  { right: 0; background: linear-gradient(to left,  #fff 20%, transparent); }
+
+    /* Track */
+    .bwb-brand-carousel .brand-carousel-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: bwbScroll 28s linear infinite;
+      padding: 16px 0;
+    }
+    .bwb-brand-carousel .brand-carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Individual tile */
+    .bwb-brand-carousel .brand-item {
+      padding: 0 10px;
+      flex-shrink: 0;
+    }
+    .bwb-brand-carousel .brand-logo-wrap {
+      width: clamp(90px, 10vw, 120px);
+      height: clamp(90px, 10vw, 120px);
+      border-radius: 12px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      cursor: default;
+    }
+    .bwb-brand-carousel .brand-logo-wrap:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.22), 0 0 0 2px #f97316;
+    }
+    /* Orange corner accent on hover */
+    .bwb-brand-carousel .brand-logo-wrap::after {
       content: '';
       position: absolute;
-      top: 0; bottom: 0;
-      width: clamp(28px, 5vw, 56px) !important;
-      z-index: 2; pointer-events: none;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 0 20px 20px 0;
+      border-color: transparent #f97316 transparent transparent;
+      opacity: 0;
+      transition: opacity 0.22s ease;
     }
-    .bwb-brand-carousel.brand-carousel::before {
-      left: 0;
-      background: linear-gradient(to right, #111 10%, transparent) !important;
-    }
-    .bwb-brand-carousel.brand-carousel::after {
-      right: 0;
-      background: linear-gradient(to left, #111 10%, transparent) !important;
-    }
-    .bwb-brand-carousel .brand-carousel-track {
-      animation-duration: 28s;
-      align-items: center;
-    }
-    .bwb-brand-carousel .brand-item {
-      padding: 0 clamp(16px, 2.5vw, 28px);
-    }
-    /* Each logo gets a glowing pill card */
+    .bwb-brand-carousel .brand-logo-wrap:hover::after { opacity: 1; }
+
     .bwb-brand-carousel .brand-logo {
-      height: clamp(34px, 4.5vw, 48px);
-      max-width: min(130px, 17vw);
-      opacity: 1;
-      mix-blend-mode: normal;
-      filter: none;
-      transition: filter 0.3s, transform 0.3s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      filter: brightness(1.08) contrast(1.05);
+      transition: filter 0.22s ease, transform 0.22s ease;
     }
-    .bwb-brand-carousel .brand-logo:hover {
-      filter: drop-shadow(0 0 8px rgba(249,115,22,0.9));
-      transform: scale(1.12);
-      opacity: 1;
+    .bwb-brand-carousel .brand-logo-wrap:hover .brand-logo {
+      filter: brightness(1.15) contrast(1.08) saturate(1.1);
+      transform: scale(1.04);
     }
-    /* Separator dots */
-    .bwb-brand-carousel .brand-sep {
-      background: rgba(249,115,22,0.7);
-      opacity: 1;
-      width: 4px;
-      height: 4px;
-      box-shadow: 0 0 6px rgba(249,115,22,0.6);
-      animation: orangePulse 2.4s ease-in-out infinite;
-    }
-    .bwb-brand-carousel .brand-sep:nth-child(3)  { animation-delay: 0.4s; }
-    .bwb-brand-carousel .brand-sep:nth-child(7)  { animation-delay: 0.8s; }
-    .bwb-brand-carousel .brand-sep:nth-child(11) { animation-delay: 1.2s; }
-    .bwb-brand-carousel .brand-sep:nth-child(15) { animation-delay: 1.6s; }
-    /* Subtle animated top accent line */
-    .bwb-brand-carousel.brand-carousel::before {
-      left: 0;
-      background: linear-gradient(to right, #1a1a1a 15%, transparent) !important;
-    }
-    /* Info bar above brand logos inside dark pill */
+
+    /* No separators needed — tiles are self-contained */
+    .bwb-brand-carousel .brand-sep { display: none; }
+
+    /* Bottom info row */
     .bwb-carousel-infobar {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 20px 14px;
+      gap: 6px;
       font-family: 'Montserrat', sans-serif;
       font-size: 10px;
       font-weight: 600;
-      letter-spacing: 0.06em;
-      color: #f97316;
-      text-align: center;
+      letter-spacing: 0.04em;
+      color: rgba(0,0,0,0.45);
       line-height: 1.4;
-      opacity: 0.88;
     }
-    .bwb-carousel-infobar strong {
-      font-weight: 800;
-      color: #fb923c;
-    }
+    .bwb-carousel-infobar strong { font-weight: 800; color: #f97316; }
     .bwb-carousel-infobar-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #f97316;
-      flex-shrink: 0;
-      opacity: 0.5;
+      width: 3px; height: 3px; border-radius: 50%;
+      background: #f97316; opacity: 0.5; flex-shrink: 0;
     }
+
+    /* ── Mobile ── */
     @media (max-width: 900px) {
-      .bwb-carousel-infobar {
-        font-size: 9px;
-        padding: 0 12px 10px;
-        gap: 6px;
+      .bwb-section-header { flex-direction: column; align-items: stretch; gap: 16px; }
+      .bwb-brand-carousel.brand-carousel { flex: 1 1 100%; width: 100%; gap: 10px; }
+      .bwb-carousel-pill { display: none; }
+      .bwb-brand-carousel .brand-logo-wrap {
+        width: clamp(72px, 20vw, 96px);
+        height: clamp(72px, 20vw, 96px);
+        border-radius: 10px;
       }
+      .bwb-brand-carousel .brand-item { padding: 0 6px; }
+      .bwb-carousel-infobar { font-size: 9px; }
       .bwb-carousel-infobar-dot { display: none; }
-    }
-      position: absolute;
-      top: 50%;
-      right: 18px;
-      transform: translateY(-50%);
-      font-size: 8px;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
-      pointer-events: none;
-      z-index: 3;
-      display: none;
-    }
-    @media (max-width: 900px) {
-      .bwb-section-header {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 16px;
-      }
-      .bwb-brand-carousel.brand-carousel {
-        flex: 1 1 100%;
-        width: 100%;
-        border-radius: 16px;
-        padding: 14px 0;
-      }
-      .bwb-brand-carousel .brand-logo {
-        height: 34px;
-        max-width: 100px;
-      }
-      .bwb-brand-carousel .brand-item {
-        padding: 0 16px;
-      }
     }
   </style>
   <link rel="stylesheet" href="site-mobile.css">
@@ -4262,38 +4269,43 @@
             <p class="text-black/50 text-sm max-w-lg">Top dollar paid across jewelry, designer, streetwear, watches, sneakers, accessories, handbags, and electronics. Tap a category for details.</p>
           </div>
           <div class="bwb-brand-carousel brand-carousel" aria-label="Brands we buy">
+
+            <!-- Eyebrow + pills -->
+            <div class="bwb-carousel-toprow">
+              <span class="bwb-carousel-eyebrow">Brands We Accept</span>
+              <div class="bwb-carousel-pills">
+                <span class="bwb-carousel-pill pill-orange">Same-day cash</span>
+                <span class="bwb-carousel-pill">200+ brands</span>
+              </div>
+            </div>
+
+            <!-- Scrolling tile strip -->
+            <div class="bwb-carousel-strip">
+              <div class="brand-carousel-track">
+                <!-- Set 1 -->
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="nike_1.png" alt="Nike" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="supreme_1.png" alt="Supreme" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="chrome_1.png" alt="Chrome Hearts" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="bape_1.png" alt="BAPE" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="dior_1.png" alt="Dior" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="jordan_1.png" alt="Jordan" class="brand-logo" draggable="false"></div></span>
+                <!-- Set 2 — seamless loop -->
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="nike_1.png" alt="Nike" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="supreme_1.png" alt="Supreme" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="chrome_1.png" alt="Chrome Hearts" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="bape_1.png" alt="BAPE" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="dior_1.png" alt="Dior" class="brand-logo" draggable="false"></div></span>
+                <span class="brand-item"><div class="brand-logo-wrap"><img src="jordan_1.png" alt="Jordan" class="brand-logo" draggable="false"></div></span>
+              </div>
+            </div>
+
+            <!-- Bottom info -->
             <div class="bwb-carousel-infobar">
               <span class="bwb-carousel-infobar-dot"></span>
-              <span>200+ brands accepted &nbsp;·&nbsp; Same-day cash offers &nbsp;·&nbsp; No appointment needed &nbsp;·&nbsp; Walk in or text photos to <strong>917-608-8939</strong></span>
+              <span>Walk in or text photos to <strong>917-608-8939</strong> &nbsp;·&nbsp; No appointment needed</span>
               <span class="bwb-carousel-infobar-dot"></span>
             </div>
-            <div class="brand-carousel-track">
-              <!-- Set 1 -->
-              <span class="brand-item"><img src="nike_1.png" alt="Nike" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="supreme_1.png" alt="Supreme" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="chrome_1.png" alt="Chrome Hearts" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="bape_1.png" alt="BAPE" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="dior_1.png" alt="Dior" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="jordan_1.png" alt="Jordan" class="brand-logo" draggable="false"></span>
-              <!-- Set 2 — duplicate for seamless loop -->
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="nike_1.png" alt="Nike" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="supreme_1.png" alt="Supreme" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="chrome_1.png" alt="Chrome Hearts" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="bape_1.png" alt="BAPE" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="dior_1.png" alt="Dior" class="brand-logo" draggable="false"></span>
-              <span class="brand-sep"></span>
-              <span class="brand-item"><img src="jordan_1.png" alt="Jordan" class="brand-logo" draggable="false"></span>
-            </div>
+
           </div>
         </div>
 
