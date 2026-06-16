@@ -1166,6 +1166,89 @@
       .bwb-cta-btn { min-height: 44px; font-size: 10px; padding: 10px; }
     }
 
+    /* STORE INFO STRIP */
+    .store-info-strip {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: #f8f5f0;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.07);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .store-info-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .store-info-block svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: #f97316;
+    }
+    .store-info-block div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .store-info-block strong {
+      font-size: 13px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.2;
+    }
+    .store-info-block span {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.5);
+      line-height: 1.4;
+    }
+    .store-info-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+    .store-info-directions {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #f97316;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.18s;
+      flex-shrink: 0;
+    }
+    .store-info-directions:hover { background: #ea6c0a; }
+    .store-info-directions svg {
+      width: 14px;
+      height: 14px;
+    }
+    @media (max-width: 767px) {
+      .store-info-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px;
+      }
+      .store-info-divider { display: none; }
+      .store-info-block { min-width: 0; }
+      .store-info-directions { width: 100%; justify-content: center; }
+    }
+
     /*  CAROUSEL — COMPACT  */
     .store-carousel { position: relative; overflow: hidden; border-radius: 20px; }
     .carousel-track { display: flex; transition: transform .45s ease; }
@@ -1337,6 +1420,315 @@
     .vid-dot.active {
       width: 22px;
       background: #f97316;
+    }
+
+    /* ══════════════════════════════════════════════
+       SELL SECTION — REDESIGN
+       ══════════════════════════════════════════════ */
+    .sell-section {
+      position: relative;
+      overflow: hidden;
+      background: #f8f5f0;
+      color: #111;
+      padding: 80px 0;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .sell-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 8% 50%, rgba(249,115,22,.07), transparent 36%),
+        radial-gradient(circle at 92% 20%, rgba(249,115,22,.05), transparent 32%);
+      pointer-events: none;
+    }
+    .sell-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: start;
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+    }
+
+    /* Subhead */
+    .sell-subhead {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.45);
+      margin: -28px 0 36px;
+      line-height: 1.5;
+    }
+
+    /* Step rows */
+    .sell-rows {
+      display: flex;
+      flex-direction: column;
+      border-top: 1.5px solid rgba(0,0,0,0.09);
+    }
+    .sell-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1.5px solid rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .sell-row-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sr-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      color: rgba(249,115,22,0.18);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 52px;
+    }
+    .sr-title {
+      font-size: 16px;
+      font-weight: 900;
+      color: #111;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .sr-desc {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.48);
+      line-height: 1.65;
+      margin: 0;
+      padding-left: 8px;
+      border-left: 2px solid rgba(249,115,22,0.3);
+    }
+    @media (max-width: 600px) {
+      .sell-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 20px 0;
+      }
+      .sr-desc { border-left: none; padding-left: 0; padding-left: 68px; }
+    }
+
+    /* Label */
+    .sell-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #f97316;
+      background: rgba(249,115,22,.1);
+      border: 1px solid rgba(249,115,22,.28);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .sell-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+      box-shadow: 0 0 10px rgba(249,115,22,.6);
+      flex-shrink: 0;
+    }
+
+    /* Heading */
+    .sell-heading {
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+      color: #111;
+      margin: 0 0 48px;
+    }
+    .sell-heading span { color: #f97316; }
+
+    /* Steps */
+    .sell-steps { display: flex; flex-direction: column; gap: 0; }
+    .sell-step {
+      display: grid;
+      grid-template-columns: 56px 2px 1fr;
+      gap: 0 20px;
+      align-items: start;
+    }
+    .sell-step--last { grid-template-columns: 56px 1fr; }
+    .sell-step--last .sell-step-body { grid-column: 2; }
+
+    .sell-step-num {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(249,115,22,.3);
+      box-shadow: 0 2px 12px rgba(249,115,22,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px; font-weight: 900;
+      color: #f97316;
+      letter-spacing: -.02em;
+      flex-shrink: 0;
+    }
+    .sell-step-line {
+      width: 2px;
+      height: 100%;
+      min-height: 40px;
+      background: linear-gradient(to bottom, rgba(249,115,22,.35), rgba(249,115,22,.05));
+      margin: 56px 0 0;
+      align-self: stretch;
+    }
+    .sell-step-body {
+      padding: 14px 0 36px;
+    }
+    .sell-step-body strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 900;
+      color: #111;
+      letter-spacing: -.01em;
+      margin-bottom: 6px;
+    }
+    .sell-step-body span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,.5);
+      line-height: 1.6;
+    }
+
+    /* Right column */
+    .sell-right { display: flex; flex-direction: column; gap: 20px; }
+
+    /* CTA card */
+    .sell-cta-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sell-cta-eyebrow {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.35);
+      margin-bottom: 4px;
+    }
+    .sell-btn-primary {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: #f97316;
+      color: #fff;
+      border-radius: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 0 #c2410c, 0 10px 28px rgba(249,115,22,.38);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .sell-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #c2410c, 0 14px 36px rgba(249,115,22,.45); }
+    .sell-btn-primary:active { transform: translateY(4px); box-shadow: 0 2px 0 #c2410c; }
+    .sell-btn-primary svg { width: 18px; height: 18px; }
+
+    .sell-btn-secondary {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      background: #fff;
+      border: 1.5px solid rgba(0,0,0,.12);
+      color: #111;
+      border-radius: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color .18s, box-shadow .18s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .sell-btn-secondary:hover { border-color: #f97316; box-shadow: 0 4px 14px rgba(249,115,22,.15); }
+    .sell-btn-secondary svg { width: 18px; height: 18px; }
+
+    /* Trust block */
+    .sell-trust {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .sell-trust-title {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,.35);
+      margin-bottom: 16px;
+    }
+    .sell-trust-list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .sell-trust-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 13px; font-weight: 500;
+      color: rgba(0,0,0,.6);
+      line-height: 1.5;
+    }
+    .sell-trust-list li strong { color: #111; font-weight: 700; }
+    .sell-check {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(22,163,74,.1);
+      border: 1px solid rgba(22,163,74,.25);
+      color: #16a34a;
+      font-size: 11px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .sell-id-note {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(0,0,0,.07);
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(0,0,0,.38);
+      letter-spacing: .02em;
+    }
+
+    /* Mobile */
+    @media (max-width: 860px) {
+      .sell-section { padding: 56px 0; }
+      .sell-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .sell-heading { font-size: clamp(36px, 9vw, 52px); margin-bottom: 36px; }
+    }
+    @media (max-width: 540px) {
+      .sell-section { padding: 44px 0; }
+      .sell-step-num { width: 46px; height: 46px; font-size: 13px; border-radius: 12px; }
+      .sell-step-body strong { font-size: 15px; }
+      .sell-cta-card { padding: 20px; }
+      .sell-btn-primary, .sell-btn-secondary { font-size: 12px; padding: 14px 16px; }
     }
 
     /*  PREMIUM FAQ EXPERIENCE  */
@@ -3963,93 +4355,88 @@
   </section>
 
 
-  <!-- SELL HUB — 3-zone compact layout -->
-  <section id="sell" class="sh-section scroll-mt-20" aria-labelledby="sh-title">
-    <div class="sh-inner">
+  <!-- SELL HUB — REMOVED -->
+  <section id="sell" class="sell-section scroll-mt-20" aria-labelledby="sh-title" style="display:none">
 
-      <header class="sh-head">
-        <p class="sh-head-label">Get Cash For Your Items</p>
-        <h2 id="sh-title">We Make It Simple.</h2>
-      </header>
+    <!-- background blobs + grid -->
+    <div class="sell-bg" aria-hidden="true"></div>
 
-      <ol class="sh-steps-row">
-        <li class="sh-step-card">
-          <span class="sh-step-num">1</span>
-          <div class="sh-step-head">
-            <strong class="sh-step-title">Text Us Photos</strong>
-            <span class="sh-step-desc">Send clear photos — front, back, any markings.</span>
-          </div>
-        </li>
-        <li class="sh-step-card">
-          <span class="sh-step-num">2</span>
-          <div class="sh-step-head">
-            <strong class="sh-step-title">Get a Free Quote</strong>
-            <span class="sh-step-desc">We reply with a ballpark offer before you make the trip.</span>
-          </div>
-        </li>
-        <li class="sh-step-card">
-          <span class="sh-step-num">3</span>
-          <div class="sh-step-head">
-            <strong class="sh-step-title">Collect Your Cash</strong>
-            <span class="sh-step-desc">Bring items in — walk out with cash in 5 minutes.</span>
-          </div>
-        </li>
-      </ol>
+    <div class="sell-inner">
 
-      <div class="sh-actions">
-        <a href="sms:9176088939" class="sh-btn sh-btn--primary"><span class="sh-btn-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg></span><span>TEXT PHOTOS FOR A QUOTE</span></a>
-        <a href="tel:9176088939" class="sh-btn sh-btn--ghost"><span class="sh-btn-icon" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.78a2 2 0 0 1-.45 2.11L8.09 9.84a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.89.31 1.82.53 2.78.66A2 2 0 0 1 22 16.92z"/></svg></span><span>CALL 917-608-8939</span></a>
+      <!-- LEFT: headline + steps -->
+      <div class="sell-left">
+
+        <p class="sell-label">Get Cash For Your Items</p>
+
+        <h2 id="sh-title" class="sell-heading">
+          We Make It <span>Simple.</span>
+        </h2>
+
+        <p class="sell-subhead">Three steps. No appointments. Cash in hand.</p>
+
+        <div class="sell-rows">
+
+          <div class="sell-row">
+            <div class="sell-row-left">
+              <span class="sr-num">01</span>
+              <strong class="sr-title">Text Us Photos</strong>
+            </div>
+            <p class="sr-desc">Send clear photos — front, back, any markings — and we'll get back to you fast.</p>
+          </div>
+
+          <div class="sell-row">
+            <div class="sell-row-left">
+              <span class="sr-num">02</span>
+              <strong class="sr-title">Get a Free Quote</strong>
+            </div>
+            <p class="sr-desc">We reply with a real ballpark offer before you make the trip. No pressure.</p>
+          </div>
+
+          <div class="sell-row">
+            <div class="sell-row-left">
+              <span class="sr-num">03</span>
+              <strong class="sr-title">Collect Your Cash</strong>
+            </div>
+            <p class="sr-desc">Bring items in — walk out with cash in 5 minutes.</p>
+          </div>
+
+        </div>
       </div>
 
-      <div class="sh-info-grid">
-        <div class="sh-panel">
-          <p class="sh-panel-title">Why Choose East Village Buyers?</p>
-          <ul class="sh-check-list">
-            <li>Top Dollar Paid – Highest prices guaranteed with zero risk.</li>
-            <li>30+ Years of Experience – Trusted, professional appraisals.</li>
-            <li>Fast &amp; Legit – Free "Legit Checks" and no obligations.</li>
-          </ul>
-          <p class="sh-note">📌 Bring a valid Government ID (Must be 18+). Don't forget to smile! 😊</p>
+      <!-- RIGHT: CTA card + trust -->
+      <div class="sell-right">
+
+        <div class="sell-cta-card">
+          <p class="sell-cta-eyebrow">Ready to sell?</p>
+          <a href="sms:9176088939" class="sell-btn-primary">
+            <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text Photos for a Quote
+          </a>
+          <a href="tel:9176088939" class="sell-btn-secondary">
+            <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.66 2.78a2 2 0 0 1-.45 2.11L8.09 9.84a16 16 0 0 0 6 6l1.23-1.23a2 2 0 0 1 2.11-.45c.89.31 1.82.53 2.78.66A2 2 0 0 1 22 16.92z"/></svg>
+            Call 917-608-8939
+          </a>
         </div>
 
-        <div class="sh-panel" id="location">
-          <p class="sh-panel-title">Find Our Store</p>
-          <p class="sh-address">39 Avenue A, New York, NY 10009</p>
-          <ul class="sh-hours-list">
-            <li><span class="sh-day">Sun – Thu</span><span>12:30 PM – 6:30 PM</span></li>
-            <li><span class="sh-day">Friday</span><span>12:30 PM – 6:00 PM</span></li>
-            <li><span class="sh-day">Saturday</span><span class="closed">Closed</span></li>
+        <div class="sell-trust">
+          <p class="sell-trust-title">Why East Village Buyers?</p>
+          <ul class="sell-trust-list">
+            <li>
+              <span class="sell-check">✓</span>
+              <span><strong>Top Dollar Paid</strong> — Highest prices guaranteed with zero risk.</span>
+            </li>
+            <li>
+              <span class="sell-check">✓</span>
+              <span><strong>30+ Years of Experience</strong> — Trusted, professional appraisals.</span>
+            </li>
+            <li>
+              <span class="sell-check">✓</span>
+              <span><strong>Fast &amp; Legit</strong> — Free "Legit Checks" and no obligations.</span>
+            </li>
           </ul>
-          <a href="https://maps.app.goo.gl/X5ov5HtS6mGtD7rH6" target="_blank" rel="noopener noreferrer" class="sh-store-btn">
-            <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.1 7-12a7 7 0 0 0-14 0c0 6.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-            Get Directions
-          </a>
-          <details class="sh-transit">
-            <summary class="sh-transit-toggle">Getting Here</summary>
-            <div class="sh-transit-grid">
-              <div class="sh-transit-item">
-                <h4>Famous Landmarks</h4>
-                <p>Just a short walk from Katz's Delicatessen and Tompkins Square Park.</p>
-              </div>
-              <div class="sh-transit-item">
-                <h4>By Car &amp; Parking</h4>
-                <p>Metered street parking available right out front on Avenue A.</p>
-              </div>
-              <div class="sh-transit-item">
-                <h4>By Subway</h4>
-                <ul>
-                  <li>F Train to Lower East Side – Second Ave (closest)</li>
-                  <li>L Train to First Ave</li>
-                  <li>J, M, Z Trains to Essex St – Delancey St</li>
-                </ul>
-              </div>
-              <div class="sh-transit-item">
-                <h4>By Bus</h4>
-                <p>M9 or M14A-SBS stops right near the shop.</p>
-              </div>
-            </div>
-          </details>
+          <p class="sell-id-note">📌 Bring a valid Government ID · Must be 18+</p>
         </div>
+
       </div>
 
     </div>
@@ -4080,6 +4467,30 @@
       <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
     </div>
     <div class="flex justify-center gap-2 mt-4" id="dots"></div>
+
+    <!-- Store info strip — merged from Find Our Store -->
+    <div class="store-info-strip">
+      <div class="store-info-block">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-12a7 7 0 0 0-14 0c0 6.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div>
+          <strong>39 Avenue A</strong>
+          <span>New York, NY 10009 · East Village</span>
+        </div>
+      </div>
+      <div class="store-info-divider"></div>
+      <div class="store-info-block">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div>
+          <strong>Hours</strong>
+          <span>Sun–Thu 12:30–6:30 PM &nbsp;·&nbsp; Fri 12:30–6:00 PM &nbsp;·&nbsp; Sat Closed</span>
+        </div>
+      </div>
+      <div class="store-info-divider"></div>
+      <a href="https://maps.app.goo.gl/X5ov5HtS6mGtD7rH6" target="_blank" rel="noopener noreferrer" class="store-info-directions">
+        <svg fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-12a7 7 0 0 0-14 0c0 6.9 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        Get Directions
+      </a>
+    </div>
   </section>
 
 
