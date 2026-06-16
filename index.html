@@ -1135,12 +1135,21 @@
     .bwb-card:hover .bwb-cta-btn svg { transform: translateX(3px); }
 
     @media (max-width: 767px) {
-      .bwb-body { padding: 16px; }
-      .bwb-thumb { width: 68px; height: 68px; }
-      .bwb-title { font-size: 12px; }
-      .bwb-subtitle { font-size: 11px; line-height: 1.6; }
-      .bwb-desc { font-size: 11px; margin-bottom: 10px; }
-      .bwb-cta-btn { min-height: 44px; font-size: 10px; }
+      .bwb-body { padding: 14px; }
+      .bwb-thumb { display: none; }
+      .bwb-card-top { margin-bottom: 6px; }
+      .bwb-title { font-size: 11.5px; }
+      .bwb-subtitle {
+        font-size: 10.5px;
+        line-height: 1.55;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+      .bwb-desc { display: none; }
+      .bwb-cta-btn { min-height: 44px; font-size: 10px; padding: 10px; }
     }
 
     /*  CAROUSEL — COMPACT  */
